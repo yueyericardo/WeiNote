@@ -1,0 +1,10 @@
+{
+  "port": 8081,
+  "session": {
+    "secret": "weinote",
+    "key": "WeiNote",
+    "maxAge": 2592000000
+  },
+  "allow_signup": true, //set false to ban signup
+  "mongodb": "mongodb://username:password@xxx.mlab.com:port/datebase"
+}
