@@ -1,14 +1,17 @@
 <%- include('header')%>
 
+<% if (user) { -%>
+	<% var avatar = '/img/' + user.avatar; name=user.name%>
+<% } else if (posts.length > 0) { -%>
+	<% var avatar = '/img/' + posts[0].author.avatar; name=posts[0].author.name%>
+<% } else { -%>
+	<% var avatar = 'https://yyrcd-1256568788.cos.na-siliconvalley.myqcloud.com/yyrcd/2019-06-13-note-icon.png'; name='username'%>
+<% }-%>
+
 <header id="header">
 	  <div class="circle-container">
 	    <a style="color: transparent" href="/notes">	
 		<div class="circle" style="background: none; border: none;">
-			<% if (user) { -%>
-				<% var avatar = user.avatar; name=user.name%>
-			<% } else { -%>
-				<% var avatar = posts[0].author.avatar; name=posts[0].author.name%>
-			<% } -%>
 			<img src=" /img/<%= avatar %>" style="width: 80px;border-radius: 40px;">
   		</div>
 	    </a>
