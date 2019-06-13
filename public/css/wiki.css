@@ -30,16 +30,10 @@ body {
   margin: 0;
   border: none;
 }
-.content {
-  position: relative;
-}
 @media (max-width: 330px) {
   body {
     overflow: scroll;
     overflow-x: hidden;
-  }
-  .content {
-    overflow: scroll;
   }
 }
 #header {
@@ -290,61 +284,20 @@ body {
   position: absolute;
   bottom: 0;
   margin-bottom: 10px;
-  width: 100%;
+  width: 91%;
   color: #c3bbbb;
-  vertical-align: top;
   text-align: center;
   font-size: 0.7em;
 }
-#footer ul {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-#footer li {
-  display: inline-block;
-  margin-right: 15px;
-  border-right: 1px solid #666;
-  vertical-align: middle;
-}
-#footer li a {
-  margin-right: 15px;
-}
-#footer li:last-child {
-  margin-right: 0;
-  border-right: 0;
-}
-#footer li:last-child a {
-  margin-right: 0;
-}
-#footer a {
-  color: #666;
-  text-decoration: underline;
-  background-image: none;
-}
-#footer a:hover {
-  color: #858585;
-}
-#footer .footer-left {
-  height: 20px;
-  vertical-align: middle;
-  line-height: 20px;
-}
-@media (min-width: 50rem) {
-  #footer {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-between;
-    align-items: center;
-    align-content: center;
-    margin-bottom: 20px;
+@media (min-width: 750px) {
+    #footer .footer-container{
+        display: flex;
+    }
+    #footer .footer-container .footer-left {
+    margin:0 auto 0 0;
   }
-  #footer .footer-left {
-    align-self: flex-start;
-    margin-right: 20px;
-  }
-  #footer .footer-right {
-    align-self: flex-end;
+    #footer .footer-container .footer-right {
+    margin:0 0 0 auto ;
   }
 }
 .pagination {
@@ -854,20 +807,23 @@ for color, i in colors
   .label p{
     padding: 1px 10px;
   }
+  #footer{
+    width: 97%;
+  }
 }
 @media screen and (max-width: 450px) {
-.more-setting-button {
-  padding: 3px 5px;
-  font-size: 0.8em!important;
-}
-.create-bnt-cancel{
-  padding: 3px 5px;
-  font-size: 0.8em!important;
-}
-.create-bnt-submit{
-  padding: 3px 5px;
-  font-size: 0.8em!important;
-}
+    .more-setting-button {
+      padding: 3px 5px;
+      font-size: 0.8em!important;
+    }
+    .create-bnt-cancel{
+      padding: 3px 5px;
+      font-size: 0.8em!important;
+    }
+    .create-bnt-submit{
+      padding: 3px 5px;
+      font-size: 0.8em!important;
+    }
 }
 .success-message{
   display: block;
