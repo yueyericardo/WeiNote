@@ -33,8 +33,8 @@ router.post('/', checkNotLogin, function (req, res, next) {
 
   // 校验参数
   try {
-    if (!(name.length >= 5 && name.length <= 16)) {
-      throw new Error('名字请限制在 5-16 个字符')
+    if (!(name.length >= 3 && name.length <= 16)) {
+      throw new Error('名字请限制在 3-16 个字符')
     }
     if (['m', 'f', 'x'].indexOf(gender) === -1) {
       throw new Error('性别只能是 m、f 或 x')
@@ -45,8 +45,8 @@ router.post('/', checkNotLogin, function (req, res, next) {
     if (!req.files.avatar.name) {
       throw new Error('缺少头像')
     }
-    if (password.length < 6) {
-      throw new Error('密码至少 6 个字符')
+    if (password.length < 10) {
+      throw new Error('密码至少 10 个字符')
     }
     if (password !== repassword) {
       throw new Error('两次输入密码不一致')
