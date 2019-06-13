@@ -7,13 +7,7 @@ const checkNotLogin = require('../middlewares/check').checkNotLogin
 
 // GET /signin 登录页
 router.get('/', checkNotLogin, function (req, res, next) {
-  if (req.session.user) {
-    res.redirect('/notes');
-
-  }else{
     res.render('signin');
-    console.log(req.session);
-  }
 })
 
 // POST /signin 用户登录
