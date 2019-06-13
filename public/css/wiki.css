@@ -869,3 +869,25 @@ for color, i in colors
   font-size: 0.8em!important;
 }
 }
+.success-message{
+  display: block;
+  margin: auto;
+  width: fit-content;
+  padding: 5px 50px;
+  border: 2px solid #4CAF50;
+  color: white;
+}
+.success-message p{
+  margin:0;
+}
+.error-message{
+  display: block;
+  margin: auto;
+  width: fit-content;
+  padding: 5px 50px;
+  border: 2px solid #F44336;
+  color: white;
+}
+.error-message p{
+  margin: 0;
+}
