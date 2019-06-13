@@ -1,7 +1,7 @@
-<img src="https://yyrcd-1256568788.cos.na-siliconvalley.myqcloud.com/yyrcd/2019-06-13-note-icon.png" width=50px;>
-
 # WeiNote
 像发微博一样写笔记 | [Demo](http://weinote.yyrcd.com)  
+
+![](https://yyrcd-1256568788.cos.na-siliconvalley.myqcloud.com/yyrcd/2019-06-13-222357.png)
 
 # Table of contents
 * [1. Features](#1-features)
@@ -10,7 +10,6 @@
 * [4. Configuration](#4-configuration)
 * [5. Run in production](#5-run-in-production)
 * [6. Debug](#6-debug)
-
 
 ## 1. Features
 - 多标签 
