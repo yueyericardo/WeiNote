@@ -8,10 +8,8 @@ module.exports = {
   },
 
   bansignup: function bansignup (req, res, next) {
-    if (true) {
-      req.flash('error', '暂不开放注册')
-      return res.status(404).render('404signup')
-    }
+    req.flash('error', '暂不开放注册')
+    return res.status(404).render('404')
     next()
   },
 

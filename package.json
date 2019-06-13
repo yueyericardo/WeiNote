@@ -5,14 +5,13 @@
   "main": "app.js",
   "scripts": {
     "test": "istanbul cover _mocha",
-    "start": "node app.js",
-    "lint": "eslint --fix config lib middlewares models routes test"
+    "start": "node app.js"
   },
   "author": "yueyericardo",
   "license": "MIT",
   "dependencies": {
     "async": "^2.6.2",
-    "config-lite": "2.1.0",
+    "config": "^3.1.0",
     "connect-flash": "0.1.1",
     "connect-mongo": "2.0.1",
     "date-and-time": "^0.6.3",
