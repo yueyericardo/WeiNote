@@ -1,0 +1,48 @@
+<%- include('header')%>
+
+<header id="header">
+	  <div class="circle-container">
+	    <a style="color: transparent" href="/notes">	
+		<div class="circle" style="background: none; border: none;">
+			<% if (user) { -%>
+				<% var avatar = user.avatar; name=user.name%>
+			<% } else { -%>
+				<% var avatar = posts[0].author.avatar; name=posts[0].author.name%>
+			<% } -%>
+			<img src=" /img/<%= avatar %>" style="width: 80px;border-radius: 40px;">
+  		</div>
+	    </a>
+	  </div>
+</header>
+<div class="header-tag" style="color: darkgray">
+	<p> <%= name%> </p>
+</div>
+
+<div class="tags-container">
+	<% var colors =  ['#2172b8', '#5d3191', '#c12680', '#18a39b', '#ed2861', '#f06045', '#f8b739', '#82c545', '#18a39b', '#2172b8', '#c12680', '#ed2861', '#403838', '#5d3191', '#c12680', '#82c545', '#18a39b', '#2172b8', '#5d3191', '#c12680', '#ed2861', '#f06045', '#f8b739', '#82c545', '#18a39b', '#2172b8', '#c12680', '#ed2861', '#5d3191', '#c12680', '#ed2861', '#f06045', '#f8b739', '#82c545', '#18a39b', '#2172b8', '#5d3191', '#c12680', '#ed2861', '#f06045', '#f8b739', '#82c545', '#18a39b', '#2172b8', '#c12680', '#ed2861'] %>
+  <% for(var i=0; i < posts.tags.length; i++) { %>
+	<div class="label" style="background-color: <%= colors[i]%>">
+		<a href="/notes/tag/<%= posts.tags[i]%>"><p><%= posts.tags[i]%></p></a>
+	</div>
+  <% } %>
+  <div class="shadow-separator"></div>
+</div>
+
+<% for(var i=0; i < posts.length; i++) { %>
+	<% if(i>0 && posts[i].top == false){ %>
+		<% var thisyear = Number(posts[i].postdate.split(" ")[2]); %>
+		<% var lastyear = Number(posts[i-1].postdate.split(" ")[2]); %>
+		<% if(lastyear - thisyear>=1){ %>
+			<div class="year-cut">
+			    <p><%= thisyear %></p>
+			</div>
+		<% } %>
+	<% } %>
+
+	<% var index = posts.tags.findIndex(function(tag) {return tag == posts[i].tag}) %>
+
+	<%- include('components/post-content-wiki', { post: posts[i], color: colors[index] }) %>
+<% } %>
+
+
+<%- include('footer') %>

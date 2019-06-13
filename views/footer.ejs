@@ -1,0 +1,56 @@
+<footer id="footer">
+  <div class="footer-left">
+    Copyright © 2019 WeiNote by Richard
+  </div>
+  <div class="footer-right">
+        <!-- id 将作为查询条件 -->
+    <span id="busuanzi_container_page_pv"><span id="busuanzi_value_page_pv">0</span> Page View </span>
+      
+  </div>
+
+<!-- dropdown button -->
+<script type="text/javascript">
+$(".bnt_to_dropdown").on('click', function(e) {
+    e.stopPropagation();
+    var $dropdown = $(this).siblings().fadeToggle(200); // toggle this dropdown
+    $('.dropdown #dropdown_content').not($dropdown).fadeOut(200); // hide other dropdowns
+});
+
+$(document).on('click', function(e) {
+    $('.dropdown #dropdown_content').fadeOut(100); // hide all dropdowns
+});
+
+function copy(text) {
+  var input = document.createElement('input');
+  input.setAttribute('value', window.location.origin + text);
+  document.body.appendChild(input);
+  input.select();
+  var result = document.execCommand('copy');
+  document.body.removeChild(input)
+  return result;
+}
+</script>
+<script src="/js/prism.js"></script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<!-- Default Statcounter code for weinote -->
+<script type="text/javascript">
+var sc_project=12025432; 
+var sc_invisible=1; 
+var sc_security="c649dc82"; 
+</script>
+<script type="text/javascript"
+src="https://www.statcounter.com/counter/counter.js"
+async></script>
+<noscript><div class="statcounter"><a title="web statistics"
+href="https://statcounter.com/" target="_blank"><img
+class="statcounter"
+src="https://c.statcounter.com/12025432/0/c649dc82/1/"
+alt="web statistics"></a></div></noscript>
+<!-- End of Statcounter Code -->
+
+</footer>
+
+    </div>
+</body>
+</html>

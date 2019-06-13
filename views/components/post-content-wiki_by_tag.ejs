@@ -1,0 +1,50 @@
+<% if (user && user._id == post.author._id) { -%>
+    <div class="dairy">
+      <div class="dairy-date">
+        <div class="date">
+          <% var date = post.postdate.split(" "); %>
+          <p class="datem"><%= date[0].toUpperCase() %></p>
+          <p class="dated"><%= date[1] %></p>
+        </div>
+      </div>
+      <div class="dairy-p markdown-body" >
+        <div class="markdown-status-bar" id="<%=post._id %>">
+          <%var now = new Date(); thisyear=now.getFullYear();%>
+          <% if (post.top === true && post.hide === true) { -%>
+             <%- include('icon-top-hide') %><span style="margin: auto auto auto 0;">Hidden <% if (date[2] != thisyear) { -%>(<%= date[2] %>)<% } -%> </span>
+          <% } else if (post.hide === true) { -%>
+            <%- include('icon-hide') %> <span style="margin: auto auto auto 0;">Hidden </span>
+          <% } else if (post.top === true) { -%>
+            <%- include('icon-top') %> <span style="margin: auto auto auto 0;">Top <% if (date[2] != thisyear) { -%>(<%= date[2] %>)<% } -%> </span>
+          <% } -%>
+        </div>
+        <%- include('bnt_more', { post: post}) %>
+        <div class="markdown-content">
+          <%- post.content%>
+        </div>
+      </div>
+    </div>
+<% } else { -%>
+    <% if (post.hide != true) { -%>
+        <div class="dairy">
+          <div class="dairy-date">
+            <div class="date">
+              <% var date = post.postdate.split(" "); %>
+              <p class="datem"><%= date[0].toUpperCase() %></p>
+              <p class="dated"><%= date[1] %></p>
+            </div>
+          </div>
+          <div class="dairy-p markdown-body" >
+            <div class="markdown-status-bar">
+              <%var now = new Date(); thisyear=now.getFullYear();%>
+              <% if (post.top === true) { -%>
+                <%- include('icon-top') %> <span style="margin: auto auto auto 0;">Top <% if (date[2] != thisyear) { -%>(<%= date[2] %>)<% } -%> </span>
+              <% } -%>
+            </div>
+            <div class="markdown-content">
+              <%- post.content%>
+            </div>
+          </div>
+        </div>
+    <% } -%>
+<% } -%>

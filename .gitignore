@@ -1,0 +1,8 @@
+npm-debug.log
+node_modules
+coverage
+.DS_Store
+._.DS_Store
+package-lock.json
+config/*
+logs/

@@ -1,0 +1,21 @@
+<%- include('header')%>
+
+<header id="header">
+	  <div class="circle-container">
+	    <a style="color: transparent" href="/notes">	
+		<div class="circle" style="background: none; border: none;">
+			<img src=" /img/<%= post.author.avatar %>" style="width: 80px;border-radius: 40px;">
+  		</div>
+	    </a>
+	  </div>
+</header>
+<div class="header-tag" style="color: darkgray">
+	<p> <%= post.author.name%> </p>
+</div>
+
+<% var colors =  ['#2172b8', '#5d3191', '#c12680', '#18a39b', '#ed2861', '#f06045', '#f8b739', '#82c545', '#18a39b', '#2172b8', '#c12680', '#ed2861', '#403838', '#5d3191', '#c12680', '#82c545', '#18a39b', '#2172b8', '#5d3191', '#c12680', '#ed2861', '#f06045', '#f8b739', '#82c545', '#18a39b', '#2172b8', '#c12680', '#ed2861', '#5d3191', '#c12680', '#ed2861', '#f06045', '#f8b739', '#82c545', '#18a39b', '#2172b8', '#5d3191', '#c12680', '#ed2861', '#f06045', '#f8b739', '#82c545', '#18a39b', '#2172b8', '#c12680', '#ed2861'] %>
+
+<% var thisyear = Number(post.postdate.split(" ")[2]); %>
+<% var index = post.tags.findIndex(function(tag) {return tag == post.tag}) %>
+<%- include('components/post-content-wiki', { post: post, color: colors[index] }) %>
+<%- include('footer') %>

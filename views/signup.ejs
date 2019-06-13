@@ -1,0 +1,48 @@
+<%- include('header')%>
+
+<div class="dairy" style="margin-top: 70px;">
+  <div class="dairy-p markdown-body" style="width: 50%!important; display: block; margin:auto;">
+    <div class="markdown-status-bar">
+        <span style="margin: auto auto auto auto;"> </span>
+    </div>
+    <div class="markdown-content">
+
+      <form class="create-form" method="post" enctype="multipart/form-data">
+          <div class="form-item" style="margin: 0 auto 0 0;">
+              <label style="padding-top: 10px">Username</label>
+              <input class="input-bar" name="name" type="text" >
+          </div>
+          <div class="form-item">
+              <label style="padding-top: 10px">Password</label>
+              <input class="input-bar" name="password" type="password">
+          </div>
+          <div class="form-item">
+              <label style="padding-top: 10px">Retype Password</label>
+              <input class="input-bar" name="repassword" type="password">
+          </div>
+          <div class="form-item">
+              <label style="padding-top: 10px">Gender</label>
+              <select class="input-bar" name="gender" style="height: 40px; font-size: 0.9em;">
+                <option value="m">Male</option>
+                <option value="f">Female</option>
+                <option value="x">Secret</option>
+              </select>
+          </div>
+          <div class="form-item">
+              <label style="padding-top: 10px">Picture</label>
+              <input class="input-bar" type="file" name="avatar">
+          </div>
+          <div class="form-item">
+              <label style="padding-top: 10px">Bio</label>
+              <textarea name="bio" rows="5"></textarea>
+          </div>
+          <div class="form-item" style="margin: 20px 0">
+              <input type="submit" class="login-bnt" value="Sign Up">
+          </div>
+      </form>
+
+    </div>
+  </div>
+</div>
+
+<%- include('footer') %>

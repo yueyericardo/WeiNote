@@ -1,0 +1,18 @@
+<div class="bnt_more_container">
+    <div class="dropdown" style="padding: 0; margin: 0;">
+        <div class="bnt_to_dropdown">
+            <p><svg aria-label="Show options" class="bnt_more_icon octicon-kebab-horizontal" viewBox="0 0 13 16" version="1.1" width="13" height="16" role="img"><path fill-rule="evenodd" d="M1.5 9a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zm5 0a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zM13 7.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"></path></svg></p>
+        </div>
+        <div id="dropdown_content">
+            <ul id="dropdown_list">
+                <li><a href="/note/<%= post._id %>">Detail</a></li>
+                <li onclick="copy('/note/<%= post._id %>')"><a>Copy link</a></li>
+                <hr style="margin: 4px 0;">
+                <li><a href="/note/<%= post._id %>/edit">Edit</a></li>
+                <li><a href="/note/<%= post._id %>/toggleHide">Toggle Hide</a></li>
+                <li><a href="/note/<%= post._id %>/toggleTop">Toggle Top</a></li>
+                <li><a href="/note/<%= post._id %>/remove">Delete</a></li>
+            </ul>
+        </div>
+    </div>
+</div>

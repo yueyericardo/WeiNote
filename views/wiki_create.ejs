@@ -1,0 +1,123 @@
+<%- include('header')%>
+
+<header id="header">
+    <div class="circle-container">
+      <a style="color: transparent" href="/notes">  
+    <div class="circle" style="background: none; border: none;">
+      <% if (user) { -%>
+        <% var avatar = user.avatar; name=user.name%>
+      <% } else { -%>
+        <% var avatar = posts[0].author.avatar; name=posts[0].author.name%>
+      <% } -%>
+      <img src=" /img/<%= avatar %>" style="width: 80px;border-radius: 40px;">
+      </div>
+      </a>
+    </div>
+</header>
+<div class="header-tag" style="color: darkgray">
+  <p> <%= name%> </p>
+</div>
+
+<div class="dairy">
+  <div class="dairy-date" style="margin: 20px 0;">
+      <a class="avatar" href="/notes?author=<%= user._id %>">
+        <img class="avatar" src="/img/<%= user.avatar %>">
+      </a>
+  </div>
+  <div class="dairy-p markdown-body" >
+    <div class="markdown-status-bar">
+        <span style="margin: auto auto auto auto;"> </span>
+    </div>
+    <div class="markdown-content">
+
+      <form class="create-form" method="post">
+
+          <div class="form-item">
+              <label style="padding-top: 10px">Tag</label>
+              <div class="post-tag-create">
+                  <% for(var i=0; i < post.tags.length; i++) { %>
+                    <% if (post.tags[i] == post.tag) { -%>
+                      <% var check = true; %>
+                    <% } else { -%>
+                      <% var check = false; %>
+                    <% } -%>
+                    <%- include('components/create_tags', { tag: post.tags[i], check: check}) %>
+                  <% } %>
+              </div>
+          </div>
+          <div class="form-item">
+              <label style="padding-top: 10px">Content</label>
+              <textarea name="content" rows="15" id="input-content" style="display: block;"><%= post.content %></textarea>
+          </div>
+          <div class="form-item" style="display: flex; margin: 20px 0">
+              <input class="more-setting-button" type=button value="More Setting">
+              <input type=button class="create-bnt-cancel" value="Cancel" onclick="window.history.go(-1); return false;">
+              <input type="submit" class="create-bnt-submit" value="Submit">
+          </div>
+          <div class="more-setting" style="display: none;">
+              <div style="display: flex;">
+                  <div class="form-item" style="width: 45%; margin: 0 auto 0 0;">
+                      <label style="padding-top: 10px">New Tag</label>
+                      <input class="input-bar" name="new_tag" value="<%= null %>" >
+                  </div>
+                  <div class="form-item" style="width: 45%; margin: 0 0 0 auto;" >
+                      <label style="padding-top: 10px">Date</label>
+                      <input class="input-bar" type="date" name="postdate" value="<%= post.mydate %>">
+                  </div>
+              </div>
+              <div class="form-item">
+                  <label style="padding-top: 10px">Title</label>
+                  <input class="input-bar" name="title" value="<%= post.title %>">
+              </div>
+              <div style="display: flex;">
+                  <div class="form-item" style="width: 45%; margin: 0 auto 0 0;">
+                    <label style="padding-top: 10px">Hide</label>
+                      <% if (post.hide) { -%>
+                        <div class="post-tag-create">
+                          <input type="radio" name="is_hide" value="true" checked>&nbsp True &nbsp &nbsp
+                          <input type="radio" name="is_hide" value="false">&nbsp False &nbsp &nbsp
+                        </div>
+                      <% } else { -%>
+                        <div class="post-tag-create">
+                          <input type="radio" name="is_hide" value="true">&nbsp True &nbsp &nbsp
+                          <input type="radio" name="is_hide" value="false" checked>&nbsp False &nbsp &nbsp
+                        </div>
+                      <% } -%>
+                  </div>
+                  <div class="form-item" style="width: 45%; margin: 0 0 0 auto;" >
+                    <label style="padding-top: 10px">Top</label>
+                      <% if (post.top) { -%>
+                        <div class="post-tag-create">
+                          <input type="radio" name="is_top" value="true" checked>&nbsp True &nbsp &nbsp
+                          <input type="radio" name="is_top" value="false">&nbsp False &nbsp &nbsp
+                        </div>
+                      <% } else { -%>
+                        <div class="post-tag-create">
+                          <input type="radio" name="is_top" value="true">&nbsp True &nbsp &nbsp
+                          <input type="radio" name="is_top" value="false" checked>&nbsp False &nbsp &nbsp
+                        </div>
+                      <% } -%>
+                  </div>
+              </div>
+          </div>
+      </form>
+
+    </div>
+  </div>
+</div>
+
+<!-- create more setting button -->
+<script type="text/javascript">
+  more_setting_button = document.getElementsByClassName("more-setting-button");
+  more_setting_button[0].addEventListener("click", function() {
+    // this.classList.toggle("active");
+    var content = document.getElementsByClassName("more-setting")[0];
+    if (content.style.display === "block") {
+      content.style.display = "none";
+    } else {
+      content.style.display = "block";
+    }
+  });
+</script>
+
+<%- include('footer') %>

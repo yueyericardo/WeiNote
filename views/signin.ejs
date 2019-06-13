@@ -1,0 +1,28 @@
+<%- include('header')%>
+
+<div class="dairy" style="margin-top: 70px;">
+  <div class="dairy-p markdown-body" style="width: 50%!important; display: block; margin:auto;">
+    <div class="markdown-status-bar">
+        <span style="margin: auto auto auto auto;"> </span>
+    </div>
+    <div class="markdown-content">
+
+      <form class="create-form" method="post">
+          <div class="form-item" style="margin: 0 auto 0 0;">
+              <label style="padding-top: 10px">Username</label>
+              <input class="input-bar" name="name" type="text" >
+          </div>
+          <div class="form-item">
+              <label style="padding-top: 10px">Password</label>
+              <input class="input-bar" name="password" type="password">
+          </div>
+          <div class="form-item" style="margin: 20px 0">
+              <input type="submit" class="login-bnt" value="Login In">
+          </div>
+      </form>
+
+    </div>
+  </div>
+</div>
+
+<%- include('footer') %>
