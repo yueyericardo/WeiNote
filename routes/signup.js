@@ -27,7 +27,7 @@ router.post('/', checkNotLogin, function (req, res, next) {
   const name = req.fields.name
   const gender = req.fields.gender
   const bio = req.fields.bio
-  const avatar = req.files.avatar.path.split(path.sep).pop()
+  // const avatar = req.files.avatar.path.split(path.sep).pop()
   let password = req.fields.password
   const repassword = req.fields.repassword
 
@@ -42,9 +42,9 @@ router.post('/', checkNotLogin, function (req, res, next) {
     // if (!(bio.length >= 1 && bio.length <= 30)) {
     //   throw new Error('个人简介请限制在 1-30 个字符')
     // }
-    if (!req.files.avatar.name) {
-      throw new Error('缺少头像')
-    }
+    // if (!req.files.avatar.name) {
+    //   throw new Error('缺少头像')
+    // }
     if (password.length < 6) {
       throw new Error('密码至少 6 个字符')
     }
@@ -67,7 +67,8 @@ router.post('/', checkNotLogin, function (req, res, next) {
     password: password,
     gender: gender,
     bio: bio,
-    avatar: avatar
+    // avatar: avatar
+    avatar: 'https://yyrcd-1256568788.cos.na-siliconvalley.myqcloud.com/yyrcd/2019-06-13-055719.jpg'
   }
   // 用户信息写入数据库
   UserModel.create(user)
