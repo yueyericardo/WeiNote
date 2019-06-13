@@ -3,7 +3,6 @@ const express = require('express')
 const session = require('express-session')
 const MongoStore = require('connect-mongo')(session)
 const flash = require('connect-flash')
-// const config = require('config-lite')(__dirname)
 const config = require('config');
 const routes = require('./routes')
 const pkg = require('./package')

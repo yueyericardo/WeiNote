@@ -8,7 +8,6 @@ const UserModel = require('../models/users')
 const checkNotLogin = require('../middlewares/check').checkNotLogin
 const bansignup = require('../middlewares/check').bansignup
 
-// const config = require('config-lite')(__dirname)
 const config = require('config');
 if (config.get('allow_signup')) {
     // GET /signup 开放注册
