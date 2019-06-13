@@ -84,7 +84,7 @@ app.use(expressWinston.errorLogger({
 app.use(function (err, req, res, next) {
   console.error(err)
   req.flash('error', err.message)
-  res.redirect('/notes')
+  res.redirect('/signin')
 })
 
 if (module.parent) {
