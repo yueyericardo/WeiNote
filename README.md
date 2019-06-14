@@ -8,11 +8,6 @@
 <img width=49%  src="https://yyrcd-1256568788.cos.na-siliconvalley.myqcloud.com/yyrcd/2019-06-13-222927.png"></a>
 </p>
 
-![](https://yyrcd-1256568788.cos.na-siliconvalley.myqcloud.com/yyrcd/2019-06-13-223455.png)
-
-
-
-
 # Table of contents
 * [1. Features](#1-features)
 * [2. Requirement](#2-requirement)
