@@ -17,6 +17,7 @@
 * [5. Configuration](#5-configuration)
 * [6. Run in production](#6-run-in-production)
 * [7. Debug](#7-debug)
+
 ## 1. Features
 - 多标签 
 - Markdown
@@ -76,3 +77,6 @@ pm2 start app.js --name WeiNote
 npm install supervisor -g
 supervisor app
 ```
+
+## 8. Contribute
+特别是安全问题，欢迎PR！
