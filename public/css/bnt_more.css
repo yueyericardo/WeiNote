@@ -14,7 +14,6 @@
     top: 2em ;
     right: 2em;
     font-size: 0.9em;
-    z-index: 100;
 }
 
 .bnt_to_dropdown {
@@ -99,4 +98,9 @@
 }
 .bnt_more_icon:hover {
     fill: #82baf9;
+}
+@media (min-width: 850px) {
+    .bnt_nav_setting_container {
+        z-index: 100;
+    }
 }
