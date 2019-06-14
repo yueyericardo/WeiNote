@@ -18,6 +18,7 @@
 * [6. Run in production](#6-run-in-production)
 * [7. Debug](#7-debug)
 * [8. Contribute](#8-contribute)
+* [9. Acknowledge](#9-acknowledge)
 
 ## 1. Features
 - 多标签 
@@ -80,4 +81,8 @@ supervisor app
 ```
 
 ## 8. Contribute
-特别是安全问题，欢迎PR！
+欢迎PR，尤其是安全问题！
+
+## 9. Acknowledge
+本项目基于[N-blog](https://github.com/nswbmw/N-blog)精简修改  
+[License GPL](https://github.com/yueyericardo/WeiNote/blob/master/LICENSE)
