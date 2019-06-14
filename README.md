@@ -30,8 +30,8 @@
 
 ## 2. Demo
 http://weinote-demo.yyrcd.com  
-demo账户: weinote-demo  
-demo密码: tHP2grA9SzeUbUzySTnX  
+demo账户: weinote  
+demo密码: 9vzVABUa30LSldiVVJt5  
 
 ## 2. Requirement
 - Mongodb  
