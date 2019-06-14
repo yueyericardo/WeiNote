@@ -1,5 +1,5 @@
 # WeiNote
-像发微博一样写笔记 | [Demo](http://weinote.yyrcd.com)  
+像发微博一样写笔记 | [Demo](http://weinote-demo.yyrcd.com)
 
 <p class="img">
 <a class="link"  href="https://yyrcd-1256568788.cos.na-siliconvalley.myqcloud.com/yyrcd/2019-06-13-222357.png">
@@ -8,14 +8,6 @@
 <img width=49%  src="https://yyrcd-1256568788.cos.na-siliconvalley.myqcloud.com/yyrcd/2019-06-13-222927.png"></a>
 </p>
 
-# Table of contents
-* [1. Features](#1-features)
-* [2. Requirement](#2-requirement)
-* [3. Install](#3-install)
-* [4. Configuration](#4-configuration)
-* [5. Run in production](#5-run-in-production)
-* [6. Debug](#6-debug)
-
 ## 1. Features
 - 多标签 
 - Markdown
@@ -23,20 +15,25 @@
 - 置顶
 - 个人使用（支持多用户，但不推荐）
 
+## 2. Demo
+http://weinote-demo.yyrcd.com  
+demo账户: weinote-demo  
+demo密码: tHP2grA9SzeUbUzySTnX  
+
 ## 2. Requirement
 - Mongodb  
 推荐使用[mlab](https://mlab.com/)，有500M免费存储空间
 - Node  
 推荐使用[nvm](https://blog.pm2.io/2018-02-19/Installing-Node-js-with-NVM/)配置Node
 
-## 3. Install
+## 4. Install
 ```bash
 cd directory/you/want/to/run
 git clone git@github.com:yueyericardo/WeiNote.git
 npm install
 ```
 
-## 4. Configuration
+## 5. Configuration
 ```bash
 vim config/default.js
 ```
@@ -57,7 +54,7 @@ vim config/default.js
 }
 ```
 
-## 5. Run in production
+## 6. Run in production
 - pm2 
 ```
 npm install pm2 -g
@@ -65,7 +62,7 @@ pm2 start app.js --name WeiNote
 ```
 - nginx 设置域名
 
-## 6. Debug
+## 7. Debug
 ```
 npm install supervisor -g
 supervisor app
