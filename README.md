@@ -1,5 +1,6 @@
 # WeiNote
-像发微博一样写笔记 | [Demo1](http://weinote-demo.yyrcd.com)  |  [Demo2](https://bs.yyrcd.com/wiki)  
+像发微博一样写笔记  
+[Demo1](http://weinote-demo.yyrcd.com)  |  [Demo2](https://bs.yyrcd.com/wiki)  
 
 <p class="img">
 <a class="link"  href="https://yyrcd-1256568788.cos.na-siliconvalley.myqcloud.com/yyrcd/2019-06-13-222357.png">
