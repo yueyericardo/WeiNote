@@ -17,6 +17,7 @@
 * [5. Configuration](#5-configuration)
 * [6. Run in production](#6-run-in-production)
 * [7. Debug](#7-debug)
+* [8. Contribute](#8-contribute)
 
 ## 1. Features
 - 多标签 
