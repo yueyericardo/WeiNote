@@ -45,7 +45,9 @@
 		<% var thisyear = Number(posts[i].postdate.split(" ")[2]); %>
 		<% var lastyear = Number(posts[i-1].postdate.split(" ")[2]); %>
 		<% if(lastyear - thisyear>=1){ %>
-			<%- include('yyrcd/_partial/year-cut', { year: thisyear }) %>
+			<div class="year-cut">
+			    <p><%= thisyear %></p>
+			</div>
 		<% } %>
 	<% } %>
 
