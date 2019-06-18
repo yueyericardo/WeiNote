@@ -385,7 +385,7 @@ body {
 .dairy .dairy-p img {
   display: block;
   margin: 0.5em auto;
-  max-width: 50%;
+  max-width: 90%;
   border-radius: 6px;
   transition: all 0.5s;
 }
