@@ -33,22 +33,22 @@ router.post('/', checkNotLogin, function (req, res, next) {
   // 校验参数
   try {
     if (!(name.length >= 3 && name.length <= 16)) {
-      throw new Error('名字请限制在 3-16 个字符')
+      throw new Error('Limit username to 3-16 letters')
     }
     if (['m', 'f', 'x'].indexOf(gender) === -1) {
-      throw new Error('性别只能是 m、f 或 x')
+      throw new Error('only m、f or x')
     }
     // if (!(bio.length >= 1 && bio.length <= 30)) {
     //   throw new Error('个人简介请限制在 1-30 个字符')
     // }
     if (!req.files.avatar.name) {
-      throw new Error('缺少头像')
+      throw new Error('Please Upload one avatar')
     }
     if (password.length < 10) {
-      throw new Error('密码至少 10 个字符')
+      throw new Error('At least 10 letters for password')
     }
     if (password !== repassword) {
-      throw new Error('两次输入密码不一致')
+      throw new Error('Two passwords are different')
     }
   } catch (e) {
     // 注册失败，异步删除上传的头像
@@ -77,7 +77,7 @@ router.post('/', checkNotLogin, function (req, res, next) {
       delete user.password
       req.session.user = user
       // 写入 flash
-      req.flash('success', '注册成功')
+      req.flash('success', 'Signup Successfully')
       // 跳转到首页
       res.redirect('/notes')
     })
@@ -86,7 +86,7 @@ router.post('/', checkNotLogin, function (req, res, next) {
       fs.unlink(req.files.avatar.path)
       // 用户名被占用则跳回注册页，而不是错误页
       if (e.message.match('duplicate key')) {
-        req.flash('error', '用户名已被占用')
+        req.flash('error', 'Username has been used')
         return res.redirect('/signup')
       }
       next(e)

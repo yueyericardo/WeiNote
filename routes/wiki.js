@@ -39,7 +39,7 @@ router.post('/create', checkLogin, function (req, res, next) {
     .then(function (result) {
       // 此 post 是插入 mongodb 后的值，包含 _id
       post = result.ops[0]
-      req.flash('success', '发表成功')
+      req.flash('success', 'Posted Successfully')
       res.redirect(`/note/${post._id}`)
     })
     .catch(next)
@@ -106,10 +106,10 @@ router.get('/:postId/edit', checkLogin, function (req, res, next) {
   WikiModel.getRawPostById(postId)
     .then(function (post) {
       if (!post) {
-        throw new Error('该文章不存在')
+        throw new Error('This Note does not Exsit')
       }
       if (author.toString() !== post.author._id.toString()) {
-        throw new Error('权限不足')
+        throw new Error('No Access to This Note')
       }
 
         WikiModel.getAllTags()
@@ -157,15 +157,15 @@ router.post('/:postId/edit', checkLogin, function (req, res, next) {
   WikiModel.getRawPostById(postId)
     .then(function (post) {
       if (!post) {
-        throw new Error('文章不存在')
+        throw new Error('This Note does not Exsit')
       }
       if (post.author._id.toString() !== author.toString()) {
-        throw new Error('没有权限')
+        throw new Error('No Access to This Note')
       }
 
       WikiModel.updatePostById(postId, wiki)
         .then(function () {
-          req.flash('success', '编辑文章成功')
+          req.flash('success', 'Updated Successfully')
           res.redirect(`/note/${post._id}`)
         })
         .catch(next)
@@ -179,10 +179,10 @@ router.get('/:postId/toggleHide', checkLogin, function (req, res, next) {
   WikiModel.getRawPostById(postId)
     .then(function (post) {
       if (!post) {
-        throw new Error('文章不存在')
+        throw new Error('This Note does not Exsit')
       }
       if (post.author._id.toString() !== author.toString()) {
-        throw new Error('没有权限')
+        throw new Error('No Access to This Note')
       }
       post.hide = !post.hide;
       post.author = post.author._id;
@@ -202,10 +202,10 @@ router.get('/:postId/toggleTop', checkLogin, function (req, res, next) {
   WikiModel.getRawPostById(postId)
     .then(function (post) {
       if (!post) {
-        throw new Error('文章不存在')
+        throw new Error('This Note does not Exsit')
       }
       if (post.author._id.toString() !== author.toString()) {
-        throw new Error('没有权限')
+        throw new Error('No Access to This Note')
       }
       post.top = !post.top;
       post.author = post.author._id;
@@ -225,14 +225,14 @@ router.get('/:postId/remove', checkLogin, function (req, res, next) {
   WikiModel.getRawPostById(postId)
     .then(function (post) {
       if (!post) {
-        throw new Error('文章不存在')
+        throw new Error('This Note does not Exsit')
       }
       if (post.author._id.toString() !== author.toString()) {
-        throw new Error('没有权限')
+        throw new Error('No Access to This Note')
       }
       WikiModel.delPostById(postId)
         .then(function () {
-          req.flash('success', '删除文章成功')
+          req.flash('success', 'Deleted Successfully')
           res.redirect('/notes')
         })
         .catch(next)
