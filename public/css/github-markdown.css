@@ -976,9 +976,9 @@
   width: 8px;
 }
 
-::-webkit-scrollbar-track {
+/*::-webkit-scrollbar-track {
   border: 0 solid dimgray;
-}
+}*/
 ::-webkit-scrollbar-track:horizontal {
   border-bottom-width: 1px;
 }
