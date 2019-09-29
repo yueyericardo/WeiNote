@@ -986,9 +986,9 @@
   border-right-width: 1px;
 }
 
-::-webkit-scrollbar-thumb {
+/*::-webkit-scrollbar-thumb {
   border: 0px solid dimgray;
-}
+}*/
 ::-webkit-scrollbar-thumb:horizontal {
   border-bottom-width: 4px;
 }
