@@ -7,6 +7,15 @@
     font-size: 0.9em;
 }
 
+.bnt_edit_container {
+    margin: 0 auto;
+    width: fit-content;
+    position: absolute;
+    top: 0;
+    right: 40px;
+    font-size: 0.9em;
+}
+
 .bnt_nav_setting_container {
     margin: 0 auto;
     width: fit-content;
