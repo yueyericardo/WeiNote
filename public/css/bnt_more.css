@@ -102,7 +102,7 @@
 }
 .bnt_more_icon {
     display: inline-block;
-    fill: white;
+    fill: #979595;
     vertical-align: text-top;
 }
 .bnt_more_icon:hover {
