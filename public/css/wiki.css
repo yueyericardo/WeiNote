@@ -551,6 +551,13 @@ body {
   transition: width 2s;
 }
 
+.anchor-point{
+  display: block;
+  height: 300px; /*same height as header*/
+  margin-top: -300px; /*same height as header*/
+  visibility: hidden;
+}
+
 .markdown-body {
     box-sizing: border-box;
     min-width: 200px;
