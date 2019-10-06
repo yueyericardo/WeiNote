@@ -558,6 +558,14 @@ body {
   visibility: hidden;
 }
 
+@media (max-width: 500px) {
+  .anchor-point{
+    height: 150px; /*same height as header*/
+    margin-top: -150px; /*same height as header*/
+  }
+}
+
+
 .markdown-body {
     box-sizing: border-box;
     min-width: 200px;
@@ -568,11 +576,11 @@ body {
     position: relative;
   }
 
-  @media (max-width: 767px) {
-    .markdown-body {
-      padding: 15px;
-    }
+@media (max-width: 767px) {
+  .markdown-body {
+    padding: 15px;
   }
+}
 
 .tags-container{
   display: block;
