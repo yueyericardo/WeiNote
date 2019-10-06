@@ -166,7 +166,7 @@ router.post('/:postId/edit', checkLogin, function (req, res, next) {
       WikiModel.updatePostById(postId, wiki)
         .then(function () {
           req.flash('success', 'Updated Successfully')
-          res.redirect(`/note/${post._id}`)
+          res.redirect(`/notes#${post._id}`)
         })
         .catch(next)
     })
