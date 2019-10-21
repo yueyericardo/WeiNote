@@ -118,6 +118,11 @@
       content.style.display = "block";
     }
   });
+
+  // focus on text-area once the page is ready
+  $(document).ready(function() {
+    document.getElementById("input-content").focus();
+  });
 </script>
 
 <%- include('footer') %>
