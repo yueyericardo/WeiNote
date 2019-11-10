@@ -1,6 +1,6 @@
 # WeiNote
 像发微博一样写笔记  
-[Demo1](http://weinote-demo.yyrcd.com)  |  [Demo2](https://wiki.yyrcd.com/notes)  
+[Demo1](https://demo.weinote.cc/notes)  |  [Demo2](https://wiki.yyrcd.com/notes)  
 
 灵感来源于
 1. [卢昌海](https://www.changhai.org/index.php)的[微言小义](https://www.changhai.org/articles/miscellaneous/blog/201906.php)。去年自建了一个类似的后端站点，写点bullshit。
