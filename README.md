@@ -34,7 +34,7 @@
 - 个人使用（支持多用户，但不推荐）
 
 ## 2. Demo
-http://weinote-demo.yyrcd.com  
+https://demo.weinote.cc  
 demo账户: weinote  
 demo密码: 9vzVABUa30LSldiVVJt5  
 
