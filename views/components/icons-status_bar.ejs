@@ -1,0 +1,13 @@
+<div class="markdown-status-bar" >
+    <%var now = new Date(); thisyear=now.getFullYear();%>
+    <div style="width: 100px; margin: auto auto auto auto; display: flex;">
+        <% if (post.hide === true) { -%>
+          <%- include('icon-hide') %>
+        <% } if (post.archive === true) { -%>
+          <%- include('icon-archive') %>
+        <% } if (post.top === true) { -%>
+          <%- include('icon-top') %>
+          <span style="margin: auto auto auto 0;"> <% if (date[2] != thisyear) { -%>(<%= date[2] %>)<% } -%> </span>
+        <% } -%>
+    </div>
+</div>

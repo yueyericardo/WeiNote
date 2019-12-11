@@ -4,7 +4,7 @@ const router = express.Router()
 let date = require('date-and-time');
 var http = require('http');
 const htmlToText = require('html-to-text');
- 
+
 const checkLogin = require('../middlewares/check').checkLogin
 const WikiModel = require('../models/wiki')
 
@@ -16,7 +16,8 @@ router.get('/', function (req, res, next) {
 		    .then(function (tags) {
 				posts.tags = tags
 				res.render('wiki', {
-					posts: posts
+					posts: posts,
+					tag_base: '/notes/'
 			})
 	    });
     })
@@ -37,11 +38,88 @@ router.get('/tag/:tagId', function (req, res, next) {
 				posts.tags = tags;
 				posts.tag = tagId;
 				res.render('wiki_by_tag', {
-					posts: posts
+					posts: posts,
+					tag_base: '/notes/'
 			})
 	    });
     })
 })
+
+router.get('/archive', function (req, res, next) {
+  const author = req.query.author
+  WikiModel.getArchivedPosts(author)
+    .then(function (posts) {
+        WikiModel.getAllTags()
+		    .then(function (tags) {
+				posts.tags = tags
+				res.render('wiki', {
+					posts: posts,
+					tag_base: '/notes/archive/'
+			})
+	    });
+    })
+    .catch(next)
+})
+
+router.get('/archive/tag/:tagId', function (req, res, next) {
+  const tagId = req.params.tagId;
+  const author = req.query.author
+
+	WikiModel.getArchivedPostsByTag(author,tagId)
+	    .then(function (posts) {
+	      if (!posts) {
+	        throw new Error('Wiki does not exist')
+	      }
+        WikiModel.getAllTags()
+		    .then(function (tags) {
+				posts.tags = tags;
+				posts.tag = tagId;
+				res.render('wiki_by_tag', {
+					posts: posts,
+					tag_base: '/notes/archive/'
+			})
+	    });
+    })
+})
+
+
+router.get('/all', function (req, res, next) {
+  const author = req.query.author
+  WikiModel.getAllPosts(author)
+    .then(function (posts) {
+        WikiModel.getAllTags()
+		    .then(function (tags) {
+				posts.tags = tags
+				res.render('wiki', {
+					posts: posts,
+					tag_base: '/notes/all/'
+			})
+	    });
+    })
+    .catch(next)
+})
+
+router.get('/all/tag/:tagId', function (req, res, next) {
+  const tagId = req.params.tagId;
+  const author = req.query.author
+
+	WikiModel.getAllPostsByTag(author,tagId)
+	    .then(function (posts) {
+	      if (!posts) {
+	        throw new Error('Wiki does not exist')
+	      }
+        WikiModel.getAllTags()
+		    .then(function (tags) {
+				posts.tags = tags;
+				posts.tag = tagId;
+				res.render('wiki_by_tag', {
+					posts: posts,
+					tag_base: '/notes/all/'
+			})
+	    });
+    })
+})
+
 
 // router.get('/random', function (req, res, next) {
 //   const author = req.query.author
