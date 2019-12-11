@@ -39,6 +39,37 @@ module.exports = {
     if (author) {
       query.author = author
     }
+    query.archive = false;
+    return Wiki
+      .find(query)
+      .populate({ path: 'author', model: 'User' })
+      .sort({ top: -1, mydate: -1, _id: -1 })
+      .addCreatedAt()
+      .contentToHtml()
+      .exec()
+  },
+
+  // 按创建时间降序获取所有用户文章或者某个特定用户的所有文章
+  getArchivedPosts: function getArchivedPosts (author) {
+    const query = {}
+    if (author) {
+      query.author = author
+    }
+    query.archive = true;
+    return Wiki
+      .find(query)
+      .populate({ path: 'author', model: 'User' })
+      .sort({ top: -1, mydate: -1, _id: -1 })
+      .addCreatedAt()
+      .contentToHtml()
+      .exec()
+  },
+
+  getAllPosts: function getAllPosts (author) {
+    const query = {}
+    if (author) {
+      query.author = author
+    }
     return Wiki
       .find(query)
       .populate({ path: 'author', model: 'User' })
@@ -86,6 +117,7 @@ module.exports = {
     if (tag) {
       query.tag = tag;
     }
+    query.archive = false;
     console.log(query);
     return Wiki
       .find(query)
@@ -96,6 +128,44 @@ module.exports = {
       .exec()
   },
 
+  // get post by tag
+  getAllPostsByTag: function getAllPostsByTag (author, tag) {
+    const query = {}
+    if (author) {
+      query.author = author;
+    }
+    if (tag) {
+      query.tag = tag;
+    }
+    console.log(query);
+    return Wiki
+      .find(query)
+      .populate({ path: 'author', model: 'User' })
+      .sort({ top: -1, mydate: -1, _id: -1 })
+      .addCreatedAt()
+      .contentToHtml()
+      .exec()
+  },
+
+  // get post by tag
+  getArchivedPostsByTag: function getArchivedPostsByTag (author, tag) {
+    const query = {}
+    if (author) {
+      query.author = author;
+    }
+    if (tag) {
+      query.tag = tag;
+    }
+    query.archive = true;
+    console.log(query);
+    return Wiki
+      .find(query)
+      .populate({ path: 'author', model: 'User' })
+      .sort({ top: -1, mydate: -1, _id: -1 })
+      .addCreatedAt()
+      .contentToHtml()
+      .exec()
+  },
 
   getNoneHiddenPostsByTag: function getNoneHiddenPostsByTag (author, tag) {
     const query = {}

@@ -28,11 +28,11 @@
   <% for(var i=0; i < posts.tags.length; i++) { %>
   	<% if (i == index) { -%>
 		<div class="label" style="background-color: <%= colors[i]%>">
-			<a href="/notes/tag/<%= posts.tags[i]%>"><p><%= posts.tags[i]%></p></a>
+			<a href="<%=tag_base%>tag/<%= posts.tags[i]%>"><p><%= posts.tags[i]%></p></a>
 		</div>
   	<% } else { -%>
 		<div class="label" style="background-color: <%= colors_dim[i]%>">
-			<a href="/notes/tag/<%= posts.tags[i]%>"><p><%= posts.tags[i]%></p></a>
+			<a href="<%=tag_base%>tag/<%= posts.tags[i]%>"><p><%= posts.tags[i]%></p></a>
 		</div>
   	<% } -%>
 

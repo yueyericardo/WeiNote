@@ -218,6 +218,31 @@ router.get('/:postId/toggleTop', checkLogin, function (req, res, next) {
     })
 })
 
+
+router.get('/:postId/toggleArchive', checkLogin, function (req, res, next) {
+  const postId = req.params.postId
+  const author = req.session.user._id
+
+  WikiModel.getRawPostById(postId)
+    .then(function (post) {
+      if (!post) {
+        throw new Error('This Note does not Exsit')
+      }
+      if (post.author._id.toString() !== author.toString()) {
+        throw new Error('No Access to This Note')
+      }
+      post.archive = !post.archive;
+      post.author = post.author._id;
+      WikiModel.updatePostById(postId, post)
+        .then(function () {
+          req.flash('success', 'Updated');
+          res.redirect(`/notes/all#${postId}`);
+        })
+        .catch(next)
+    })
+})
+
+
 router.get('/:postId/remove', checkLogin, function (req, res, next) {
   const postId = req.params.postId
   const author = req.session.user._id
