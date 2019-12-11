@@ -189,7 +189,7 @@ router.get('/:postId/toggleHide', checkLogin, function (req, res, next) {
       WikiModel.updatePostById(postId, post)
         .then(function () {
           req.flash('success', 'Updated');
-          res.redirect(`/notes#${postId}`);
+          res.redirect(`/notes/all#${postId}`);
         })
         .catch(next)
     })
@@ -209,10 +209,11 @@ router.get('/:postId/toggleTop', checkLogin, function (req, res, next) {
       }
       post.top = !post.top;
       post.author = post.author._id;
+      console.log(url);
       WikiModel.updatePostById(postId, post)
         .then(function () {
           req.flash('success', 'Updated');
-          res.redirect(`/notes#${postId}`);
+          res.redirect(`/notes/all#${postId}`);
         })
         .catch(next)
     })
