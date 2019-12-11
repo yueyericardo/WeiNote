@@ -729,6 +729,19 @@ for color, i in colors
   display: inline-block;
   font-weight: 600!important;
 }
+.markdown-button {
+  outline: 0;
+  margin: 6px auto 5px 0!important;
+  width: 25%;
+  padding: 6px 12px;
+  border-radius: .25em;
+  border: 1px solid rgba(27,31,35,.2);
+  background-color: #262626;
+  color: white;
+  cursor: pointer;
+  display: inline-block;
+  font-weight: 600!important;
+}
 .more-setting{
   padding-bottom: 10px;
 }
@@ -828,6 +841,10 @@ for color, i in colors
 }
 @media screen and (max-width: 450px) {
     .more-setting-button {
+      padding: 3px 5px;
+      font-size: 0.8em!important;
+    }
+    .markdown-button {
       padding: 3px 5px;
       font-size: 0.8em!important;
     }

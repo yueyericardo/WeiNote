@@ -33,7 +33,6 @@
       <form class="create-form" method="post">
 
           <div class="form-item">
-              <label style="padding-top: 10px">Tag</label>
               <div class="post-tag-create">
                   <% for(var i=0; i < post.tags.length; i++) { %>
                     <% if (post.tags[i] == post.tag) { -%>
@@ -46,8 +45,14 @@
               </div>
           </div>
           <div class="form-item">
-              <label style="padding-top: 10px">Content</label>
-              <textarea name="content" rows="15" id="input-content" style="display: block;"><%= post.content %></textarea>
+            <div style="display: inline-block; height: 48px; width: 100%;">
+              <input class="markdown-button" type=button value="Preview" id="preview-bnt">
+            </div>
+              <div style="height: 320px;">
+              <textarea name="content" rows="15" id="input-content" style="display: block; height: inherit;"><%= post.content %></textarea>
+              <div class="markdown-content" style="height: inherit; overflow-y: scroll; display: none; padding-bottom: 0; padding-left: 20px; border: 1px solid rgb(79, 76, 76);" id="markdown-preview">
+              </div>
+              </div>
           </div>
           <div class="form-item" style="display: flex; margin: 20px 0">
               <input class="more-setting-button" type=button value="More Setting">
@@ -106,8 +111,10 @@
   </div>
 </div>
 
-<!-- create more setting button -->
+<script src="/js/marked/marked.min.js"></script>
+
 <script type="text/javascript">
+  // more_setting_button
   more_setting_button = document.getElementsByClassName("more-setting-button");
   more_setting_button[0].addEventListener("click", function() {
     // this.classList.toggle("active");
@@ -116,6 +123,21 @@
       content.style.display = "none";
     } else {
       content.style.display = "block";
+    }
+  });
+
+  // preview button
+  preview_button = document.getElementById("preview-bnt");
+  preview_button.addEventListener("click", function() {
+    var preview = document.getElementById("markdown-preview");
+    var write_content = document.getElementById("input-content");
+    if (preview.style.display === "block") {
+      preview.style.display = "none";
+      write_content.style.display = "block";
+    } else {
+      preview.innerHTML = marked(write_content.value);
+      preview.style.display = "block";
+      write_content.style.display = "none";
     }
   });
 
