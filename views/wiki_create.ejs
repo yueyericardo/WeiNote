@@ -30,7 +30,7 @@
     </div>
     <div class="markdown-content">
 
-      <form class="create-form" method="post">
+      <form class="create-form" method="post" id="form">
 
           <div class="form-item">
               <div class="post-tag-create">
@@ -112,12 +112,11 @@
 </div>
 
 <script src="/js/marked/marked.min.js"></script>
-
+<script src="/js/jquery.are-you-sure.js"></script>
 <script type="text/javascript">
   // more_setting_button
   more_setting_button = document.getElementsByClassName("more-setting-button");
   more_setting_button[0].addEventListener("click", function() {
-    // this.classList.toggle("active");
     var content = document.getElementsByClassName("more-setting")[0];
     if (content.style.display === "block") {
       content.style.display = "none";
@@ -141,9 +140,17 @@
     }
   });
 
+  // warning before leave
+  $(function() {
+    $('form').areYouSure({
+        message: 'It looks like you have been editing something. '
+               + 'If you leave before saving, your changes will be lost.'});
+  });
+
   // focus on text-area once the page is ready
   $(document).ready(function() {
     document.getElementById("input-content").focus();
+
   });
 </script>
 
