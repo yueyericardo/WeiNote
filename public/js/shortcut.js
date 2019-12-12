@@ -1,12 +1,14 @@
 document.onkeyup = function(e) {
+  // char key code: https://www.cambiaresearch.com/articles/15/javascript-char-codes-key-codes
   if (e.ctrlKey && e.which == 78) {
-    // alert("Ctrl + N shortcut combination was pressed");
     window.location.href = "/note/create";
   } else if (e.altKey && e.which == 78) {
-    // alert("Alt + N shortcut combination was pressed");
     window.open("/note/create");
   } else if (e.ctrlKey && e.which == 72) {
-    // alert("Ctrl + H shortcut combination was pressed");
     window.location.href = "/notes";
+  } else if (e.ctrlKey && e.which == 65) {
+    window.location.href = "/notes/all";
+  } else if (e.ctrlKey && e.which == 67) {
+    window.location.href = "/notes/archive";
   }
 };
