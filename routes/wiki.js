@@ -209,7 +209,7 @@ router.get('/:postId/toggleTop', checkLogin, function (req, res, next) {
       }
       post.top = !post.top;
       post.author = post.author._id;
-      console.log(url);
+
       WikiModel.updatePostById(postId, post)
         .then(function () {
           req.flash('success', 'Updated');
