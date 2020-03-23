@@ -1,5 +1,6 @@
 # WeiNote
-像发微博一样写笔记  
+![docker](https://github.com/yueyericardo/WeiNote/workflows/docker/badge.svg)  
+像发微博一样写笔记 
 [Demo1](https://demo.weinote.cc/notes)  |  [Demo2](https://wiki.yyrcd.com/notes)  
 
 灵感来源于
