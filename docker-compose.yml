@@ -4,7 +4,7 @@ services:
     container_name: weinote
     restart: always
     environment:
-        allow_signup: "false"
+        allow_signup: "true"
     build: .
     ports:
       - "3081:3081"
