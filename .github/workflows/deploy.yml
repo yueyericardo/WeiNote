@@ -8,3 +8,7 @@ jobs:
       - uses: actions/checkout@v2
       - name: Test docker
         run: docker-compose up -d
+      - name: Check running containers
+        run: docker ps
+      - name: Check logs
+        run: docker logs weinote
