@@ -43,10 +43,8 @@ demo密码: 9vzVABUa30LSldiVVJt5
   ```
 - Nginx 设置域名，[Certbot](https://certbot.eff.org/lets-encrypt/ubuntubionic-nginx) 配置 https
 
-## 4. Contribute
-欢迎PR，尤其是安全问题！
 
-## 5. Shortcuts
+## 4. Shortcuts
 - Mac OS:
   - **Ctrl + N** : Go to `Create page`
   - **Alt  + N** : Open `Create page` at a new page
@@ -61,6 +59,10 @@ demo密码: 9vzVABUa30LSldiVVJt5
   - **Alt + H** : Go  to `Home page` [/notes](/notes)
   - **Alt + A** : Go  to `All notes page` [/notes/all](/notes/all)
   - **Alt + C** : Redirect  to `Archive notes page` [/notes/archive](/notes/archive)
+  
+## 5. Contribute
+欢迎PR，尤其是安全问题！
+
   
 ## 6. Acknowledge
 本项目基于[N-blog](https://github.com/nswbmw/N-blog)精简修改  
