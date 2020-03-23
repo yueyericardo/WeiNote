@@ -1,4 +1,4 @@
-version: "0.1"
+version: "2.0"
 services:
   weinote:
     container_name: weinote
