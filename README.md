@@ -38,7 +38,7 @@ demo pw: 9vzVABUa30LSldiVVJt5
   ```
   sudo docker-compose up -d
   ```
-- Use Nginx set your domain ，and [Certbot](https://certbot.eff.org/lets-encrypt/ubuntubionic-nginx) for https
+- Use Nginx for your domain ，and [Certbot](https://certbot.eff.org/lets-encrypt/ubuntubionic-nginx) for https
 
 
 ## 4. Shortcuts
