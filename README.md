@@ -18,7 +18,7 @@
 ## 1. Features
 - 多标签 
 - Markdown
-- Markdown Preview（参考github评论中的Preview）
+- Markdown Preview（参考github写评论时的Preview）
 - 快捷键
 - 可设置本条note仅自己可见
 - 可设置多条note置顶
