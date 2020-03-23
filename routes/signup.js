@@ -8,8 +8,14 @@ const UserModel = require('../models/users')
 const checkNotLogin = require('../middlewares/check').checkNotLogin
 const bansignup = require('../middlewares/check').bansignup
 
-const config = require('config');
-if (config.get('allow_signup')) {
+let allow_signup = process.env.allow_signup || config.get('allow_signup');
+if (allow_signup === 'true' ||  allow_signup === true){
+    allow_signup = true
+}else{
+    allow_signup = false
+}
+
+if (allow_signup) {
     // GET /signup 开放注册
     router.get('/', checkNotLogin, function (req, res, next) {
       res.render('signup')

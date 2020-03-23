@@ -94,7 +94,9 @@ if (module.parent) {
 } else {
   // 监听端口，启动程序
   const PORT = process.env.PORT || config.get('port');
+  const allow_signup = process.env.allow_signup || config.get('allow_signup');
   app.listen(PORT, function () {
     console.log(`${pkg.name} listening on port ${PORT}`)
+    console.log(`Allow Signup:  ${allow_signup}`)
   })
 }

@@ -1,0 +1,24 @@
+version: "0.1"
+services:
+  weinote:
+    container_name: weinote
+    restart: always
+    environment:
+        allow_signup: "false"
+    build: .
+    ports:
+      - "3081:3081"
+    links:
+      - mongo
+  mongo:
+    container_name: mongo
+    image: mongo
+    environment:
+      MONGO_INITDB_DATABASE: wn
+      MONGO_INITDB_ROOT_USERNAME: root 
+      MONGO_INITDB_ROOT_PASSWORD: 0XuujEtjNyyIfdpCAMgw
+    volumes:
+      - ./init-mongo.js:/docker-entrypoint-initdb.d/init-mongo.js:ro
+      - ./mongo_data:/data/db
+    ports:
+      - "27017:27017"
