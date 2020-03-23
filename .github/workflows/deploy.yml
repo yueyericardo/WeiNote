@@ -11,4 +11,4 @@ jobs:
       - name: Check running containers
         run: docker ps
       - name: Check weinote logs
-        run: sleep 20; docker logs weinote
+        run: sleep 10; docker logs weinote --tail 20
