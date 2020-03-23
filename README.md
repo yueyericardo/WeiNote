@@ -38,7 +38,7 @@ demo密码: 9vzVABUa30LSldiVVJt5
   注册之后，将`docker-compose.yml`中的`allow_signup: "true"`改为`allow_signup: "false"`，可以禁止其他人注册。  
 - 重新载入
   ```
-  sudo docker-compose up --build --force-recreate --no-deps -d
+  sudo docker-compose up -d
   ```
 - Nginx 设置域名，[Certbot](https://certbot.eff.org/lets-encrypt/ubuntubionic-nginx) 配置 https
 
