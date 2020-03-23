@@ -6,6 +6,8 @@ services:
     environment:
         allow_signup: "true"
     build: .
+    volumes:
+      - ./public:/usr/src/app/public
     ports:
       - "3081:3081"
     links:
