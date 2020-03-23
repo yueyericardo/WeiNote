@@ -11,13 +11,15 @@
 <p class="img">
 <a class="link"  href="https://yyrcd-1256568788.cos.na-siliconvalley.myqcloud.com/yyrcd/2019-06-13-222357.png">
 <img width=49%  src="https://yyrcd-1256568788.cos.na-siliconvalley.myqcloud.com/yyrcd/2019-06-13-222357.png"></a>
-<a class="link"  href="https://yyrcd-1256568788.cos.na-siliconvalley.myqcloud.com/yyrcd/2019-06-13-222927.png">
-<img width=49%  src="https://yyrcd-1256568788.cos.na-siliconvalley.myqcloud.com/yyrcd/2019-06-13-222927.png"></a>
+<a class="link"  href="https://yyrcd-1256568788.cos.na-siliconvalley.myqcloud.com/yyrcd/2020-03-23-030759.png">
+<img width=49%  src="https://yyrcd-1256568788.cos.na-siliconvalley.myqcloud.com/yyrcd/2020-03-23-030759.png"></a>
 </p>
 
 ## 1. Features
 - 多标签 
 - Markdown
+- Markdown Preview（参考github评论中的Preview）
+- 快捷键
 - 可设置本条note仅自己可见
 - 可设置多条note置顶
 - 个人使用（支持多用户，但不推荐）
