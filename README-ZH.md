@@ -2,7 +2,7 @@
 ![docker](https://github.com/yueyericardo/WeiNote/workflows/docker/badge.svg)  
 [English](https://github.com/yueyericardo/WeiNote/blob/master/README.md) | [简体中文](https://github.com/yueyericardo/WeiNote/blob/master/README-ZH.md)  
 像发微博一样写笔记  
-[Demo1](https://demo.weinote.cc/notes)  |  [Demo2](https://wiki.yyrcd.com/notes)  
+[Demo](https://demo.weinote.cc/notes)
 
 灵感来源于
 1. [卢昌海](https://www.changhai.org/index.php)的[微言小义](https://www.changhai.org/articles/miscellaneous/blog/201906.php)。去年自建了一个类似的后端站点，写点bullshit。
