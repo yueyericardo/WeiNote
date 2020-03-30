@@ -2,7 +2,7 @@
 ![docker](https://github.com/yueyericardo/WeiNote/workflows/docker/badge.svg)  
 [English](https://github.com/yueyericardo/WeiNote/blob/master/README.md) | [简体中文](https://github.com/yueyericardo/WeiNote/blob/master/README-ZH.md)  
 Keep a note just like post a weibo    
-[Demo1](https://demo.weinote.cc/notes)  |  [Demo2](https://wiki.yyrcd.com/notes)  
+[Demo](https://demo.weinote.cc/notes)
 
 <p class="img">
 <a class="link"  href="https://yyrcd-1256568788.cos.na-siliconvalley.myqcloud.com/yyrcd/2019-06-13-222357.png">
