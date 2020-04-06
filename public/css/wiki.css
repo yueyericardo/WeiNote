@@ -324,16 +324,17 @@ body {
   color: rgba(86,124,119,0.8);
 }
 .bodydairy {
-  background-color: #262626; //theme dark
-  /*background-color: dimgray;*/
+  background-color: #3e3e3e;
+  background-image: url(https://yyrcd-1256568788.cos.na-siliconvalley.myqcloud.com/2020-04-06-501227b370fe7f4d6e3b3b0993298eab.png);
+  background-size: auto, auto 1.5rem;
+  background-repeat: repeat, repeat-x;
+  background-position: 0px 0px, 0px -40px;
 }
 .bodydairy #nav-header {
   background: none;
 }
 .dairy {
   display: flex;
-  background-color: #262626; // theme dark
-  /*background-color: dimgray;*/
 }
 .dairy .dairy-date {
   width: 8% !important;
@@ -373,8 +374,8 @@ body {
 }
 .dairy .dairy-p {
   width: 90% !important;
-  background-color: #343434;
-  border-radius: 8px;;
+  background-color: #232323;
+  border-radius: 8px;
   /*padding: 20px 40px 10px;*/
   padding: 0;
   margin: 20px 0px;
@@ -664,7 +665,7 @@ for color, i in colors
   border-top-left-radius: inherit;
   border-top-right-radius: inherit;
   color: #999999;
-  background-color: #3d3b3b;
+  background-color: #2b2b2b;
 }
 
 /*-------create-------*/
