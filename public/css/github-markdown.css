@@ -689,10 +689,11 @@
 }
 
 .markdown-body code {
-  background-color: dimgray;
+  background-color: #d0d0d0;
   border-radius: 3px;
   margin: 0;
-  padding: .2em .4em;
+  padding: .1em .4em;
+  color: #dd0055;
 }
 
 .markdown-body pre {
