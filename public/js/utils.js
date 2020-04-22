@@ -52,3 +52,25 @@ document.onkeyup = function(e) {
   }
 
 };
+
+
+function change_theme(theme){
+  // init
+  var current_theme = window.localStorage.getItem("theme");
+  // update
+  document.body.className = theme;
+  window.localStorage.setItem("theme", theme);
+  console.log(theme);
+  document.getElementById('bnt-'+current_theme).style.color = "black";
+  document.getElementById('bnt-'+theme).style.color = "#e400ff";
+}
+
+function load_theme(){
+  var theme = window.localStorage && window.localStorage.getItem("theme");
+  if (theme !== null){
+    document.body.className = theme;
+  }
+  document.getElementById('bnt-'+theme).style.color = "#e400ff";
+}
+
+load_theme()

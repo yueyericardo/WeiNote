@@ -11,8 +11,15 @@
                     <li><a href="/note/create">Post a note</a></li>
                     <li><a href="/notes/archive">Archive</a></li>
                     <li><a href="/notes/all">All</a></li>
+                    <hr style="margin: 4px 0;">
+                    <li id="bnt-theme-d1" onclick="change_theme('theme-d1')">Dark Theme 1</li>
+                    <li id="bnt-theme-d2" onclick="change_theme('theme-d2')">Dark Theme 2</li>
+                    <hr style="margin: 4px 0;">
                     <li><a href="/signout">Sign out</a></li>
                 <% } else { %>
+                    <li id="bnt-theme-d1" onclick="change_theme('theme-d1')">Dark Theme 1</li>
+                    <li id="bnt-theme-d2" onclick="change_theme('theme-d2')">Dark Theme 2</li>
+                    <hr style="margin: 4px 0;">
                     <li><a href="/signin">Login in</a></li>
                     <li><a href="/signup">Sign up</a></li>
                 <% } %>
