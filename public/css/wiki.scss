@@ -5,14 +5,19 @@ $light-text-color: black;
 $light-a-color: #0091d2;
 
 // dark1
-$d1-body-bk: #484848;
-$d1-content-bk: #2b2b2b;
-$d1-bar-bk: #313131;
+$d1-body-bk: #262626;
+$d1-content-bk: #343434;
+$d1-bar-bk: #3d3b3b;
 
 // dark2
-$d2-body-bk: #6d6d6d;
-$d2-content-bk: #343434;
-$d2-bar-bk: #3d3b3b;
+$d2-body-bk: #484848;
+$d2-content-bk: #2b2b2b;
+$d2-bar-bk: #313131;
+
+// dark3
+$d3-body-bk: #6d6d6d;
+$d3-content-bk: #343434;
+$d3-bar-bk: #3d3b3b;
 
 // light1
 $l1-body-bk: #9c9c9c;
@@ -64,6 +69,33 @@ $l2-bar-bk: #eaeaea;
   }
   .markdown-status-bar {
     background-color: $d2-bar-bk;
+  }
+  .toggle-icon{
+    fill: #d6d6d6;
+  }
+  .toggle-icon:hover{
+    fill: white;
+  }
+  .dairy-p:hover {
+    -webkit-box-shadow: 0 0 1px 1px white;
+  }
+  .active {
+    -webkit-box-shadow: 0 0 2px 2px white;
+  }
+}
+
+.theme-d3 {
+  background: $d3-body-bk;
+  background-image: url(https://yyrcd-1256568788.cos.na-siliconvalley.myqcloud.com/2020-04-06-501227b370fe7f4d6e3b3b0993298eab.png);
+  color: $dark-text-color;
+  .dairy .dairy-p {
+    background-color: $d3-content-bk;
+  }
+  .dairy .dairy-p a {
+    color: $dark-a-color;
+  }
+  .markdown-status-bar {
+    background-color: $d3-bar-bk;
   }
   .toggle-icon{
     fill: #d6d6d6;

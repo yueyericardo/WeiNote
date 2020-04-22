@@ -126,6 +126,14 @@ function toggle_theme(){
   }
 }
 
+function show_dropdown(){
+  var dropdown = document.getElementById("dropdown_content");
+  dropdown.style.display = "block";
+}
+function hide_dropdown(){
+  var dropdown = document.getElementById("dropdown_content");
+  dropdown.style.display = "none";
+}
 
 load_theme()
 

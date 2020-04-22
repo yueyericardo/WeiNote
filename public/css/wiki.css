@@ -1,14 +1,14 @@
 @charset "UTF-8";
 .theme-d1 {
-  background: #484848;
+  background: #262626;
   background-image: url(https://yyrcd-1256568788.cos.na-siliconvalley.myqcloud.com/2020-04-06-501227b370fe7f4d6e3b3b0993298eab.png);
   color: white; }
   .theme-d1 .dairy .dairy-p {
-    background-color: #2b2b2b; }
+    background-color: #343434; }
   .theme-d1 .dairy .dairy-p a {
     color: #21baff; }
   .theme-d1 .markdown-status-bar {
-    background-color: #313131; }
+    background-color: #3d3b3b; }
   .theme-d1 .toggle-icon {
     fill: #d6d6d6; }
   .theme-d1 .toggle-icon:hover {
@@ -19,15 +19,15 @@
     -webkit-box-shadow: 0 0 2px 2px white; }
 
 .theme-d2 {
-  background: #6d6d6d;
+  background: #484848;
   background-image: url(https://yyrcd-1256568788.cos.na-siliconvalley.myqcloud.com/2020-04-06-501227b370fe7f4d6e3b3b0993298eab.png);
   color: white; }
   .theme-d2 .dairy .dairy-p {
-    background-color: #343434; }
+    background-color: #2b2b2b; }
   .theme-d2 .dairy .dairy-p a {
     color: #21baff; }
   .theme-d2 .markdown-status-bar {
-    background-color: #3d3b3b; }
+    background-color: #313131; }
   .theme-d2 .toggle-icon {
     fill: #d6d6d6; }
   .theme-d2 .toggle-icon:hover {
@@ -35,6 +35,25 @@
   .theme-d2 .dairy-p:hover {
     -webkit-box-shadow: 0 0 1px 1px white; }
   .theme-d2 .active {
+    -webkit-box-shadow: 0 0 2px 2px white; }
+
+.theme-d3 {
+  background: #6d6d6d;
+  background-image: url(https://yyrcd-1256568788.cos.na-siliconvalley.myqcloud.com/2020-04-06-501227b370fe7f4d6e3b3b0993298eab.png);
+  color: white; }
+  .theme-d3 .dairy .dairy-p {
+    background-color: #343434; }
+  .theme-d3 .dairy .dairy-p a {
+    color: #21baff; }
+  .theme-d3 .markdown-status-bar {
+    background-color: #3d3b3b; }
+  .theme-d3 .toggle-icon {
+    fill: #d6d6d6; }
+  .theme-d3 .toggle-icon:hover {
+    fill: white; }
+  .theme-d3 .dairy-p:hover {
+    -webkit-box-shadow: 0 0 1px 1px white; }
+  .theme-d3 .active {
     -webkit-box-shadow: 0 0 2px 2px white; }
 
 .theme-l1 {
@@ -111,7 +130,7 @@ body {
   background-size: auto, auto 1.5rem;
   background-repeat: repeat, repeat-x;
   background-position: 0px 0px, 0px -40px;
-  color: #484848; }
+  color: #262626; }
 
 @media (max-width: 330px) {
   body {
@@ -438,7 +457,7 @@ body {
 
 .dairy .dairy-p {
   width: 90% !important;
-  background-color: #2b2b2b;
+  background-color: #343434;
   border-radius: 8px;
   color: inherit;
   /*padding: 20px 40px 10px;*/
@@ -718,7 +737,7 @@ body {
   border-top-left-radius: inherit;
   border-top-right-radius: inherit;
   color: #999999;
-  background-color: #313131; }
+  background-color: #3d3b3b; }
 
 /*-------create-------*/
 .create-form {
