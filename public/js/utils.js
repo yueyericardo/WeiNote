@@ -69,8 +69,11 @@ function load_theme(){
   var theme = window.localStorage && window.localStorage.getItem("theme");
   if (theme !== null){
     document.body.className = theme;
+    document.getElementById('bnt-'+theme).style.color = "#e400ff";
+  }else{
+    window.localStorage.setItem("theme", "theme-d1");
+    document.getElementById('bnt-theme-d1').style.color = "#e400ff";
   }
-  document.getElementById('bnt-'+theme).style.color = "#e400ff";
 }
 
 load_theme()
