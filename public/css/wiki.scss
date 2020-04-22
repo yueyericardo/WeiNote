@@ -404,7 +404,6 @@ body {
   bottom: 0;
   margin-bottom: 10px;
   width: 91%;
-  color: #c3bbbb;
   text-align: center;
   font-size: 0.7em;
 }
@@ -458,7 +457,7 @@ body {
   position: absolute;
   top: 1px;
   right: 12px;
-  width: 3.2rem;
+  width: 3.3rem;
   height: 3.2rem;
   text-align: center;
 }
@@ -470,7 +469,7 @@ body {
   color: #fff;
   border-top-right-radius: 5px;
   border-top-left-radius: 5px;
-  font-size: 0.7em;
+  font-size: 0.6em;
   margin: 0px 0px;
   font-weight: bold;
 }
@@ -479,11 +478,12 @@ body {
   border-top: 0px;
   border-bottom-right-radius: 5px;
   border-bottom-left-radius: 5px;
-  font-size: 0.9em;
+  font-size: 0.75em;
   margin: 0px 0px;
   font-weight: bold;
   background-color: #262626;
   color: #fff;
+  height: 30px;
 }
 .dairy .dairy-p {
   width: 90% !important;
@@ -734,7 +734,7 @@ body {
 .post-tag{
   position: absolute;
   right: 12px;
-  top: 60px;
+  top: 63px;
 }
 
 .post-tag .post-label {
@@ -906,7 +906,7 @@ body {
     width: 15% !important;
   }
   .dairy .dairy-date .date p.dated {
-    height: 2.2em;
+    height: 2.4em;
   }
   .dairy .dairy-p {
     width: 85% !important;
@@ -930,7 +930,7 @@ body {
     width: 20% !important;
   }
   .dairy .dairy-date .date p.dated {
-    height: 2.2em;
+    height: 2.4em;
   }
   .dairy .dairy-p {
     width: 80% !important;
