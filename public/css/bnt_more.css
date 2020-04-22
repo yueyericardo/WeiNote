@@ -102,11 +102,19 @@
 }
 .bnt_more_icon {
     display: inline-block;
-    fill: #979595;
     vertical-align: text-top;
 }
-.bnt_more_icon:hover {
+.icon-color{
+    fill: #d6d6d6;
+}
+.icon-color:hover {
     fill: #82baf9;
+}
+.toggle-icon{
+    fill: #d6d6d6;
+}
+  .toggle-icon:hover{
+    fill: white;
 }
 @media (min-width: 850px) {
     .bnt_nav_setting_container {

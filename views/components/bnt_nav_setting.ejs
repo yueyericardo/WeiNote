@@ -1,7 +1,14 @@
 <div class="bnt_nav_setting_container">
-    <div class="dropdown" style="padding: 0; margin: 0;">
+    <div style="display: inline-block; cursor: pointer; width: 40px; text-align: center;" onclick="toggle_theme()">
+        <svg class="toggle-icon" width="20" height="20" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+        3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+        13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"></path>
+        </svg>
+    </div>
+    <div class="dropdown" style="padding: 0; margin: 0; display: inline-block">
         <div class="bnt_to_dropdown">
-            <p><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;height: 20px;width: 20px;fill: darkgray;" xml:space="preserve"><g><g><path d="M491.318,235.318H20.682C9.26,235.318,0,244.577,0,256s9.26,20.682,20.682,20.682h470.636    c11.423,0,20.682-9.259,20.682-20.682C512,244.578,502.741,235.318,491.318,235.318z"/></g></g><g><g><path d="M491.318,78.439H20.682C9.26,78.439,0,87.699,0,99.121c0,11.422,9.26,20.682,20.682,20.682h470.636    c11.423,0,20.682-9.26,20.682-20.682C512,87.699,502.741,78.439,491.318,78.439z"/></g></g><g><g><path d="M491.318,392.197H20.682C9.26,392.197,0,401.456,0,412.879s9.26,20.682,20.682,20.682h470.636    c11.423,0,20.682-9.259,20.682-20.682S502.741,392.197,491.318,392.197z"/></g></g></svg></p>
+            <p><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="icon-color" version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;height: 20px;width: 20px;" xml:space="preserve"><g><g><path d="M491.318,235.318H20.682C9.26,235.318,0,244.577,0,256s9.26,20.682,20.682,20.682h470.636    c11.423,0,20.682-9.259,20.682-20.682C512,244.578,502.741,235.318,491.318,235.318z"/></g></g><g><g><path d="M491.318,78.439H20.682C9.26,78.439,0,87.699,0,99.121c0,11.422,9.26,20.682,20.682,20.682h470.636    c11.423,0,20.682-9.26,20.682-20.682C512,87.699,502.741,78.439,491.318,78.439z"/></g></g><g><g><path d="M491.318,392.197H20.682C9.26,392.197,0,401.456,0,412.879s9.26,20.682,20.682,20.682h470.636    c11.423,0,20.682-9.259,20.682-20.682S502.741,392.197,491.318,392.197z"/></g></g></svg></p>
         </div>
         <div id="dropdown_content">
             <ul id="dropdown_list">
@@ -11,8 +18,19 @@
                     <li><a href="/note/create">Post a note</a></li>
                     <li><a href="/notes/archive">Archive</a></li>
                     <li><a href="/notes/all">All</a></li>
+                    <hr style="margin: 4px 0;">
+                    <li id="bnt-theme-d1" onclick="change_theme('theme-d1')">Dark Theme 1</li>
+                    <li id="bnt-theme-d2" onclick="change_theme('theme-d2')">Dark Theme 2</li>
+                    <li id="bnt-theme-l1" onclick="change_theme('theme-l1')">Light Theme 1</li>
+                    <li id="bnt-theme-l2" onclick="change_theme('theme-l2')">Light Theme 2</li>
+                    <hr style="margin: 4px 0;">
                     <li><a href="/signout">Sign out</a></li>
                 <% } else { %>
+                    <li id="bnt-theme-d1" onclick="change_theme('theme-d1')">Dark Theme 1</li>
+                    <li id="bnt-theme-d2" onclick="change_theme('theme-d2')">Dark Theme 2</li>
+                    <li id="bnt-theme-l1" onclick="change_theme('theme-l1')">Light Theme 1</li>
+                    <li id="bnt-theme-l2" onclick="change_theme('theme-l2')">Light Theme 2</li>
+                    <hr style="margin: 4px 0;">
                     <li><a href="/signin">Login in</a></li>
                     <li><a href="/signup">Sign up</a></li>
                 <% } %>
