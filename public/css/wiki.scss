@@ -50,10 +50,10 @@ $l2-bar-bk: #eaeaea;
     fill: white;
   }
   .dairy-p:hover {
-    -webkit-box-shadow: 0 0 1px 1px white;
+    -webkit-box-shadow: 0 0 1px 1px #6f6f6f;
   }
   .active {
-    -webkit-box-shadow: 0 0 2px 2px white;
+    -webkit-box-shadow: 0 0 1px 1px #6f6f6f;
   }
 }
 
@@ -77,10 +77,10 @@ $l2-bar-bk: #eaeaea;
     fill: white;
   }
   .dairy-p:hover {
-    -webkit-box-shadow: 0 0 1px 1px white;
+    -webkit-box-shadow: 0 0 1px 1px #808080;
   }
   .active {
-    -webkit-box-shadow: 0 0 2px 2px white;
+    -webkit-box-shadow: 0 0 1px 1px #808080;
   }
 }
 
@@ -104,10 +104,10 @@ $l2-bar-bk: #eaeaea;
     fill: white;
   }
   .dairy-p:hover {
-    -webkit-box-shadow: 0 0 1px 1px white;
+    -webkit-box-shadow: 0 0 1px 1px #b1b1b1;
   }
   .active {
-    -webkit-box-shadow: 0 0 2px 2px white;
+    -webkit-box-shadow: 0 0 1px 1px #b1b1b1;
   }
 }
 
@@ -132,10 +132,10 @@ $l2-bar-bk: #eaeaea;
     fill: black;;
   }
   .dairy-p:hover {
-    -webkit-box-shadow: 0 0 1px 1px black;
+    -webkit-box-shadow: 0 0 1px 1px #cecccc;
   }
   .active {
-    -webkit-box-shadow: 0 0 2px 2px black;
+    -webkit-box-shadow: 0 0 1px 1px #cecccc;
   }
 }
 
@@ -162,10 +162,10 @@ $l2-bar-bk: #eaeaea;
     fill: black;
   }
   .dairy-p:hover {
-    -webkit-box-shadow: 0 0 1px 1px black;
+    -webkit-box-shadow: 0 0 1px 1px #969696;
   }
   .active {
-    -webkit-box-shadow: 0 0 2px 2px black;
+    -webkit-box-shadow: 0 0 1px 1px #969696;
   }
 }
 
@@ -557,7 +557,7 @@ body {
   -webkit-box-shadow: 0 0 1px 1px white;
 }
 .active {
-  -webkit-box-shadow: 0 0 2px 2px white;
+  -webkit-box-shadow: 0 0 1px 1px white;
 }
 
 .dairy .dairy-p img {
