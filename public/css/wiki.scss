@@ -1,17 +1,39 @@
+// font and link
+$dark-text-color: white;
+$dark-a-color: #21baff;
+$light-text-color: black;
+$light-a-color: #0091d2;
+
 // dark1
 $d1-body-bk: #484848;
 $d1-content-bk: #2b2b2b;
 $d1-bar-bk: #313131;
 
 // dark2
-$d2-body-bk: #262626;
+$d2-body-bk: #6d6d6d;
 $d2-content-bk: #343434;
 $d2-bar-bk: #3d3b3b;
 
+// light1
+$l1-body-bk: #9c9c9c;
+$l1-content-bk: #676565;
+$l1-bar-bk: #616060;
+
+// light2
+$l2-body-bk: #e4e4e4;
+$l2-content-bk: #efefef;
+$l2-bar-bk: #eaeaea;
+
+// dark theme
 .theme-d1 {
   background: $d1-body-bk;
+  background-image: url(https://yyrcd-1256568788.cos.na-siliconvalley.myqcloud.com/2020-04-06-501227b370fe7f4d6e3b3b0993298eab.png);
+  color: $dark-text-color;
   .dairy .dairy-p {
-    background-color: $d1-content-bk
+    background-color: $d1-content-bk;
+  }
+  .dairy .dairy-p a {
+    color: $dark-a-color;
   }
   .markdown-status-bar {
     background-color: $d1-bar-bk;
@@ -20,11 +42,50 @@ $d2-bar-bk: #3d3b3b;
 
 .theme-d2 {
   background: $d2-body-bk;
+  background-image: url(https://yyrcd-1256568788.cos.na-siliconvalley.myqcloud.com/2020-04-06-501227b370fe7f4d6e3b3b0993298eab.png);
+  color: $dark-text-color;
   .dairy .dairy-p {
-    background-color: $d2-content-bk
+    background-color: $d2-content-bk;
+  }
+  .dairy .dairy-p a {
+    color: $dark-a-color;
   }
   .markdown-status-bar {
     background-color: $d2-bar-bk;
+  }
+}
+
+// light theme
+.theme-l1 {
+  background: $l1-body-bk;
+  background-image: url(https://yyrcd-1256568788.cos.na-siliconvalley.myqcloud.com/2020-04-06-501227b370fe7f4d6e3b3b0993298eab.png);
+  color: $dark-text-color;
+  .dairy .dairy-p {
+    background-color: $l1-content-bk;
+  }
+  .dairy .dairy-p a {
+    color: $dark-a-color;
+  }
+  .markdown-status-bar {
+    background-color: $l1-bar-bk;
+  }
+}
+
+.theme-l2 {
+  background: $l2-body-bk;
+  background-image: url(https://yyrcd-1256568788.cos.na-siliconvalley.myqcloud.com/2020-04-06-501227b370fe7f4d6e3b3b0993298eab.png);
+  color: $light-text-color;
+  .dairy .dairy-p {
+    background-color: $l2-content-bk;
+  }
+  .dairy .dairy-p a {
+    color: $light-a-color;
+  }
+  .markdown-status-bar {
+    background-color: $l2-bar-bk;
+  }
+  .icon-color{
+    fill: #4a4949;
   }
 }
 
@@ -57,10 +118,8 @@ body {
   -webkit-font-smoothing: antialiased;
   margin: 0;
   border: none;
-  // transition: 0.01s background ease;
+  transition: 0.1s background ease;
   /* color */
-  background-color: #484848;
-  background-image: url(https://yyrcd-1256568788.cos.na-siliconvalley.myqcloud.com/2020-04-06-501227b370fe7f4d6e3b3b0993298eab.png);
   background-size: auto, auto 1.5rem;
   background-repeat: repeat, repeat-x;
   background-position: 0px 0px, 0px -40px;
@@ -406,10 +465,10 @@ body {
   width: 90% !important;
   background-color: $d1-content-bk;
   border-radius: 8px;
+  color: inherit;
   /*padding: 20px 40px 10px;*/
   padding: 0;
   margin: 20px 0px;
-  color: #fff;
   position: relative;
   /*font-weight: bold;*/
 }
@@ -448,7 +507,6 @@ body {
 }
 .header-tag{
   margin: 0 auto;
-  color: white;
   text-align: center;
   letter-spacing: 0.01em;
   font-weight: bold;

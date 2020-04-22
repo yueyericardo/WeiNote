@@ -1,17 +1,49 @@
 @charset "UTF-8";
 .theme-d1 {
-  background: #484848; }
+  background: #484848;
+  background-image: url(https://yyrcd-1256568788.cos.na-siliconvalley.myqcloud.com/2020-04-06-501227b370fe7f4d6e3b3b0993298eab.png);
+  color: white; }
   .theme-d1 .dairy .dairy-p {
     background-color: #2b2b2b; }
+  .theme-d1 .dairy .dairy-p a {
+    color: #21baff; }
   .theme-d1 .markdown-status-bar {
     background-color: #313131; }
 
 .theme-d2 {
-  background: #262626; }
+  background: #6d6d6d;
+  background-image: url(https://yyrcd-1256568788.cos.na-siliconvalley.myqcloud.com/2020-04-06-501227b370fe7f4d6e3b3b0993298eab.png);
+  color: white; }
   .theme-d2 .dairy .dairy-p {
     background-color: #343434; }
+  .theme-d2 .dairy .dairy-p a {
+    color: #21baff; }
   .theme-d2 .markdown-status-bar {
     background-color: #3d3b3b; }
+
+.theme-l1 {
+  background: #9c9c9c;
+  background-image: url(https://yyrcd-1256568788.cos.na-siliconvalley.myqcloud.com/2020-04-06-501227b370fe7f4d6e3b3b0993298eab.png);
+  color: white; }
+  .theme-l1 .dairy .dairy-p {
+    background-color: #676565; }
+  .theme-l1 .dairy .dairy-p a {
+    color: #21baff; }
+  .theme-l1 .markdown-status-bar {
+    background-color: #616060; }
+
+.theme-l2 {
+  background: #e4e4e4;
+  background-image: url(https://yyrcd-1256568788.cos.na-siliconvalley.myqcloud.com/2020-04-06-501227b370fe7f4d6e3b3b0993298eab.png);
+  color: black; }
+  .theme-l2 .dairy .dairy-p {
+    background-color: #efefef; }
+  .theme-l2 .dairy .dairy-p a {
+    color: #0091d2; }
+  .theme-l2 .markdown-status-bar {
+    background-color: #eaeaea; }
+  .theme-l2 .icon-color {
+    fill: #4a4949; }
 
 .max-width {
   max-width: 50rem;
@@ -42,9 +74,8 @@ body {
   -webkit-font-smoothing: antialiased;
   margin: 0;
   border: none;
+  transition: 0.1s background ease;
   /* color */
-  background-color: #484848;
-  background-image: url(https://yyrcd-1256568788.cos.na-siliconvalley.myqcloud.com/2020-04-06-501227b370fe7f4d6e3b3b0993298eab.png);
   background-size: auto, auto 1.5rem;
   background-repeat: repeat, repeat-x;
   background-position: 0px 0px, 0px -40px;
@@ -377,10 +408,10 @@ body {
   width: 90% !important;
   background-color: #2b2b2b;
   border-radius: 8px;
+  color: inherit;
   /*padding: 20px 40px 10px;*/
   padding: 0;
   margin: 20px 0px;
-  color: #fff;
   position: relative;
   /*font-weight: bold;*/ }
 
@@ -419,7 +450,6 @@ body {
 
 .header-tag {
   margin: 0 auto;
-  color: white;
   text-align: center;
   letter-spacing: 0.01em;
   font-weight: bold; }
