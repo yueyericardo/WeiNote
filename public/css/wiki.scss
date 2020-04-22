@@ -44,6 +44,12 @@ $l2-bar-bk: #eaeaea;
   .toggle-icon:hover{
     fill: white;
   }
+  .dairy-p:hover {
+    -webkit-box-shadow: 0 0 1px 1px white;
+  }
+  .active {
+    -webkit-box-shadow: 0 0 2px 2px white;
+  }
 }
 
 .theme-d2 {
@@ -64,6 +70,12 @@ $l2-bar-bk: #eaeaea;
   }
   .toggle-icon:hover{
     fill: white;
+  }
+  .dairy-p:hover {
+    -webkit-box-shadow: 0 0 1px 1px white;
+  }
+  .active {
+    -webkit-box-shadow: 0 0 2px 2px white;
   }
 }
 
@@ -86,6 +98,12 @@ $l2-bar-bk: #eaeaea;
   }
   .toggle-icon:hover{
     fill: black;;
+  }
+  .dairy-p:hover {
+    -webkit-box-shadow: 0 0 1px 1px black;
+  }
+  .active {
+    -webkit-box-shadow: 0 0 2px 2px black;
   }
 }
 
@@ -110,6 +128,12 @@ $l2-bar-bk: #eaeaea;
   }
   .toggle-icon:hover{
     fill: black;
+  }
+  .dairy-p:hover {
+    -webkit-box-shadow: 0 0 1px 1px black;
+  }
+  .active {
+    -webkit-box-shadow: 0 0 2px 2px black;
   }
 }
 
@@ -496,6 +520,14 @@ body {
   position: relative;
   /*font-weight: bold;*/
 }
+
+.dairy-p:hover {
+  -webkit-box-shadow: 0 0 1px 1px white;
+}
+.active {
+  -webkit-box-shadow: 0 0 2px 2px white;
+}
+
 .dairy .dairy-p img {
   display: block;
   margin: 0.5em auto;

@@ -13,6 +13,10 @@
     fill: #d6d6d6; }
   .theme-d1 .toggle-icon:hover {
     fill: white; }
+  .theme-d1 .dairy-p:hover {
+    -webkit-box-shadow: 0 0 1px 1px white; }
+  .theme-d1 .active {
+    -webkit-box-shadow: 0 0 2px 2px white; }
 
 .theme-d2 {
   background: #6d6d6d;
@@ -28,6 +32,10 @@
     fill: #d6d6d6; }
   .theme-d2 .toggle-icon:hover {
     fill: white; }
+  .theme-d2 .dairy-p:hover {
+    -webkit-box-shadow: 0 0 1px 1px white; }
+  .theme-d2 .active {
+    -webkit-box-shadow: 0 0 2px 2px white; }
 
 .theme-l1 {
   background: #9c9c9c;
@@ -43,6 +51,10 @@
     fill: #d6d6d6; }
   .theme-l1 .toggle-icon:hover {
     fill: black; }
+  .theme-l1 .dairy-p:hover {
+    -webkit-box-shadow: 0 0 1px 1px black; }
+  .theme-l1 .active {
+    -webkit-box-shadow: 0 0 2px 2px black; }
 
 .theme-l2 {
   background: #e4e4e4;
@@ -60,6 +72,10 @@
     fill: #4a4949; }
   .theme-l2 .toggle-icon:hover {
     fill: black; }
+  .theme-l2 .dairy-p:hover {
+    -webkit-box-shadow: 0 0 1px 1px black; }
+  .theme-l2 .active {
+    -webkit-box-shadow: 0 0 2px 2px black; }
 
 .max-width {
   max-width: 50rem;
@@ -430,6 +446,12 @@ body {
   margin: 20px 0px;
   position: relative;
   /*font-weight: bold;*/ }
+
+.dairy-p:hover {
+  -webkit-box-shadow: 0 0 1px 1px white; }
+
+.active {
+  -webkit-box-shadow: 0 0 2px 2px white; }
 
 .dairy .dairy-p img {
   display: block;
