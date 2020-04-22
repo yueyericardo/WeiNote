@@ -21,6 +21,7 @@ function getOS() {
   return os;
 }
 
+
 function check_active(){
   var current = document.getElementsByClassName("active");
   if (current.length == 0) {
@@ -30,6 +31,7 @@ function check_active(){
   }
 }
 
+
 function remove_active(){
   var current = document.getElementsByClassName("active");
   if (current.length != 0) {
@@ -37,9 +39,11 @@ function remove_active(){
   }
 }
 
+
 function get_edit_url(current){
   return current.getElementsByClassName("bnt_edit_container")[0].getElementsByTagName('a')[0].href
 }
+
 
 function scroll(up=true){
   p_list = document.getElementsByClassName("dairy-p");
@@ -50,15 +54,17 @@ function scroll(up=true){
       break;
     }
   }
+  // up or down
   if (up) {
     to_index = index - 1;
   } else {
     to_index = index + 1;
   }
+  // out of index range?
   if (to_index < p_list.length && to_index >= 0){
     remove_active();
     p_list[to_index].className += " active";
-
+    // smoothly scroll with an offset
     const element = p_list[to_index];
     const offset = 300;
     const bodyRect = document.body.getBoundingClientRect().top;
@@ -73,11 +79,9 @@ function scroll(up=true){
   }
 }
 
-function listen_dairy_p_click(){
-  // Get all buttons with class="btn" inside the container
-  var p_list = document.getElementsByClassName("dairy-p")
 
-  // Loop through the buttons and add the active class to the current/clicked button
+function listen_dairy_p_click(){
+  var p_list = document.getElementsByClassName("dairy-p")
   for (var i = 0; i < p_list.length; i++) {
     p_list[i].addEventListener("click", function() {
       remove_active();
@@ -85,6 +89,45 @@ function listen_dairy_p_click(){
     });
   }
 }
+
+
+function change_theme(theme){
+  // init
+  var current_theme = window.localStorage.getItem("theme");
+  // update
+  document.body.className = theme;
+  window.localStorage.setItem("theme", theme);
+  console.log(theme);
+  document.getElementById('bnt-'+current_theme).style.color = "black";
+  document.getElementById('bnt-'+theme).style.color = "#e400ff";
+}
+
+
+function load_theme(){
+  var theme = window.localStorage && window.localStorage.getItem("theme");
+  if (theme !== null){
+    document.body.className = theme;
+    document.getElementById('bnt-'+theme).style.color = "#e400ff";
+  }else{
+    window.localStorage.setItem("theme", "theme-d1");
+    document.getElementById('bnt-theme-d1').style.color = "#e400ff";
+  }
+}
+
+
+function toggle_theme(){
+  var theme = window.localStorage && window.localStorage.getItem("theme");
+  isdark = /theme-d/.test(theme)
+
+  if (isdark){
+    change_theme("theme-l2");
+  }else{
+    change_theme("theme-d2");
+  }
+}
+
+
+load_theme()
 
 document.onkeyup = function(e) {
   // char key code: https://www.cambiaresearch.com/articles/15/javascript-char-codes-key-codes
@@ -127,18 +170,18 @@ document.onkeyup = function(e) {
   // active dairy-p
   if (e.which == 27) {
     // ESC
-    remove_active()
+    remove_active();
   } else if (e.which == 38) {
     // Arrow-up
     current = check_active();
     if (current != null){
-      scroll(up=true)
+      scroll(up=true);
     }
   } else if (e.which == 40) {
     // Arrow-down
     current = check_active();
     if (current != null){
-      scroll(up=false)
+      scroll(up=false);
     }
   } else if (e.ctrlKey && e.which == 13) {
     // Ctrl + Enter
@@ -150,42 +193,6 @@ document.onkeyup = function(e) {
   }
 
 };
-
-
-function change_theme(theme){
-  // init
-  var current_theme = window.localStorage.getItem("theme");
-  // update
-  document.body.className = theme;
-  window.localStorage.setItem("theme", theme);
-  console.log(theme);
-  document.getElementById('bnt-'+current_theme).style.color = "black";
-  document.getElementById('bnt-'+theme).style.color = "#e400ff";
-}
-
-function load_theme(){
-  var theme = window.localStorage && window.localStorage.getItem("theme");
-  if (theme !== null){
-    document.body.className = theme;
-    document.getElementById('bnt-'+theme).style.color = "#e400ff";
-  }else{
-    window.localStorage.setItem("theme", "theme-d1");
-    document.getElementById('bnt-theme-d1').style.color = "#e400ff";
-  }
-}
-
-function toggle_theme(){
-  var theme = window.localStorage && window.localStorage.getItem("theme");
-  isdark = /theme-d/.test(theme)
-
-  if (isdark){
-    change_theme("theme-l2");
-  }else{
-    change_theme("theme-d2");
-  }
-}
-
-load_theme()
 
 window.onload = function(){
   listen_dairy_p_click();
