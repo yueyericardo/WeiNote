@@ -9,6 +9,10 @@
     color: #21baff; }
   .theme-d1 .markdown-status-bar {
     background-color: #313131; }
+  .theme-d1 .toggle-icon {
+    fill: #d6d6d6; }
+  .theme-d1 .toggle-icon:hover {
+    fill: white; }
 
 .theme-d2 {
   background: #6d6d6d;
@@ -20,6 +24,10 @@
     color: #21baff; }
   .theme-d2 .markdown-status-bar {
     background-color: #3d3b3b; }
+  .theme-d2 .toggle-icon {
+    fill: #d6d6d6; }
+  .theme-d2 .toggle-icon:hover {
+    fill: white; }
 
 .theme-l1 {
   background: #9c9c9c;
@@ -31,6 +39,10 @@
     color: #21baff; }
   .theme-l1 .markdown-status-bar {
     background-color: #616060; }
+  .theme-l1 .toggle-icon {
+    fill: #d6d6d6; }
+  .theme-l1 .toggle-icon:hover {
+    fill: black; }
 
 .theme-l2 {
   background: #e4e4e4;
@@ -44,6 +56,10 @@
     background-color: #eaeaea; }
   .theme-l2 .icon-color {
     fill: #4a4949; }
+  .theme-l2 .toggle-icon {
+    fill: #4a4949; }
+  .theme-l2 .toggle-icon:hover {
+    fill: black; }
 
 .max-width {
   max-width: 50rem;

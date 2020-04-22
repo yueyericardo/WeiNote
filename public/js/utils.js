@@ -76,4 +76,15 @@ function load_theme(){
   }
 }
 
+function toggle_theme(){
+  var theme = window.localStorage && window.localStorage.getItem("theme");
+  isdark = /theme-d/.test(theme)
+
+  if (isdark){
+    change_theme("theme-l2");
+  }else{
+    change_theme("theme-d2");
+  }
+}
+
 load_theme()

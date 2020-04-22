@@ -38,6 +38,12 @@ $l2-bar-bk: #eaeaea;
   .markdown-status-bar {
     background-color: $d1-bar-bk;
   }
+  .toggle-icon{
+    fill: #d6d6d6;
+  }
+  .toggle-icon:hover{
+    fill: white;
+  }
 }
 
 .theme-d2 {
@@ -52,6 +58,12 @@ $l2-bar-bk: #eaeaea;
   }
   .markdown-status-bar {
     background-color: $d2-bar-bk;
+  }
+  .toggle-icon{
+    fill: #d6d6d6;
+  }
+  .toggle-icon:hover{
+    fill: white;
   }
 }
 
@@ -68,6 +80,12 @@ $l2-bar-bk: #eaeaea;
   }
   .markdown-status-bar {
     background-color: $l1-bar-bk;
+  }
+  .toggle-icon{
+    fill: #d6d6d6;
+  }
+  .toggle-icon:hover{
+    fill: black;;
   }
 }
 
@@ -86,6 +104,12 @@ $l2-bar-bk: #eaeaea;
   }
   .icon-color{
     fill: #4a4949;
+  }
+  .toggle-icon{
+    fill: #4a4949;
+  }
+  .toggle-icon:hover{
+    fill: black;
   }
 }
 
