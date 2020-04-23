@@ -749,6 +749,7 @@
 
 .markdown-body pre code {
   background-color: transparent;
+  color: white;
   border: 0;
   display: inline;
   line-height: inherit;
