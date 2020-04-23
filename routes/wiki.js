@@ -15,6 +15,7 @@ router.post('/create', checkLogin, function (req, res, next) {
   var tag = req.fields.tag;
   var top = (req.fields.is_top === 'true')
   var hide = (req.fields.is_hide === 'true')
+  var isblog = Boolean(req.fields.isblog);
   var postdate = req.fields.postdate;
   var mydate = date.parse(postdate, 'YYYY-MM-DD');
   var postdate = date.format(mydate, 'MMM DD YYYY');
@@ -33,6 +34,7 @@ router.post('/create', checkLogin, function (req, res, next) {
     tag: tag,
     top: top,
     hide: hide,
+    isblog: isblog
   }
   console.log(req.fields.new_tag);
   WikiModel.create(post)
@@ -57,6 +59,7 @@ router.get('/create', checkLogin, function (req, res, next) {
   var tag = 'others';
   var top = false;
   var hide = false;
+  var isblog = false;
   var postdate = now;
   var mydate = now;
   WikiModel.getAllTags()
@@ -70,7 +73,8 @@ router.get('/create', checkLogin, function (req, res, next) {
 			tag: tag,
 			top: top,
 			hide: hide,
-			tags: tags
+      tags: tags,
+      isblog: isblog
 		}
 
 		res.render('wiki_create', {
@@ -132,6 +136,7 @@ router.post('/:postId/edit', checkLogin, function (req, res, next) {
   var tag = req.fields.tag;
   var top = (req.fields.is_top === 'true')
   var hide = (req.fields.is_hide === 'true')
+  var isblog = Boolean(req.fields.isblog);
   var postdate = req.fields.postdate;
 
   var mydate = date.parse(postdate, 'YYYY-MM-DD');
@@ -152,6 +157,7 @@ router.post('/:postId/edit', checkLogin, function (req, res, next) {
     tag: tag,
     top: top,
     hide: hide,
+    isblog: isblog
   }
 
   WikiModel.getRawPostById(postId)

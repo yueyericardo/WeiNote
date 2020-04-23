@@ -906,6 +906,9 @@ body {
     font-size: 0.8em !important; }
   .create-bnt-submit {
     padding: 3px 5px;
+    font-size: 0.8em !important; }
+  .input-bar {
+    padding: 3px 5px;
     font-size: 0.8em !important; } }
 
 .success-message {
