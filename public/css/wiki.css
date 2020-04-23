@@ -14,9 +14,9 @@
   .theme-d1 .toggle-icon:hover {
     fill: white; }
   .theme-d1 .dairy-p:hover {
-    -webkit-box-shadow: 0 0 1px 1px #6f6f6f; }
+    -webkit-box-shadow: 0 0 1px 1px #585858; }
   .theme-d1 .active {
-    -webkit-box-shadow: 0 0 1px 1px #6f6f6f; }
+    -webkit-box-shadow: 0 0 1px 1px #585858; }
 
 .theme-d2 {
   background: #484848;
@@ -33,9 +33,9 @@
   .theme-d2 .toggle-icon:hover {
     fill: white; }
   .theme-d2 .dairy-p:hover {
-    -webkit-box-shadow: 0 0 1px 1px #808080; }
+    -webkit-box-shadow: 0 0 1px 1px #5a5a5a; }
   .theme-d2 .active {
-    -webkit-box-shadow: 0 0 1px 1px #808080; }
+    -webkit-box-shadow: 0 0 1px 1px #5a5a5a; }
 
 .theme-d3 {
   background: #6d6d6d;
@@ -52,9 +52,9 @@
   .theme-d3 .toggle-icon:hover {
     fill: white; }
   .theme-d3 .dairy-p:hover {
-    -webkit-box-shadow: 0 0 1px 1px #b1b1b1; }
+    -webkit-box-shadow: 0 0 1px 1px #909090; }
   .theme-d3 .active {
-    -webkit-box-shadow: 0 0 1px 1px #b1b1b1; }
+    -webkit-box-shadow: 0 0 1px 1px #909090; }
 
 .theme-l1 {
   background: #9c9c9c;
@@ -71,9 +71,9 @@
   .theme-l1 .toggle-icon:hover {
     fill: black; }
   .theme-l1 .dairy-p:hover {
-    -webkit-box-shadow: 0 0 1px 1px #cecccc; }
+    -webkit-box-shadow: 0 0 1px 1px #afafaf; }
   .theme-l1 .active {
-    -webkit-box-shadow: 0 0 1px 1px #cecccc; }
+    -webkit-box-shadow: 0 0 1px 1px #afafaf; }
 
 .theme-l2 {
   background: #e4e4e4;
@@ -92,9 +92,9 @@
   .theme-l2 .toggle-icon:hover {
     fill: black; }
   .theme-l2 .dairy-p:hover {
-    -webkit-box-shadow: 0 0 1px 1px #969696; }
+    -webkit-box-shadow: 0 0 1px 1px #a7a7a7; }
   .theme-l2 .active {
-    -webkit-box-shadow: 0 0 1px 1px #969696; }
+    -webkit-box-shadow: 0 0 1px 1px #a7a7a7; }
 
 .max-width {
   max-width: 50rem;
