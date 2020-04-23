@@ -1,16 +1,41 @@
 const marked = require('marked')
+const toc = require('markdown-toc');
 const Wiki = require('../lib/mongo').Wiki
+
+function remove_title(text){
+  exceptFirstLine = text.split('\n').slice(1);
+  return exceptFirstLine.join("\n");
+}
 
 // 将 post 的 content 从 markdown 转换成 html
 Wiki.plugin('contentToHtml', {
   afterFind: function (posts) {
     return posts.map(function (post) {
+      if (post.isblog){
+        // result = toc(post.content, {firsth1: false, bullets: "-"}).content;
+        var result = toc(post.content, {
+          linkify: function(tok, text, slug) {
+            // update tok.content to how you want it
+            tok.content = `[${text}](/note/${post._id}/#${slug})`;
+            // tok.content = `${text}`;
+            return tok;
+          },
+          firsth1: false,
+          bullets: ['1.', '1.', '-']
+        });
+        str = result.content;
+        // str = remove_link_from_md(result);
+        post.content = str;
+      }
       post.content = marked(post.content)
       return post
     })
   },
   afterFindOne: function (post) {
     if (post) {
+      if (post.isblog){
+        post.content = remove_title(post.content);
+      }
       post.content = marked(post.content)
     }
     return post

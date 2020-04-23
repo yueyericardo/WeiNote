@@ -61,6 +61,20 @@
           </div>
           <div class="more-setting" style="display: none;">
               <div style="display: flex;">
+                <div class="form-item" style="width: 45%; margin: 0 auto 6px 0;">
+                  <div class="post-tag-create">
+                    Blog &nbsp &nbsp <input id="is_blog" style="margin-left: 3px;" type="checkbox" name="isblog" <%= post.isblog ? "checked" : "" %>  />
+                  </div>
+                </div>
+                <div class="form-item" style="width: 45%; margin: 0 0 0 auto;" >
+                    <input class="markdown-button" style="margin: 0!important; width: 100%;" type=button value="Generate Title" id="auto-generate-title">
+                </div>
+              </div>
+              <div class="form-item">
+                <label style="padding-top: 10px">Title</label>
+                <input id="input-title" class="input-bar" name="title" value="<%= post.title %>" placeholder="Title">
+              </div>
+              <div style="display: flex;">
                   <div class="form-item" style="width: 45%; margin: 0 auto 0 0;">
                       <label style="padding-top: 10px">New Tag</label>
                       <input class="input-bar" name="new_tag" value="<%= null %>" >
@@ -69,10 +83,6 @@
                       <label style="padding-top: 10px">Date</label>
                       <input class="input-bar" type="date" name="postdate" value="<%= post.mydate %>">
                   </div>
-              </div>
-              <div class="form-item">
-                  <label style="padding-top: 10px">Title</label>
-                  <input class="input-bar" name="title" value="<%= post.title %>">
               </div>
               <div style="display: flex;">
                   <div class="form-item" style="width: 45%; margin: 0 auto 0 0;">
@@ -138,6 +148,19 @@
       preview.style.display = "block";
       write_content.style.display = "none";
     }
+  });
+
+  // auto_gen_title button
+  preview_button = document.getElementById("auto-generate-title");
+  preview_button.addEventListener("click", function() {
+    var title = document.getElementById("input-title");
+    var write_content = document.getElementById("input-content");
+    var isblog = document.getElementById("is_blog").checked;
+
+    firstline = write_content.value.split('\n')[0];
+    t = firstline.replace(/#+\s/g, '');
+    t = t.replace(/[~`!@#$&*:]/g, '');
+    title.value = t;
   });
 
   // warning before leave

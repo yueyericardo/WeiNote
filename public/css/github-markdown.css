@@ -569,12 +569,12 @@
 .markdown-body h6 {
   font-weight: 600;
   line-height: 1.25;
-  margin-bottom: 16px;
-  margin-top: 24px;
+  margin-bottom: 5px;
+  margin-top: 30px;
 }
 
 .markdown-body h1 {
-  font-size: 2em;
+  font-size: 1.4em;
 }
 
 .markdown-body h1,
@@ -584,24 +584,27 @@
 }
 
 .markdown-body h2 {
-  font-size: 1.5em;
+  font-size: 1.4em;
 }
 
 .markdown-body h3 {
-  font-size: 1.25em;
+  font-size: 1.2em;
+  margin-left: 4px;
 }
 
 .markdown-body h4 {
-  font-size: 1em;
+  font-size: 1.2em;
+  margin-left: 6px;
 }
 
 .markdown-body h5 {
-  font-size: .875em;
+  font-size: 1.0em;
+  margin-left: 8px;
 }
 
 .markdown-body h6 {
-  color: #6a737d;
-  font-size: .85em;
+  font-size: 1.0em;
+  margin-left: 8px;
 }
 
 .markdown-body ol,
@@ -1001,3 +1004,27 @@
 }
 ::-webkit-scrollbar-thumb:vertical:hover {
   border-right-width: 8px;
+}
+
+/* numberd heading */
+h1 { counter-reset: h2counter h3counter h4counter h5counter h6counter; }
+h2 { counter-reset: h3counter h4counter h5counter h6counter; }
+h3 { counter-reset: h4counter h5counter h6counter; }
+h4 { counter-reset: h5counter h6counter; }
+h5 { counter-reset: h6counter; }
+h6 {}
+
+h2:before {
+    counter-increment: h2counter;
+    content: counter(h2counter) ".\0000a0\0000a0";
+}
+
+h3:before {
+    counter-increment: h3counter;
+    content: counter(h3counter) ".\0000a0\0000a0";
+}
+
+h5:before {
+  counter-increment: h5counter;
+  content: counter(h5counter) ".\0000a0\0000a0";
+}
