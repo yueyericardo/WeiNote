@@ -145,6 +145,7 @@
       write_content.style.display = "block";
     } else {
       preview.innerHTML = marked(write_content.value);
+      Prism.highlightAll();
       preview.style.display = "block";
       write_content.style.display = "none";
     }

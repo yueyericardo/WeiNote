@@ -391,6 +391,10 @@
   margin-top: 0;
 }
 
+.markdown-body pre::-webkit-scrollbar {
+  display: none;
+}
+
 .markdown-body input::-webkit-inner-spin-button,
 .markdown-body input::-webkit-outer-spin-button {
   -webkit-appearance: none;
@@ -741,7 +745,8 @@
   font-size: 85%;
   line-height: 1.45;
   overflow: auto;
-  padding: 16px;
+  padding: .4em .8em;
+  margin: .5em 0;
   -webkit-box-shadow: inset 0 1px 10px rgba(0,0,0,0.3), 0 1px 0 rgba(255,255,255,0.1), 0 -1px 0 rgba(0,0,0,0.5);
   box-shadow: inset 0 1px 10px rgba(0,0,0,0.3), 0 1px 0 rgba(255,255,255,0.1), 0 -1px 0 rgba(0,0,0,0.5); 
   -moz-box-shadow: inset 0 1px 10px rgba(0,0,0,0.3),0 1px 0 rgba(255,255,255,0.1),0 -1px 0 rgba(0,0,0,0.5);
