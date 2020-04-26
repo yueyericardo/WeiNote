@@ -589,22 +589,22 @@
 
 .markdown-body h3 {
   font-size: 1.2em;
-  margin-left: 4px;
+  margin-left: 2px;
 }
 
 .markdown-body h4 {
   font-size: 1.2em;
-  margin-left: 6px;
+  margin-left: 2px;
 }
 
 .markdown-body h5 {
   font-size: 1.0em;
-  margin-left: 8px;
+  margin-left: 3px;
 }
 
 .markdown-body h6 {
   font-size: 1.0em;
-  margin-left: 8px;
+  margin-left: 3px;
 }
 
 .markdown-body ol,
@@ -749,6 +749,7 @@
 
 .markdown-body pre code {
   background-color: transparent;
+  color: white;
   border: 0;
   display: inline;
   line-height: inherit;
