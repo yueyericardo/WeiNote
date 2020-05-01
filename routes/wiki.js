@@ -130,7 +130,10 @@ router.get('/:postId/edit', checkLogin, function (req, res, next) {
 
 router.get('/:postId/raw', function (req, res, next) {
   const postId = req.params.postId;
-  const author = req.session.user._id;
+  let author = "guest";
+  if (req.session.user){
+    author = req.session.user._id;
+  }
 
   let adddate = req.query.date;
 
