@@ -127,6 +127,38 @@ router.get('/:postId/edit', checkLogin, function (req, res, next) {
     .catch(next)
 })
 
+
+router.get('/:postId/raw', function (req, res, next) {
+  const postId = req.params.postId;
+  const author = req.session.user._id;
+
+  let adddate = req.query.date;
+
+  if (!adddate) {
+		adddate = false;
+  }
+
+  WikiModel.getRawPostById(postId)
+    .then(function (post) {
+      if (!post) {
+        throw new Error('This Note does not Exsit')
+      }
+      if (post.hide && author.toString() !== post.author._id.toString()) {
+        throw new Error('No Access to This Note')
+      }else{
+        res.statusCode = 200;
+        res.setHeader('Content-Type', 'text/plain; charset=utf-8');
+        if (adddate) {
+          output = `Date: ${post.mydate}\n\n${post.content}`;
+        }else{
+          output = `${post.content}`;
+        }
+        res.end(output)
+      }
+    })
+    .catch(next)
+})
+
 router.post('/:postId/edit', checkLogin, function (req, res, next) {
 
   const postId = req.params.postId;
