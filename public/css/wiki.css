@@ -17,6 +17,8 @@
     -webkit-box-shadow: 0 0 1px 1px #585858; }
   .theme-d1 .active {
     -webkit-box-shadow: 0 0 1px 1px #585858; }
+  .theme-d1 .blog_item a {
+    color: white; }
 
 .theme-d2 {
   background: #484848;
@@ -36,6 +38,8 @@
     -webkit-box-shadow: 0 0 1px 1px #5a5a5a; }
   .theme-d2 .active {
     -webkit-box-shadow: 0 0 1px 1px #5a5a5a; }
+  .theme-d2 .blog_item a {
+    color: white; }
 
 .theme-d3 {
   background: #6d6d6d;
@@ -55,6 +59,8 @@
     -webkit-box-shadow: 0 0 1px 1px #909090; }
   .theme-d3 .active {
     -webkit-box-shadow: 0 0 1px 1px #909090; }
+  .theme-d3 .blog_item a {
+    color: white; }
 
 .theme-l1 {
   background: #9c9c9c;
@@ -74,6 +80,8 @@
     -webkit-box-shadow: 0 0 1px 1px #afafaf; }
   .theme-l1 .active {
     -webkit-box-shadow: 0 0 1px 1px #afafaf; }
+  .theme-l1 .blog_item a {
+    color: white; }
 
 .theme-l2 {
   background: #e4e4e4;
@@ -95,6 +103,8 @@
     -webkit-box-shadow: 0 0 1px 1px #a7a7a7; }
   .theme-l2 .active {
     -webkit-box-shadow: 0 0 1px 1px #a7a7a7; }
+  .theme-l2 .blog_item a {
+    color: black; }
 
 .max-width {
   max-width: 50rem;
@@ -488,7 +498,6 @@ body {
   padding: 0;
   padding-top: 5px;
   border: 0;
-  font-family: "sans-serif";
   margin: 0.4em 0;
   /*font-weight: bold;*/ }
 
@@ -932,3 +941,47 @@ body {
 
 .error-message p {
   margin: 0; }
+
+.blog_item {
+  display: flex;
+  margin: 5px 0; }
+
+.blog_item a {
+  color: white;
+  text-decoration: none;
+  width: 100%;
+  display: block;
+  padding: 5px 0; }
+
+.blog_item a:hover {
+  text-decoration: underline; }
+
+.blog_item .posts-date {
+  width: 13%;
+  padding: 5px 0; }
+
+.blog_item .posts-title {
+  width: 77%; }
+
+.blog_item .posts-category {
+  width: 14%;
+  padding: 5px 0;
+  font-size: 0.95em; }
+
+.blog_item .posts-category a {
+  padding: 1px 3px;
+  min-width: 80px;
+  border-radius: 6px;
+  background: none;
+  text-align: center;
+  white-space: nowrap; }
+
+.dairy.dairy-blog .dairy-p {
+  background-color: transparent;
+  width: 100% !important; }
+
+.dairy.dairy-blog .dairy-p:hover {
+  -webkit-box-shadow: none; }
+
+.dairy.dairy-blog .active {
+  -webkit-box-shadow: none; }

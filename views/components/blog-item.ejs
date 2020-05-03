@@ -1,0 +1,10 @@
+<% if ((user && user._id == post.author._id ) || post.hide != true) { -%>
+
+    <div class="blog_item">
+        <% var date = post.postdate.split(" "); %>
+        <div class="posts-date"> <%= date[0] %>  <%= date[1] %> </div>
+        <div class="posts-title"><a href="/blog/<%= post._id%>"><%- post.title %></a></div>
+        <div class="posts-category"><a href="/notes/tag/<%= post.tag%>"><%= post.tag%></a></div>
+    </div>
+
+<% } -%>

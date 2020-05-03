@@ -1,0 +1,13 @@
+<% if ((user && user._id == post.author._id ) || post.hide != true) { -%>
+
+  <div class="dairy dairy-blog">
+    <div class="dairy-p markdown-body" >
+      <div class="markdown-content">
+        <h1 style="margin: 15px 40px 5px; text-align: center; border-bottom: none; font-size: 1.5em;"><%- post.title%></h1>
+        <div style="text-align: center; font-size: 0.85em; margin-bottom: 30px;"> <%- post.mydate %></div>
+        <%- post.content%>
+      </div>
+    </div>
+  </div>
+
+<% } -%>

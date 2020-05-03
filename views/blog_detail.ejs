@@ -1,0 +1,17 @@
+<%- include('header')%>
+
+<header id="header">
+	  <div class="circle-container">
+	    <a style="color: transparent" href="/blogs">
+		<div class="circle" style="background: none; border: none;">
+			<img src=" /img/<%= post.author.avatar %>" style="width: 80px;border-radius: 40px;">
+  		</div>
+	    </a>
+	  </div>
+</header>
+<div class="header-tag">
+	<p> <%= post.author.name%> </p>
+</div>
+
+<%- include('components/blog-post', { post: post}) %>
+<%- include('footer') %>

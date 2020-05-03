@@ -249,4 +249,21 @@ module.exports = {
     return Wiki.distinct('tag')
       .exec()
   },
+
+  // get all blogs
+  getAllBlogs: function getAllBlogs (author) {
+    const query = {}
+    if (author) {
+      query.author = author;
+    }
+    query.isblog = true;
+    console.log(query);
+    return Wiki
+      .find(query)
+      .populate({ path: 'author', model: 'User' })
+      .sort({ top: -1, mydate: -1, _id: -1 })
+      .addCreatedAt()
+      .exec()
+  },
+
 }
