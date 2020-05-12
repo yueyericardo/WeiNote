@@ -3,7 +3,7 @@
       <div class="dairy-date">
         <div class="date">
           <% var date = post.postdate.split(" "); %>
-          <p class="datem"><%= 2019 %></p>
+          <p class="datem"><%= date[2] %></p>
           <p class="dated"> <span style="padding-top: 5px; display: block;"> <%= date[0] %>  <%= date[1] %> </span></p>
         </div>
       </div>
@@ -28,7 +28,7 @@
           <div class="dairy-date">
             <div class="date">
               <% var date = post.postdate.split(" "); %>
-              <p class="datem"><%= 2019 %></p>
+              <p class="datem"><%= date[2] %></p>
               <p class="dated"> <span style="padding-top: 5px; display: block;"> <%= date[0] %>  <%= date[1] %> </span></p>
             </div>
           </div>
