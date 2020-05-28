@@ -88,6 +88,7 @@ function listen_dairy_p_click(){
       this.className += " active";
     });
   }
+  p_list[0].className += " active";
 }
 
 
@@ -191,8 +192,8 @@ document.onkeyup = function(e) {
     if (current != null){
       scroll(up=false);
     }
-  } else if (e.ctrlKey && e.which == 13) {
-    // Ctrl + Enter
+  } else if (e.which == 69) {
+    // e
     current = check_active();
     if (current != null){
       let url = get_edit_url(current);
