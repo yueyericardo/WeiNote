@@ -6,6 +6,22 @@ module.exports = {
     return User.create(user).exec()
   },
 
+  getFirstUser: function getFirstUser () {
+    return User
+      .findOne()
+      .exec()
+  },
+
+  updateUserById: function updateUserById (postId, data) {
+    return User.update({ _id: postId }, { $set: data }).exec()
+  },
+
+  getUserById: function getUserById (_id) {
+    return User
+      .findOne({ _id: _id })
+      .exec()
+  },
+
   // 通过用户名获取用户信息
   getUserByName: function getUserByName (name) {
     return User

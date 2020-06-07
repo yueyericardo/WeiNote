@@ -6,9 +6,10 @@ var http = require('http');
 const htmlToText = require('html-to-text');
 
 const checkLogin = require('../middlewares/check').checkLogin
+const checkPrivate = require('../middlewares/check').checkPrivate
 const WikiModel = require('../models/wiki')
 
-router.get('/', function (req, res, next) {
+router.get('/', checkPrivate, function (req, res, next) {
   const author = req.query.author
   WikiModel.getPosts(author)
     .then(function (posts) {
@@ -24,7 +25,7 @@ router.get('/', function (req, res, next) {
     .catch(next)
 })
 
-router.get('/tag/:tagId', function (req, res, next) {
+router.get('/tag/:tagId', checkPrivate, function (req, res, next) {
   const tagId = req.params.tagId;
   const author = req.query.author
 
@@ -45,7 +46,7 @@ router.get('/tag/:tagId', function (req, res, next) {
     })
 })
 
-router.get('/archive', function (req, res, next) {
+router.get('/archive', checkPrivate, function (req, res, next) {
   const author = req.query.author
   WikiModel.getArchivedPosts(author)
     .then(function (posts) {
@@ -61,7 +62,7 @@ router.get('/archive', function (req, res, next) {
     .catch(next)
 })
 
-router.get('/archive/tag/:tagId', function (req, res, next) {
+router.get('/archive/tag/:tagId', checkPrivate, function (req, res, next) {
   const tagId = req.params.tagId;
   const author = req.query.author
 
@@ -83,7 +84,7 @@ router.get('/archive/tag/:tagId', function (req, res, next) {
 })
 
 
-router.get('/all', function (req, res, next) {
+router.get('/all', checkPrivate, function (req, res, next) {
   const author = req.query.author
   WikiModel.getAllPosts(author)
     .then(function (posts) {
@@ -99,7 +100,7 @@ router.get('/all', function (req, res, next) {
     .catch(next)
 })
 
-router.get('/all/tag/:tagId', function (req, res, next) {
+router.get('/all/tag/:tagId', checkPrivate, function (req, res, next) {
   const tagId = req.params.tagId;
   const author = req.query.author
 

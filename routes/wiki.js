@@ -87,13 +87,20 @@ router.get('/create', checkLogin, function (req, res, next) {
 
 router.get('/:postId', function (req, res, next) {
   const postId = req.params.postId;
-  // const author = req.session.user._id
+  var author = "guest";
+  if (req.session.user){
+    author = req.session.user._id;
+  }
+
   WikiModel.getPostById(postId)
     .then(function (post) {
       if (!post) {
         throw new Error('Wiki does not exist')
       }
-
+      if (post.hide && author.toString() !== post.author._id.toString()) {
+        req.flash('error', 'Please Sign in')
+        return res.redirect('/signin')
+      }else{
         WikiModel.getAllTags()
 		    .then(function (tags) {
 				post.tags = tags
@@ -101,7 +108,8 @@ router.get('/:postId', function (req, res, next) {
 					post: post
 			})
 	    });
-		});
+      }
+		}).catch(next);
 })
 
 router.get('/:postId/edit', checkLogin, function (req, res, next) {
@@ -130,7 +138,7 @@ router.get('/:postId/edit', checkLogin, function (req, res, next) {
 
 router.get('/:postId/raw', function (req, res, next) {
   const postId = req.params.postId;
-  let author = "guest";
+  var author = "guest";
   if (req.session.user){
     author = req.session.user._id;
   }

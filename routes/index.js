@@ -7,6 +7,7 @@ module.exports = function (app) {
   app.use('/signout', require('./signout'))
   app.use('/note', require('./wiki'))
   app.use('/notes', require('./wikis'))
+  app.use('/setting', require('./setting'))
 
   // 404 page
   app.use(function (req, res) {
