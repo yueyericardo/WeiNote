@@ -200,7 +200,8 @@ document.onkeyup = function(e) {
   } else if (e.which == 69) {
     // E -> Edit
     current = check_active();
-    if (current != null){
+    var isnotes = window.location.href.match('notes');
+    if (current != null && isnotes){
       let url = get_edit_url(current);
       window.location.href = url;
     }
@@ -208,7 +209,8 @@ document.onkeyup = function(e) {
   else if (e.which == 68) {
     // D -> Delete
     current = check_active();
-    if (current != null){
+    var isnotes = window.location.href.match('notes');
+    if (current != null && isnotes){
       var result = confirm("Confirm to delete this?");
       if (result) {
         let url = get_delete_url(current);
