@@ -12,7 +12,7 @@ router.get('/togglePrivate', checkLogin, function (req, res, next) {
       if (!result) {
         throw new Error('User does not Exsit')
       }
-      console.log(result.private);
+      // console.log(result.private);
       result.private = result.private == null ? false : result.private;
       result.private = ! result.private;
 
