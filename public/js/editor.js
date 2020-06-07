@@ -68,7 +68,7 @@ function editor_shortcut(e) {
 
   if(e.keyCode==9 || e.which==9){
     e.preventDefault();
-    const TAB_SIZE = 4;
+    const TAB_SIZE = 2;
     // The one-liner that does the magic
     document.execCommand('insertText', false, ' '.repeat(TAB_SIZE));
   }
