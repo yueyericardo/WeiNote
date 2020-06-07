@@ -1,3 +1,8 @@
+function textarea_auto_grow(element) {
+    element.style.height = "5px";
+    element.style.height = (element.scrollHeight)+"px";
+}
+
 function togglePreview() {
     var preview = document.getElementById("markdown-preview");
     var write_content = document.getElementById("input-content");
@@ -74,6 +79,9 @@ function editor_shortcut(e) {
   }
 
 }
+
+textarea = document.getElementsByName("content")[0];
+textarea_auto_grow(textarea);
 
 window.onload = function(){
     // editor shortcuts
