@@ -57,7 +57,7 @@
           <div class="form-item" style="display: flex; margin: 20px 0">
               <input class="more-setting-button" type=button value="More Setting">
               <input type=button class="create-bnt-cancel" value="Cancel" onclick="window.history.go(-1); return false;">
-              <input type="submit" class="create-bnt-submit" value="Submit">
+              <input type="submit" class="create-bnt-submit" value="Submit" id="input-submit">
           </div>
           <div class="more-setting" style="display: none;">
               <div style="display: flex;">
@@ -135,22 +135,6 @@
     }
   });
 
-  // preview button
-  preview_button = document.getElementById("preview-bnt");
-  preview_button.addEventListener("click", function() {
-    var preview = document.getElementById("markdown-preview");
-    var write_content = document.getElementById("input-content");
-    if (preview.style.display === "block") {
-      preview.style.display = "none";
-      write_content.style.display = "block";
-    } else {
-      preview.innerHTML = marked(write_content.value);
-      Prism.highlightAll();
-      preview.style.display = "block";
-      write_content.style.display = "none";
-    }
-  });
-
   // auto_gen_title button
   preview_button = document.getElementById("auto-generate-title");
   preview_button.addEventListener("click", function() {
@@ -178,4 +162,5 @@
   });
 </script>
 
+<script src="/js/editor.js"></script>
 <%- include('footer') %>

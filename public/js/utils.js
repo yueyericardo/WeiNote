@@ -41,7 +41,12 @@ function remove_active(){
 
 
 function get_edit_url(current){
-  return current.getElementsByClassName("bnt_edit_container")[0].getElementsByTagName('a')[0].href
+  return current.getElementsByClassName("bnt_edit_container")[0].getElementsByTagName('a')[0].href;
+}
+
+function get_delete_url(current){
+  var ediurl = current.getElementsByClassName("bnt_edit_container")[0].getElementsByTagName('a')[0].href;
+  return ediurl.replace("edit", "remove")
 }
 
 
@@ -193,11 +198,22 @@ document.onkeyup = function(e) {
       scroll(up=false);
     }
   } else if (e.which == 69) {
-    // e
+    // E -> Edit
     current = check_active();
     if (current != null){
       let url = get_edit_url(current);
       window.location.href = url;
+    }
+  }
+  else if (e.which == 68) {
+    // D -> Delete
+    current = check_active();
+    if (current != null){
+      var result = confirm("Confirm to delete this?");
+      if (result) {
+        let url = get_delete_url(current);
+        window.location.href = url;
+      }
     }
   }
 
