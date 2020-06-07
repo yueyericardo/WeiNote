@@ -17,7 +17,7 @@
       <div class="dairy-p markdown-body" >
         <%- include('icons-status_bar', { post: post, date: date}) %>
         <%- include('bnt_more', { post: post}) %>
-        <div class="markdown-content">
+        <div class="markdown-content instapaper_body">
           <% if (post.isblog) { -%>
             <h1 style="margin: 15px 40px 10px; text-align: center; border-bottom: none; font-size: 1.2em;"><%- post.title%></h1>
             <a href="/note/<%= post._id%>" target="_blank">
@@ -47,7 +47,7 @@
           </div>
           <div class="dairy-p markdown-body" >
             <%- include('icons-status_bar', { post: post, date: date}) %>
-            <div class="markdown-content">
+            <div class="markdown-content instapaper_body">
               <% if (post.isblog) { -%>
                 <h1 style="margin: 15px 40px 10px; text-align: center; border-bottom: none; font-size: 1.2em;"><%- post.title%></h1>
                 <a href="/note/<%= post._id%>" target="_blank">

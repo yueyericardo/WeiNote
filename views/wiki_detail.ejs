@@ -1,8 +1,12 @@
-<%- include('header')%>
+<% var content = post.content; var titleNotDefined = post.title == ''; %>
+<% var title = titleNotDefined ? content.split('\n')[0].replace(/#+\s/g, '').replace(/[~`!@#$&*:]/g, '').replace(/<.*?>/g, '') : post.title.replace(/<.*?>/g, '') ;%>
+<% var description = content.slice(0, 200); description = description.replace(/#+\s/g, '').replace(/[~`!@#$&*:]/g, '').replace(/<.*?>/g, '') ;%>
+
+<%- include('header-meta', {title: title, description: description, author: post.author.name})%>
 
 <header id="header">
 	  <div class="circle-container">
-	    <a style="color: transparent" href="/notes">	
+	    <a style="color: transparent" href="/notes">
 		<div class="circle" style="background: none; border: none;">
 			<img src=" /img/<%= post.author.avatar %>" style="width: 80px;border-radius: 40px;">
   		</div>
