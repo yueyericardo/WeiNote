@@ -29,6 +29,7 @@ demo pw: 9vzVABUa30LSldiVVJt5
   ```bash
   cd directory/you/want/to/run
   git clone git@github.com:yueyericardo/WeiNote.git
+  cd WeiNote
   sudo docker-compose up -d
   ```
   The default port is 3081, e.g.: http://example.com:3081  
