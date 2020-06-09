@@ -49,6 +49,10 @@ function get_delete_url(current){
   return ediurl.replace("edit", "remove")
 }
 
+function get_detail_url(current){
+  var ediurl = current.getElementsByClassName("bnt_edit_container")[0].getElementsByTagName('a')[0].href;
+  return ediurl.replace("/edit", "")
+}
 
 function scroll(up=true){
   p_list = document.getElementsByClassName("dairy-p");
@@ -216,6 +220,15 @@ document.onkeyup = function(e) {
         let url = get_delete_url(current);
         window.location.href = url;
       }
+    }
+  }
+  else if (e.which == 13) {
+    // Enter -> Detail
+    current = check_active();
+    var isnotes = window.location.href.match('notes');
+    if (current != null && isnotes){
+      let url = get_detail_url(current);
+      window.location.href = url;
     }
   }
 
