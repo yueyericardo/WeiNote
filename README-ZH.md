@@ -5,9 +5,9 @@
 [Demo](https://demo.weinote.cc/notes)
 
 灵感来源于
-1. [卢昌海](https://www.changhai.org/index.php)的[微言小义](https://www.changhai.org/articles/miscellaneous/blog/201906.php)。去年自建了一个类似的后端站点，写点bullshit。
+1. [卢昌海](https://www.changhai.org/index.php)的[微言小义](https://www.changhai.org/articles/miscellaneous/blog/201906.php)
 2. 有些朋友在word上敲snippet，记录一些常用的command，我推荐他们在github建立了repo直接改README。  
-后来发现自己的bullshit如果添加多标签的功能，更适合来做小wiki，于是将bullshit整理出来开源了。
+后来发现自己这个项目如果添加多标签的功能，更适合来记录 wiki，于是将代码整理出来开源了。
 
 <p class="img">
 <a class="link"  href="https://yyrcd-1256568788.cos.na-siliconvalley.myqcloud.com/yyrcd/2019-06-13-222357.png">
