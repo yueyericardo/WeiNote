@@ -35,6 +35,7 @@ demo密码: 9vzVABUa30LSldiVVJt5
   ```bash
   cd directory/you/want/to/run
   git clone git@github.com:yueyericardo/WeiNote.git
+  cd WeiNote
   sudo docker-compose up -d
   ```
   默认配置在3081端口，如：http://example.com:3081  
