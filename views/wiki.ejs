@@ -44,7 +44,7 @@
 
 	<% var index = posts.tags.findIndex(function(tag) {return tag == posts[i].tag}) %>
 
-	<%- include('components/post-content-wiki', { post: posts[i], color: colors[index] }) %>
+	<%- include('components/post-content-wiki', { post: posts[i], color: colors[index], isdetailpage: false }) %>
 <% } %>
 
 

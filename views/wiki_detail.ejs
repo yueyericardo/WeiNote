@@ -21,5 +21,5 @@
 
 <% var thisyear = Number(post.postdate.split(" ")[2]); %>
 <% var index = post.tags.findIndex(function(tag) {return tag == post.tag}) %>
-<%- include('components/post-content-wiki', { post: post, color: colors[index] }) %>
+<%- include('components/post-content-wiki', { post: post, color: colors[index], isdetailpage: true }) %>
 <%- include('footer') %>
