@@ -14,10 +14,13 @@ Keep a note just like post a weibo
 ## 1. Features
 - Multi tags 
 - Markdown
-- Markdown Preview
+- Markdown Preview (like github preview)
 - Shortcut
 - Hide a note
 - Top a note
+- Archive a note
+- Support fully private mode
+- Raw content (like github)
 
 ## 2. Demo
 https://demo.weinote.cc  
