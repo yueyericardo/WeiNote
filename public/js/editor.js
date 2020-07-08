@@ -13,6 +13,7 @@ function togglePreview() {
     } else {
         preview.innerHTML = marked(write_content.value);
         Prism.highlightAll();
+        MathJax.typeset();
         preview.style.display = "block";
         write_content.style.display = "none";
     }
