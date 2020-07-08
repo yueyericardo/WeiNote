@@ -192,20 +192,22 @@ document.onkeyup = function(e) {
   } else if (e.which == 38) {
     // Arrow-up
     current = check_active();
-    if (current != null){
+    var isEdit = window.location.href.match('edit');
+    if (current != null && !isEdit){
       scroll(up=true);
     }
   } else if (e.which == 40) {
     // Arrow-down
     current = check_active();
-    if (current != null){
+    var isEdit = window.location.href.match('edit');
+    if (current != null && !isEdit){
       scroll(up=false);
     }
   } else if (e.which == 69) {
     // E -> Edit
     current = check_active();
-    var isnotes = window.location.href.match('notes');
-    if (current != null && isnotes){
+    var isEdit = window.location.href.match('edit');
+    if (current != null && !isEdit){
       let url = get_edit_url(current);
       window.location.href = url;
     }
@@ -213,8 +215,8 @@ document.onkeyup = function(e) {
   else if (e.which == 68) {
     // D -> Delete
     current = check_active();
-    var isnotes = window.location.href.match('notes');
-    if (current != null && isnotes){
+    var isEdit = window.location.href.match('edit');
+    if (current != null && !isEdit){
       var result = confirm("Confirm to delete this?");
       if (result) {
         let url = get_delete_url(current);
@@ -225,8 +227,8 @@ document.onkeyup = function(e) {
   else if (e.which == 13) {
     // Enter -> Detail
     current = check_active();
-    var isnotes = window.location.href.match('notes');
-    if (current != null && isnotes){
+    var isEdit = window.location.href.match('edit');
+    if (current != null && !isEdit){
       let url = get_detail_url(current);
       window.location.href = url;
     }
