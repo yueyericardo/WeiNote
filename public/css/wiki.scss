@@ -170,7 +170,7 @@ $l2-bar-bk: #eaeaea;
 }
 
 .max-width {
-  max-width: 50rem;
+  max-width: 60rem;
   margin-right: auto;
   margin-left: auto;
   position: relative;
@@ -1062,7 +1062,7 @@ body {
 }
 
 :focus {
-  outline: -webkit-focus-ring-color auto 0px;
+  outline: none;
 }
 
 mjx-container{

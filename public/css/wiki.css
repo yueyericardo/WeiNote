@@ -97,7 +97,7 @@
     -webkit-box-shadow: 0 0 1px 1px #a7a7a7; }
 
 .max-width {
-  max-width: 50rem;
+  max-width: 60rem;
   margin-right: auto;
   margin-left: auto;
   position: relative;
@@ -934,7 +934,7 @@ body {
   margin: 0; }
 
 :focus {
-  outline: -webkit-focus-ring-color auto 0px; }
+  outline: none; }
 
 mjx-container {
   max-width: 100%;
