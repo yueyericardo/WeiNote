@@ -1,3 +1,7 @@
+function ignoreLatex(text){
+    return text.replace(/(\${2}[^\$]+\${2})/g, function(a){console.log(a); return `<div>${a}</div>`});
+}
+
 function textarea_auto_grow(element) {
     element.style.height = "5px";
     element.style.height = (element.scrollHeight)+"px";
@@ -11,7 +15,7 @@ function togglePreview() {
         write_content.style.display = "block";
         write_content.focus();
     } else {
-        preview.innerHTML = marked(write_content.value);
+        preview.innerHTML = marked(ignoreLatex(write_content.value));
         Prism.highlightAll();
         MathJax.typeset();
         preview.style.display = "block";

@@ -7,6 +7,10 @@ function remove_title(text){
   return exceptFirstLine.join("\n");
 }
 
+function ignoreLatex(text){
+  return text.replace(/(\${2}[^\$]+\${2})/g, function(a){console.log(a); return `<div>${a}</div>`});
+}
+
 // 将 post 的 content 从 markdown 转换成 html
 Wiki.plugin('contentToHtml', {
   afterFind: function (posts) {
@@ -27,7 +31,7 @@ Wiki.plugin('contentToHtml', {
         // str = remove_link_from_md(result);
         post.content = str;
       }
-      post.content = marked(post.content)
+      post.content = marked(ignoreLatex(post.content))
       return post
     })
   },
@@ -36,7 +40,7 @@ Wiki.plugin('contentToHtml', {
       if (post.isblog){
         post.content = remove_title(post.content);
       }
-      post.content = marked(post.content)
+      post.content = marked(ignoreLatex(post.content));
     }
     return post
   }
