@@ -203,6 +203,8 @@ router.post('/:postId/edit', checkLogin, function (req, res, next) {
     isblog: isblog
   }
 
+  fromDetail = req.query.fromDetail || 0;
+
   WikiModel.getRawPostById(postId)
     .then(function (post) {
       if (!post) {
@@ -214,8 +216,12 @@ router.post('/:postId/edit', checkLogin, function (req, res, next) {
 
       WikiModel.updatePostById(postId, wiki)
         .then(function () {
-          req.flash('success', 'Updated Successfully')
-          res.redirect(`/notes#${post._id}`)
+          req.flash('success', 'Updated Successfully');
+          if (fromDetail) {
+            res.redirect(`/note/${post._id}`);
+          } else {
+            res.redirect(`/notes#${post._id}`);
+          }
         })
         .catch(next)
     })
