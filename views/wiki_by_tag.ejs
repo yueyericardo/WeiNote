@@ -53,7 +53,7 @@
 
 	<% var index = posts.tags.findIndex(function(tag) {return tag == posts[i].tag}) %>
 
-	<%- include('components/post-content-wiki_by_tag', { post: posts[i], color: colors[index] }) %>
+	<%- include('components/post-content-wiki_by_tag', { post: posts[i], color: colors[index], isdetailpage: false }) %>
 <% } %>
 
 <%- include('footer') %>
