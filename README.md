@@ -12,13 +12,21 @@ Keep a note just like post a weibo
 </p>
 
 ## 1. Features
+Main
 - Multi tags 
 - Markdown
 - Latex
 - Support fully private mode
-- Markdown Preview (like github preview)
-- Raw content (like github)
 - Shortcuts
+
+Editor
+- Codemirror Markdown Editor
+- Continued List
+- Auto Indent List (`Tab` and `Shift + Tab`)
+
+Functions
+- Markdown Preview (like github preview or `Ctrl + Space`)
+- Raw content (like github)
 - Hide a note
 - Top a note
 - Archive a note
@@ -61,7 +69,11 @@ demo pw: 9vzVABUa30LSldiVVJt5
   - **Alt + H** : Go  to `Home page` [/notes](/notes)
   - **Alt + A** : Go  to `All notes page` [/notes/all](/notes/all)
   - **Alt + C** : Redirect  to `Archive notes page` [/notes/archive](/notes/archive)
-  
+
+- Common
+  - **E** : Edit selected note
+  - **D** : Delete selected note
+
 ## 5. Contribute
 Welcome PR! Especially for security problems.
 
