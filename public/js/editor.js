@@ -6,6 +6,10 @@ function textarea_auto_grow(element) {
     element.style.height = (element.scrollHeight)+"px";
 }
 
+function addTableContainer(text){
+    return text.replace(/(<table[^>]*>(?:.|\n)*?<\/table>)/g, function(a){return `<div class="tableContainer">${a}</div>`});
+}
+
 function togglePreview() {
     var preview = document.getElementById("markdown-preview");
     var write_content = document.getElementById("input-content");
@@ -14,7 +18,7 @@ function togglePreview() {
         write_content.style.display = "block";
         write_content.focus();
     } else {
-        preview.innerHTML = marked(ignoreLatex(write_content.value));
+        preview.innerHTML = addTableContainer(marked(ignoreLatex(write_content.value)));
         Prism.highlightAll();
         MathJax.typeset();
         preview.style.display = "block";
