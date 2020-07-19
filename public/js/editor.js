@@ -81,7 +81,7 @@ textarea_auto_grow(textarea);
 window.onload = function(){
     options = {
         mode: 'markdown',
-        lineNumbers: true,
+        lineNumbers: false,
         lineWrapping: true,
         theme: 'monokai',
         viewportMargin: Infinity,
