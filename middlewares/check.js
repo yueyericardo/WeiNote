@@ -13,10 +13,12 @@ module.exports = {
   checkPrivate: function checkPrivate (req, res, next) {
     UserModel.getFirstUser()
     .then(function (user) {
-      private = user.private || false;
-      if (private && !req.session.user) {
+      if (!user) {
+        return res.redirect('/signin');
+      }
+      if ((user.private && !req.session.user)) {
         req.flash('error', 'Please Sign in')
-        return res.redirect('/signin')
+        return res.redirect('/signin');
       }
       next()
     })
