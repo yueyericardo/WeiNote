@@ -11,6 +11,10 @@ function ignoreLatex(text){
   return text.replace(/(\${2}[^\$]+\${2})/g, function(a){return `<div>${a}</div>`});
 }
 
+function addTableContainer(text){
+  return text.replace(/(<table[^>]*>(?:.|\n)*?<\/table>)/g, function(a){return `<div class="tableContainer">${a}</div>`});
+}
+
 // 将 post 的 content 从 markdown 转换成 html
 Wiki.plugin('contentToHtml', {
   afterFind: function (posts) {
@@ -31,7 +35,7 @@ Wiki.plugin('contentToHtml', {
         // str = remove_link_from_md(result);
         post.content = str;
       }
-      post.content = marked(ignoreLatex(post.content))
+      post.content = addTableContainer(marked(ignoreLatex(post.content)));
       return post
     })
   },
@@ -40,7 +44,7 @@ Wiki.plugin('contentToHtml', {
       if (post.isblog){
         post.content = remove_title(post.content);
       }
-      post.content = marked(ignoreLatex(post.content));
+      post.content = addTableContainer(marked(ignoreLatex(post.content)));
     }
     return post
   }

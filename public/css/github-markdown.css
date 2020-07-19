@@ -658,6 +658,7 @@
   overflow: auto;
   width: 100%;
   font-size: inherit;
+  margin: 0;
 }
 
 table ::-webkit-scrollbar {
@@ -684,6 +685,14 @@ table ::-webkit-scrollbar {
   background-color: #353535;
 }
 
+.tableContainer {
+  max-width: 100%;
+  overflow: auto;
+  -webkit-box-shadow: inset 0 1px 10px rgba(0, 0, 0, 0.3), 0 1px 0 rgba(255, 255, 255, 0.1), 0 0px 0 rgba(0, 0, 0, 0.5);
+  box-shadow: inset 0 1px 10px rgba(0, 0, 0, 0.3), 0 1px 0 rgba(255, 255, 255, 0.1), 0 0px 0 rgba(0, 0, 0, 0.5);
+  border-radius: 3px;
+  margin-bottom: 16px;
+}
 .markdown-body img {
   background-color: #fff;
   box-sizing: content-box;
