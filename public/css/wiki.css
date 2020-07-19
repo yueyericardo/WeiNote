@@ -974,8 +974,7 @@ input[type="checkbox" i]:disabled {
 .status-bar-date .status-label a {
   color: #999999 !important;
   cursor: pointer;
-  text-decoration: none;
-  font-weight: bold; }
+  text-decoration: none; }
 
 .status-bar-date .status-label {
   display: inline; }
