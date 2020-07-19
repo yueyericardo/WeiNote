@@ -956,3 +956,6 @@ mjx-container {
 
 mjx-container::-webkit-scrollbar {
   width: 0; }
+
+input[type="checkbox" i]:disabled {
+  background-color: none; }

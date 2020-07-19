@@ -1,8 +1,17 @@
 <%- include('header')%>
 
+<script src="/js/codemirror/lib/codemirror.js"></script>
+<link rel="stylesheet" href="/js/codemirror/lib/codemirror.css">
+<link rel="stylesheet" href="/js/codemirror/theme/tomorrow-night-bright.css">
+<link rel="stylesheet" href="/js/codemirror/theme/monokai.css">
+<script src="/js/codemirror/mode/markdown/markdown.js"></script>
+<script src="/js/codemirror/mode/xml/xml.js"></script>
+<script src="/js/codemirror/addon/edit/continuelist.js"></script>
+<script src="/js/codemirror/addon/edit/indentlist.js"></script>
+
 <header id="header">
     <div class="circle-container">
-      <a style="color: transparent" href="/notes">  
+      <a style="color: transparent" href="/notes">
     <div class="circle" style="background: none; border: none;">
       <% if (user) { -%>
         <% var avatar = user.avatar; name=user.name%>
@@ -49,7 +58,7 @@
               <input class="markdown-button" type=button value="Preview" id="preview-bnt">
             </div>
               <div style="min-height: 320px;">
-              <textarea name="content" rows="15" id="input-content" oninput="textarea_auto_grow(this)" style="display: block; min-height: 320px; height: inherit;"><%= post.content %></textarea>
+              <textarea name="content" rows="15" id="input-content" oninput="textarea_auto_grow(this)" style="display: none; min-height: 320px; height: inherit;"><%= post.content %></textarea>
               <div class="markdown-content" style="height: inherit; overflow-y: scroll; display: none; padding-bottom: 0; min-height: 320px; padding-left: 20px; border: 1px solid rgb(79, 76, 76);" id="markdown-preview">
               </div>
               </div>
@@ -153,12 +162,6 @@
     $('form').areYouSure({
         message: 'It looks like you have been editing something. '
                + 'If you leave before saving, your changes will be lost.'});
-  });
-
-  // focus on text-area once the page is ready
-  $(document).ready(function() {
-    document.getElementById("input-content").focus();
-
   });
 </script>
 

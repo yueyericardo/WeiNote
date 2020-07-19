@@ -12,13 +12,13 @@ function addTableContainer(text){
 
 function togglePreview() {
     var preview = document.getElementById("markdown-preview");
-    var write_content = document.getElementById("input-content");
+    var write_content = document.querySelector('.CodeMirror');
     if (preview.style.display === "block") {
         preview.style.display = "none";
         write_content.style.display = "block";
-        write_content.focus();
+        myCodeMirror.focus();
     } else {
-        preview.innerHTML = addTableContainer(marked(ignoreLatex(write_content.value)));
+        preview.innerHTML = addTableContainer(marked(ignoreLatex(myCodeMirror.getValue())));
         Prism.highlightAll();
         MathJax.typeset();
         preview.style.display = "block";
@@ -75,26 +75,25 @@ document.onkeyup = function(e) {
     }
 };
 
-function editor_shortcut(e) {
-  // char key code: https://www.cambiaresearch.com/articles/15/javascript-char-codes-key-codes
-  console.log("Tab");
-
-  if(e.keyCode==9 || e.which==9){
-    e.preventDefault();
-    const TAB_SIZE = 2;
-    // The one-liner that does the magic
-    document.execCommand('insertText', false, ' '.repeat(TAB_SIZE));
-  }
-
-}
-
 textarea = document.getElementsByName("content")[0];
 textarea_auto_grow(textarea);
 
 window.onload = function(){
-    // editor shortcuts
-    textarea = document.getElementsByName("content")[0];
-    textarea.onkeydown = editor_shortcut;
+    options = {
+        mode: 'markdown',
+        lineNumbers: true,
+        lineWrapping: true,
+        theme: 'monokai',
+        viewportMargin: Infinity,
+        indentWithTabs: true,
+        indentUnit: 4,
+        extraKeys: {"Enter": "newlineAndIndentContinueMarkdownList",
+                    "Tab": "autoIndentMarkdownList", "Shift-Tab": "autoUnindentMarkdownList"
+                },
+    }
+    textarea = document.getElementById("input-content")
+    myCodeMirror = CodeMirror.fromTextArea(textarea, options=options);
+    myCodeMirror.focus();
 
     // preview button
     preview_button = document.getElementById("preview-bnt");

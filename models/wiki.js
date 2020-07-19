@@ -15,6 +15,10 @@ function addTableContainer(text){
   return text.replace(/(<table[^>]*>(?:.|\n)*?<\/table>)/g, function(a){return `<div class="tableContainer">${a}</div>`});
 }
 
+function removeCheckboxDisabled(text){
+  return text.replace(/<input checked=\"\" disabled=\"\" type=\"checkbox\">/g, `<input checked="" type="checkbox">`);
+}
+
 // 将 post 的 content 从 markdown 转换成 html
 Wiki.plugin('contentToHtml', {
   afterFind: function (posts) {
@@ -35,7 +39,7 @@ Wiki.plugin('contentToHtml', {
         // str = remove_link_from_md(result);
         post.content = str;
       }
-      post.content = addTableContainer(marked(ignoreLatex(post.content)));
+      post.content = removeCheckboxDisabled(addTableContainer(marked(ignoreLatex(post.content))));
       return post
     })
   },
@@ -44,7 +48,7 @@ Wiki.plugin('contentToHtml', {
       if (post.isblog){
         post.content = remove_title(post.content);
       }
-      post.content = addTableContainer(marked(ignoreLatex(post.content)));
+      post.content = removeCheckboxDisabled(addTableContainer(marked(ignoreLatex(post.content))));
     }
     return post
   }
