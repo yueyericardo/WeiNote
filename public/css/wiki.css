@@ -429,7 +429,7 @@ body {
   background-color: #fff0; }
 
 .dairy .dairy-date {
-  width: 8% !important;
+  width: 8%;
   position: relative; }
 
 .dairy .dairy-date .date {
@@ -466,7 +466,7 @@ body {
   height: 30px; }
 
 .dairy .dairy-p {
-  width: 90% !important;
+  width: 90%;
   background-color: #343434;
   border-radius: 8px;
   color: inherit;
@@ -744,6 +744,7 @@ body {
   text-align: center;
   font-size: 0.9em;
   display: flex;
+  position: relative;
   border-top-left-radius: inherit;
   border-top-right-radius: inherit;
   color: #999999;
@@ -870,11 +871,13 @@ body {
   body {
     font-size: 80%; }
   .dairy .dairy-date {
-    width: 15% !important; }
+    display: none; }
+  .status-bar-date {
+    display: inline-block !important; }
   .dairy .dairy-date .date p.dated {
     height: 2.4em; }
   .dairy .dairy-p {
-    width: 85% !important; }
+    width: 100%; }
   .dairy .dairy-p .markdown-content {
     padding: 0 20px 10px; }
   .px2 {
@@ -887,11 +890,12 @@ body {
   body {
     font-size: 80%; }
   .dairy .dairy-date {
-    width: 20% !important; }
+    width: 20% !important;
+    display: none; }
   .dairy .dairy-date .date p.dated {
     height: 2.4em; }
   .dairy .dairy-p {
-    width: 80% !important; }
+    width: 100%; }
   .dairy .dairy-p .markdown-content {
     padding: 0 15px 10px; }
   .post-tag .post-label p {
@@ -959,3 +963,22 @@ mjx-container::-webkit-scrollbar {
 
 input[type="checkbox" i]:disabled {
   background-color: none; }
+
+.status-bar-date {
+  display: none;
+  position: absolute;
+  transform: translateY(-50%);
+  top: 50%;
+  margin: 0 0 0 12px; }
+
+.status-bar-date .status-label a {
+  color: #999999 !important;
+  cursor: pointer;
+  text-decoration: none;
+  font-weight: bold; }
+
+.status-bar-date .status-label {
+  display: inline; }
+
+.status-bar-date .status-label a:hover {
+  text-decoration: none; }

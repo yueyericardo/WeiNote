@@ -23,6 +23,7 @@
     top: 2em ;
     right: 2em;
     font-size: 0.9em;
+    z-index: 10;
 }
 
 .bnt_to_dropdown {
@@ -116,8 +117,8 @@
   .toggle-icon:hover{
     fill: white;
 }
-@media (min-width: 850px) {
+@media (max-width: 1100px) {
     .bnt_nav_setting_container {
-        z-index: 100;
+        position: absolute;
     }
 }

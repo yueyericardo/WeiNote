@@ -7,7 +7,7 @@
 .cm-s-monokai .CodeMirror-gutters { background: #272822; border-right: 0px; }
 .cm-s-monokai .CodeMirror-guttermarker { color: white; }
 .cm-s-monokai .CodeMirror-guttermarker-subtle { color: #d0d0d0; }
-.cm-s-monokai .CodeMirror-linenumber { color: #737373; }
+.cm-s-monokai .CodeMirror-linenumber { color: #464646; }
 .cm-s-monokai .CodeMirror-cursor { border-left: 1px solid #f8f8f0; }
 
 .cm-s-monokai span.cm-comment { color: #75715e; }
