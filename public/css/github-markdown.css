@@ -657,9 +657,12 @@
   display: block;
   overflow: auto;
   width: 100%;
-  color: white;
   font-size: inherit;
-  overflow-x: scroll;
+}
+
+table ::-webkit-scrollbar {
+  display: none;
+  width: 0px;
 }
 
 .markdown-body table th {
@@ -668,17 +671,17 @@
 
 .markdown-body table td,
 .markdown-body table th {
-  border: 1px solid #dfe2e5;
+  border: 1px solid #777879;
   padding: 6px 13px;
 }
 
 .markdown-body table tr {
   /*background-color: #fff;*/
-  border-top: 1px solid #c6cbd1;
+  /* border-top: 1px solid #c6cbd1; */
 }
 
 .markdown-body table tr:nth-child(2n) {
-  background-color: #424242;
+  background-color: #353535;
 }
 
 .markdown-body img {

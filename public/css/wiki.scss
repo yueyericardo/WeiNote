@@ -55,6 +55,9 @@ $l2-bar-bk: #eaeaea;
   .active {
     -webkit-box-shadow: 0 0 1px 1px #585858;
   }
+  .markdown-body table tr:nth-child(2n) {
+    background-color: #424242;
+  }
 }
 
 .theme-d2 {
@@ -81,6 +84,9 @@ $l2-bar-bk: #eaeaea;
   }
   .active {
     -webkit-box-shadow: 0 0 1px 1px #5a5a5a;
+  }
+  .markdown-body table tr:nth-child(2n) {
+    background-color: #353535;
   }
 }
 
@@ -109,6 +115,9 @@ $l2-bar-bk: #eaeaea;
   .active {
     -webkit-box-shadow: 0 0 1px 1px #909090;
   }
+  .markdown-body table tr:nth-child(2n) {
+    background-color: #424141;
+  }
 }
 
 // light theme
@@ -136,6 +145,9 @@ $l2-bar-bk: #eaeaea;
   }
   .active {
     -webkit-box-shadow: 0 0 1px 1px #afafaf;
+  }
+  .markdown-body table tr:nth-child(2n) {
+    background-color: #6b6b6b;
   }
 }
 
@@ -166,6 +178,9 @@ $l2-bar-bk: #eaeaea;
   }
   .active {
     -webkit-box-shadow: 0 0 1px 1px #a7a7a7;
+  }
+  .markdown-body table tr:nth-child(2n) {
+    background-color: #e0e0e0;
   }
 }
 
