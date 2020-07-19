@@ -148,10 +148,10 @@
   preview_button = document.getElementById("auto-generate-title");
   preview_button.addEventListener("click", function() {
     var title = document.getElementById("input-title");
-    var write_content = document.getElementById("input-content");
+    var write_content = myCodeMirror.getValue();
     var isblog = document.getElementById("is_blog").checked;
 
-    firstline = write_content.value.split('\n')[0];
+    firstline = write_content.split('\n')[0];
     t = firstline.replace(/#+\s/g, '');
     t = t.replace(/[~`!@#$&*:]/g, '');
     title.value = t;

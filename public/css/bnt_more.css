@@ -120,5 +120,6 @@
 @media (max-width: 1100px) {
     .bnt_nav_setting_container {
         position: absolute;
+        right: 1em;
     }
 }

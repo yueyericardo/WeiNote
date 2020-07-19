@@ -884,7 +884,9 @@ body {
     padding-right: 20px;
     padding-left: 20px; }
   .tags-container {
-    max-width: 100%; } }
+    max-width: 100%; }
+  .py4 {
+    padding-top: 0.65rem; } }
 
 @media screen and (max-width: 400px) {
   body {
@@ -901,8 +903,8 @@ body {
   .post-tag .post-label p {
     padding: 1px 10px; }
   .px2 {
-    padding-right: 3px;
-    padding-left: 8px; }
+    padding-right: 5px;
+    padding-left: 5px; }
   .label p {
     padding: 1px 10px; }
   #footer {
