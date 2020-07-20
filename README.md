@@ -5,10 +5,10 @@ Keep a note just like post a weibo
 [Demo](https://demo.weinote.cc/notes)
 
 <p class="img">
-<a class="link"  href="https://yyrcd-1256568788.cos.na-siliconvalley.myqcloud.com/yyrcd/2019-06-13-222357.png">
-<img width=49%  src="https://yyrcd-1256568788.cos.na-siliconvalley.myqcloud.com/yyrcd/2019-06-13-222357.png"></a>
-<a class="link"  href="https://yyrcd-1256568788.cos.na-siliconvalley.myqcloud.com/yyrcd/2020-03-23-030759.png">
-<img width=49%  src="https://yyrcd-1256568788.cos.na-siliconvalley.myqcloud.com/yyrcd/2020-03-23-030759.png"></a>
+<a class="link"  href="https://raw.githubusercontent.com/yueyericardo/WeiNote/master/screenshots/screenshot1.png">
+<img width=49%  src="https://raw.githubusercontent.com/yueyericardo/WeiNote/master/screenshots/screenshot1.png"></a>
+<a class="link"  href="https://raw.githubusercontent.com/yueyericardo/WeiNote/master/screenshots/screenshot2.png">
+<img width=49%  src="https://raw.githubusercontent.com/yueyericardo/WeiNote/master/screenshots/screenshot2.png"></a>
 </p>
 
 ## 1. Features
