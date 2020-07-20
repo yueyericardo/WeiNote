@@ -1,5 +1,5 @@
 # WeiNote
-![docker](https://github.com/yueyericardo/WeiNote/workflows/docker/badge.svg)  
+![docker](https://github.com/yueyericardo/WeiNote/workflows/Docker%20Release/badge.svg)  
 [English](https://github.com/yueyericardo/WeiNote/blob/master/README.md) | [简体中文](https://github.com/yueyericardo/WeiNote/blob/master/README-ZH.md)  
 像发微博一样写笔记  
 [Demo](https://demo.weinote.cc/notes)
@@ -10,43 +10,61 @@
 后来发现自己这个项目如果添加多标签的功能，更适合来记录 wiki，于是将代码整理出来开源了。
 
 <p class="img">
-<a class="link"  href="https://yyrcd-1256568788.cos.na-siliconvalley.myqcloud.com/yyrcd/2019-06-13-222357.png">
-<img width=49%  src="https://yyrcd-1256568788.cos.na-siliconvalley.myqcloud.com/yyrcd/2019-06-13-222357.png"></a>
-<a class="link"  href="https://yyrcd-1256568788.cos.na-siliconvalley.myqcloud.com/yyrcd/2020-03-23-030759.png">
-<img width=49%  src="https://yyrcd-1256568788.cos.na-siliconvalley.myqcloud.com/yyrcd/2020-03-23-030759.png"></a>
+<a class="link"  href="https://raw.githubusercontent.com/yueyericardo/WeiNote/master/screenshots/screenshot1.png">
+<img width=49%  src="https://raw.githubusercontent.com/yueyericardo/WeiNote/master/screenshots/screenshot1.png"></a>
+<a class="link"  href="https://raw.githubusercontent.com/yueyericardo/WeiNote/master/screenshots/screenshot2.png">
+<img width=49%  src="https://raw.githubusercontent.com/yueyericardo/WeiNote/master/screenshots/screenshot2.png"></a>
 </p>
 
 ## 1. Features
-- 多标签 
-- Markdown
-- Markdown Preview（参考github写评论时的Preview）
+特色
+- 多标签
+- Markdown 语法
+- Latex 公式
+- 支持私有模式 仅自己可见
 - 快捷键
-- 可设置本条note仅自己可见
-- 可设置多条note置顶
-- 个人使用（支持多用户，但不推荐）
+
+编辑器
+- Codemirror Markdown 编辑器
+- 连续列表输入
+- 列表自动 (`Tab` and `Shift + Tab`)
+
+其他功能
+- Markdown 预览 (参考 github preview or `Ctrl + Space`)
+- 源代码 Raw content (参考 github)
+- 设置单个笔记仅自己可见
+- 笔记置顶
+- 笔记归档
 
 ## 2. Demo
 https://demo.weinote.cc  
-demo账户: weinote  
-demo密码: 9vzVABUa30LSldiVVJt5  
+demo 账户: weinote  
+demo 密码: 9vzVABUa30LSldiVVJt5  
 
 ## 3. Install with Docker
-- 安装
-  ```bash
-  cd directory/you/want/to/run
-  git clone git@github.com:yueyericardo/WeiNote.git
-  cd WeiNote
-  sudo docker-compose up -d
-  ```
-  默认配置在3081端口，如：http://example.com:3081  
-- 禁止其他人注册  
-  注册之后，将`docker-compose.yml`中的`allow_signup: "true"`改为`allow_signup: "false"`，可以禁止其他人注册。  
-- 重新载入
-  ```
-  sudo docker-compose up -d
-  ```
-- Nginx 设置域名，[Certbot](https://certbot.eff.org/lets-encrypt/ubuntubionic-nginx) 配置 https
+#### 安装
+```bash
+cd directory/you/want/to/run
+mkdir weinote && cd weinote
+wget https://raw.githubusercontent.com/yueyericardo/WeiNote/master/docker-compose.yml && wget https://raw.githubusercontent.com/yueyericardo/WeiNote/master/init-mongo.sh && chmod +x init-mongo.sh
+docker-compose up -d
+```
+Signup, the default port is 3081, e.g.: http://example.com:3081  
+#### 禁用注册功能  
+注册之后，将`docker-compose.yml`中的`allow_signup: "true"`改为`allow_signup: "false"`，可以禁用注册功能。完成后用以下命令重新启动
+```
+docker-compose up -d
+```
+#### 代理
+使用 Nginx 设置域名，[Certbot](https://certbot.eff.org/lets-encrypt/ubuntubionic-nginx) 配置 https
 
+#### 更新 latest image
+```
+docker-compose down && docker-compose pull && docker-compose up -d
+```
+#### 运行更多实例
+支持运行多个示例，例如生活感想笔记、学习工作笔记，使用不同的实例。请参考注释好的配置文件
+https://github.com/yueyericardo/WeiNote/blob/master/docker-compose.multi.yml
 
 ## 4. Shortcuts
 - Mac OS:
@@ -63,6 +81,10 @@ demo密码: 9vzVABUa30LSldiVVJt5
   - **Alt + H** : Go  to `Home page` [/notes](/notes)
   - **Alt + A** : Go  to `All notes page` [/notes/all](/notes/all)
   - **Alt + C** : Redirect  to `Archive notes page` [/notes/archive](/notes/archive)
+
+- Common
+  - **E** : 编辑选中的笔记
+  - **D** : 删除选中的笔记
   
 ## 5. Contribute
 欢迎PR，尤其是安全问题！
