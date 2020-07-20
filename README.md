@@ -45,8 +45,8 @@ wget https://raw.githubusercontent.com/yueyericardo/WeiNote/master/docker-compos
 docker-compose up -d
 ```
 Signup, the default port is 3081, e.g.: http://example.com:3081  
-#### Disable Sign Up  
-After you sign up，in file `docker-compose.yml`, change `allow_signup: "true"` to `allow_signup: "false"`，So others cannot sign up. After update, you can reload weinote with the following
+#### Disable signup
+After you signup，in file `docker-compose.yml`, change `allow_signup: "true"` to `allow_signup: "false"`，So others cannot sign up. After update, you can reload weinote with the following
 ```
 docker-compose up -d
 ```
@@ -57,7 +57,7 @@ Use Nginx for your domain，and [Certbot](https://certbot.eff.org/lets-encrypt/u
 docker-compose down && docker-compose pull && docker-compose up -d
 ```
 #### Multiple instances
-You can find how to create more instances at https://github.com/yueyericardo/WeiNote/blob/master/docker-compose.multi.yml
+You can find how to create multiple instances at the following example (with notes): https://github.com/yueyericardo/WeiNote/blob/master/docker-compose.multi.yml
 
 
 ## 4. Shortcuts
