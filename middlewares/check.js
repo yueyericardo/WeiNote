@@ -14,6 +14,7 @@ module.exports = {
     UserModel.getFirstUser()
     .then(function (user) {
       if (!user) {
+        req.flash('error', 'Please Sign in');
         return res.redirect('/signin');
       }
       if ((user.private && !req.session.user)) {

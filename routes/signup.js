@@ -45,11 +45,12 @@ router.post('/', checkNotLogin, function (req, res, next) {
     if (['m', 'f', 'x'].indexOf(gender) === -1) {
       throw new Error('only m、f or x')
     }
-    // if (!(bio.length >= 1 && bio.length <= 30)) {
-    //   throw new Error('个人简介请限制在 1-30 个字符')
-    // }
     if (!req.files.avatar.name) {
       throw new Error('Please Upload one avatar')
+    }
+    filesize = req.files.avatar.size / 1024 / 1024
+    if (filesize > 10) {
+      throw new Error('Image size exceeds 10MB');
     }
     if (password.length < 10) {
       throw new Error('At least 10 letters for password')
@@ -59,8 +60,10 @@ router.post('/', checkNotLogin, function (req, res, next) {
     }
   } catch (e) {
     // 注册失败，异步删除上传的头像
-    req.flash('error', e.message)
-    fs.unlink(req.files.avatar.path)
+    req.flash('error', e.message);
+    if (req.files.avatar.name) {
+      fs.unlinkSync(req.files.avatar.path);
+    }
     return res.redirect('/signup')
   }
 
@@ -90,7 +93,7 @@ router.post('/', checkNotLogin, function (req, res, next) {
     })
     .catch(function (e) {
       // 注册失败，异步删除上传的头像
-      fs.unlink(req.files.avatar.path)
+      fs.unlinkSync(req.files.avatar.path);
       // 用户名被占用则跳回注册页，而不是错误页
       if (e.message.match('duplicate key')) {
         req.flash('error', 'Username has been used')

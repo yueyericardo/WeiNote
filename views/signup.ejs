@@ -9,16 +9,16 @@
 
       <form class="create-form" method="post" enctype="multipart/form-data">
           <div class="form-item" style="margin: 0 auto 0 0;">
-              <label style="padding-top: 10px">Username</label>
-              <input class="input-bar" name="name" type="text" placeholder="length: 3 to 16">
+              <label class="required" style="padding-top: 10px">Username</label>
+              <input class="input-bar" name="name" type="text" placeholder="length: 3 to 16" required>
           </div>
           <div class="form-item">
-              <label style="padding-top: 10px">Password</label>
-              <input class="input-bar" name="password" type="password" placeholder="Minimal length: 10 ">
+              <label class="required" style="padding-top: 10px">Password</label>
+              <input class="input-bar" name="password" type="password" placeholder="Minimal length: 10 " required>
           </div>
           <div class="form-item">
-              <label style="padding-top: 10px">Retype Password</label>
-              <input class="input-bar" name="repassword" type="password">
+              <label class="required" style="padding-top: 10px">Retype Password</label>
+              <input class="input-bar" name="repassword" type="password" required>
           </div>
           <div class="form-item">
               <label style="padding-top: 10px">Gender</label>
@@ -29,8 +29,8 @@
               </select>
           </div>
           <div class="form-item">
-              <label style="padding-top: 10px">Picture</label>
-              <input class="input-bar" type="file" name="avatar">
+              <label class="required" style="padding-top: 10px">Picture (<10 MB)</label>
+              <input class="input-bar" type="file" name="avatar" accept="image/*" required>
           </div>
           <div class="form-item">
               <label style="padding-top: 10px">Bio</label>

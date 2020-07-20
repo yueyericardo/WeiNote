@@ -1120,3 +1120,7 @@ input[type="checkbox" i]:disabled {
 .status-bar-date .status-label a:hover{
   text-decoration: none;
 }
+.required:after {
+  content:" *";
+  color: #E91E63;
+}
