@@ -78,6 +78,16 @@ document.onkeyup = function(e) {
 textarea = document.getElementsByName("content")[0];
 textarea_auto_grow(textarea);
 
+formSubmitting = false;
+var isDirty = function() {
+    currentData = myCodeMirror.getValue();
+    if (currentData == sessionStorage.getItem('tmpInitialData')){
+        return false
+    }
+    return true;
+}
+var setFormSubmitting = function() { formSubmitting = true; };
+
 window.onload = function(){
     options = {
         mode: 'markdown',
@@ -94,8 +104,21 @@ window.onload = function(){
     textarea = document.getElementById("input-content")
     myCodeMirror = CodeMirror.fromTextArea(textarea, options=options);
     myCodeMirror.focus();
+    sessionStorage.setItem('tmpInitialData', myCodeMirror.getValue());
 
     // preview button
     preview_button = document.getElementById("preview-bnt");
     preview_button.onclick = togglePreview;
+
+    window.addEventListener("beforeunload", function (e) {
+        if (formSubmitting || !isDirty()) {
+            return undefined;
+        }
+
+        var confirmationMessage = 'It looks like you have been editing something. '
+                                + 'If you leave before saving, your changes will be lost.';
+
+        (e || window.event).returnValue = confirmationMessage; //Gecko + IE
+        return confirmationMessage; //Gecko + Webkit, Safari, Chrome etc.
+    });
 };
