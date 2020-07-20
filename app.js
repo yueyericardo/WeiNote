@@ -93,7 +93,7 @@ if (module.parent) {
   module.exports = app
 } else {
   // 监听端口，启动程序
-  const PORT = process.env.PORT || config.get('port');
+  const PORT = process.env.port || config.get('port');
   const MONGOURL = process.env.mongourl || config.get('mongodb');
   const allow_signup = process.env.allow_signup || config.get('allow_signup');
   app.listen(PORT, function () {
