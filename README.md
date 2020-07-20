@@ -1,5 +1,5 @@
 # WeiNote
-![docker](https://github.com/yueyericardo/WeiNote/workflows/docker/badge.svg)  
+![docker](https://github.com/yueyericardo/WeiNote/workflows/Docker%20Release/badge.svg)  
 [English](https://github.com/yueyericardo/WeiNote/blob/master/README.md) | [简体中文](https://github.com/yueyericardo/WeiNote/blob/master/README-ZH.md)  
 Keep a note just like post a weibo    
 [Demo](https://demo.weinote.cc/notes)
