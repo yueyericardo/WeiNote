@@ -29,7 +29,7 @@ app.use(session({
     maxAge: config.get('session.maxAge')// 过期时间，过期后 cookie 中的 session id 自动删除
   },
   store: new MongoStore({// 将 session 存储到 mongodb
-    url: config.get('mongodb') //mongodb 地址
+    url: process.env.mongourl || config.get('mongodb') //mongodb 地址
   })
 }))
 // flash 中间件，用来显示通知
@@ -94,9 +94,11 @@ if (module.parent) {
 } else {
   // 监听端口，启动程序
   const PORT = process.env.PORT || config.get('port');
+  const MONGOURL = process.env.mongourl || config.get('mongodb');
   const allow_signup = process.env.allow_signup || config.get('allow_signup');
   app.listen(PORT, function () {
-    console.log(`${pkg.name} listening on port ${PORT}`)
+    console.log(`${pkg.name}: listening on port ${PORT}`)
+    console.log(`${pkg.name}: mongourl: ${MONGOURL}`)
     console.log(`Allow Signup:  ${allow_signup}`)
   })
 }
