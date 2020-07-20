@@ -26,8 +26,8 @@
 
 编辑器
 - Codemirror Markdown 编辑器
-- 连续列表输入
-- 列表自动 (`Tab` and `Shift + Tab`)
+- 列表连续输入
+- 列表对齐 (`Tab` and `Shift + Tab`)
 
 其他功能
 - Markdown 预览 (参考 github preview or `Ctrl + Space`)
