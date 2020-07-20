@@ -41,7 +41,7 @@ https://demo.weinote.cc
 demo 账户: weinote  
 demo 密码: 9vzVABUa30LSldiVVJt5  
 
-## 3. Install with Docker
+## 3. 使用 Docker 安装
 #### 安装
 ```bash
 cd directory/you/want/to/run
@@ -49,7 +49,8 @@ mkdir weinote && cd weinote
 wget https://raw.githubusercontent.com/yueyericardo/WeiNote/master/docker-compose.yml && wget https://raw.githubusercontent.com/yueyericardo/WeiNote/master/init-mongo.sh && chmod +x init-mongo.sh
 docker-compose up -d
 ```
-Signup, the default port is 3081, e.g.: http://example.com:3081  
+访问 http://example.com:3081 注册 （默认端口号为 3081）
+
 #### 禁用注册功能  
 注册之后，将`docker-compose.yml`中的`allow_signup: "true"`改为`allow_signup: "false"`，可以禁用注册功能。完成后用以下命令重新启动
 ```
@@ -58,7 +59,7 @@ docker-compose up -d
 #### 代理
 使用 Nginx 设置域名，[Certbot](https://certbot.eff.org/lets-encrypt/ubuntubionic-nginx) 配置 https
 
-#### 更新 latest image
+#### 更新版本
 ```
 docker-compose down && docker-compose pull && docker-compose up -d
 ```
