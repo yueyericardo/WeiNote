@@ -11,7 +11,7 @@ services:
         mongourl: mongodb://weinote:ySEAjiDnO4MifhweIDpL@mongo:27017/wn1
         port: 3081  
     volumes:
-      - ./public:/usr/src/app/public
+      - ./img:/usr/src/app/public/img
     ports:
       - "3081:3081"
     links:
