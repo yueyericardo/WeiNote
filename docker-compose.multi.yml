@@ -11,7 +11,7 @@ services:
         mongourl: mongodb://weinote:ySEAjiDnO4MifhweIDpL@mongo:27017/wn1  # use different database name for multiple instances, at here it's wn1
         port: 3081  # not necessary to change 
     volumes:
-      - ./public:/usr/src/app/public
+      - ./img:/usr/src/app/public/img
     ports:
       - "3081:3081" 
     links:
@@ -26,7 +26,7 @@ services:
         mongourl: mongodb://weinote:ySEAjiDnO4MifhweIDpL@mongo:27017/wn2  # use different database name for multiple instances, at here it's wn2
         port: 3081  # not necessary to change
     volumes:
-      - ./public:/usr/src/app/public
+      - ./img:/usr/src/app/public/img
     ports:
       - "3082:3081"  # you only need to modify the first one 
     links:
