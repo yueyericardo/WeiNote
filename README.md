@@ -37,21 +37,27 @@ demo user: weinote
 demo pw: 9vzVABUa30LSldiVVJt5  
 
 ## 3. Install with Docker
-- Install
-  ```bash
-  cd directory/you/want/to/run
-  git clone git@github.com:yueyericardo/WeiNote.git
-  cd WeiNote
-  sudo docker-compose up -d
-  ```
-  The default port is 3081, e.g.: http://example.com:3081  
-- Disable Sign Up  
-  After you sign up，in file `docker-compose.yml`, change `allow_signup: "true"` to `allow_signup: "false"`，So others cannot sign up.  
-- Reload
-  ```
-  sudo docker-compose up -d
-  ```
-- Use Nginx for your domain ，and [Certbot](https://certbot.eff.org/lets-encrypt/ubuntubionic-nginx) for https
+#### Install
+```bash
+cd directory/you/want/to/run
+mkdir weinote && cd weinote
+wget https://raw.githubusercontent.com/yueyericardo/WeiNote/master/docker-compose.yml && wget https://raw.githubusercontent.com/yueyericardo/WeiNote/master/init-mongo.sh && chmod +x init-mongo.sh
+docker-compose up -d
+```
+Signup, the default port is 3081, e.g.: http://example.com:3081  
+#### Disable Sign Up  
+After you sign up，in file `docker-compose.yml`, change `allow_signup: "true"` to `allow_signup: "false"`，So others cannot sign up. After update, you can reload weinote with the following
+```
+docker-compose up -d
+```
+#### Proxy
+Use Nginx for your domain，and [Certbot](https://certbot.eff.org/lets-encrypt/ubuntubionic-nginx) for https
+#### Update from the latest image
+```
+docker-compose down && docker-compose pull && docker-compose up -d
+```
+#### Multiple instances
+You can find how to create more instances at https://github.com/yueyericardo/WeiNote/blob/master/docker-compose.multi.yml
 
 
 ## 4. Shortcuts
