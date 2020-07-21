@@ -64,7 +64,7 @@ docker-compose up -d
 docker-compose down && docker-compose pull && docker-compose up -d
 ```
 #### 运行更多实例
-支持运行多个示例，例如生活感想笔记、学习工作笔记，使用不同的实例。请参考注释好的配置文件
+支持运行多个实例，例如生活感想笔记、学习工作笔记，使用不同的实例。请参考注释好的配置文件
 https://github.com/yueyericardo/WeiNote/blob/master/docker-compose.multi.yml
 
 ## 4. Shortcuts
