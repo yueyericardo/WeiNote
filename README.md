@@ -1,4 +1,5 @@
 <p align="center">
+ <img width="100px" src="https://raw.githubusercontent.com/yueyericardo/WeiNote/master/screenshots/image.png" align="center" alt="Weinote" />
  <h1 align="center">WeiNote</h1>
 </p>
 <p align="center">Keep a note just like post a weibo!</p>
