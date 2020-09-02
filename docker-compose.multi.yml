@@ -1,14 +1,14 @@
 version: "2.0"
 services:
   weinote1:
-    container_name: weinote1  # use a different container name
+    container_name: weinote1 
     image: yueyericardo/weinote:latest
     restart: always
     environment:
         allow_signup: "true"
         # format: mongodb://<mongo_username>:<mongo_user_pw>@<host>:<port>/<database>
         # it's secure even if you don't change this 
-        mongourl: mongodb://weinote:ySEAjiDnO4MifhweIDpL@mongo:27017/wn1  # use different database name for multiple instances, at here it's wn1
+        mongourl: mongodb://weinote:ySEAjiDnO4MifhweIDpL@mongo:27017/wn1  # use a different database name for multiple instances, at here it's wn1
         port: 3081  # not necessary to change 
     volumes:
       - ./img:/usr/src/app/public/img
@@ -23,12 +23,12 @@ services:
     restart: always
     environment:
         allow_signup: "true"
-        mongourl: mongodb://weinote:ySEAjiDnO4MifhweIDpL@mongo:27017/wn2  # use different database name for multiple instances, at here it's wn2
+        mongourl: mongodb://weinote:ySEAjiDnO4MifhweIDpL@mongo:27017/wn2  # use a different database name for multiple instances, at here it's wn2
         port: 3081  # not necessary to change
     volumes:
       - ./img:/usr/src/app/public/img
     ports:
-      - "3082:3081"  # you only need to modify the first one 
+      - "3082:3081"  # only the first one needs to be modified
     links:
       - mongo
   
@@ -38,8 +38,8 @@ services:
     environment:
       Weinote_Mongo_Username: weinote
       Weinote_Mongo_Password: ySEAjiDnO4MifhweIDpL
-      # all databases Weinote_Mongo_Username could access
-      # seperate with space, e.g. 'wn1, wn2, wn3, wn4'
+      # all databases could be accessed by Weinote_Mongo_Username
+      # seperate with space, e.g. 'wn1 wn2 wn3 wn4'
       Weinote_Mongo_Databases: 'wn1 wn2'  # add all database names
       MONGO_INITDB_ROOT_USERNAME: root 
       MONGO_INITDB_ROOT_PASSWORD: 0XuujEtjNyyIfdpCAMgw
@@ -47,7 +47,7 @@ services:
       - ./init-mongo.sh:/docker-entrypoint-initdb.d/init-mongo.sh
       - ./mongo_data:/data/db
     # expose instead of ports, which ensure your database is secure even if you don't change the password above.
-    # exposed port could only access by other docker service.
+    # exposed port could only be accessed by other docker service.
     expose:
       - "27017"
     command: /docker-entrypoint-initdb.d/init-mongo.sh restart 

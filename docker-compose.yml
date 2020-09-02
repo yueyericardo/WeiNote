@@ -23,8 +23,8 @@ services:
     environment:
       Weinote_Mongo_Username: weinote
       Weinote_Mongo_Password: ySEAjiDnO4MifhweIDpL
-      # all databases Weinote_Mongo_Username could access
-      # seperate with space, e.g. 'wn1, wn2, wn3, wn4'
+      # all databases could be accessed by Weinote_Mongo_Username
+      # seperate with space, e.g. 'wn1 wn2 wn3 wn4'
       Weinote_Mongo_Databases: 'wn1'
       MONGO_INITDB_ROOT_USERNAME: root 
       MONGO_INITDB_ROOT_PASSWORD: 0XuujEtjNyyIfdpCAMgw
@@ -32,7 +32,7 @@ services:
       - ./init-mongo.sh:/docker-entrypoint-initdb.d/init-mongo.sh
       - ./mongo_data:/data/db
     # expose instead of ports, which ensure your database is secure even if you don't change the password above.
-    # exposed port could only access by other docker service.
+    # exposed port could only be accessd by other docker service.
     expose:
       - "27017"
     command: /docker-entrypoint-initdb.d/init-mongo.sh restart 

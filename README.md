@@ -1,8 +1,19 @@
-# WeiNote
-![docker](https://github.com/yueyericardo/WeiNote/workflows/Docker%20Release/badge.svg)  
-[English](https://github.com/yueyericardo/WeiNote/blob/master/README.md) | [简体中文](https://github.com/yueyericardo/WeiNote/blob/master/README-ZH.md)  
-Keep a note just like post a weibo    
-[Demo](https://demo.weinote.cc/notes)
+<p align="center">
+ <img width="100px" src="https://raw.githubusercontent.com/yueyericardo/WeiNote/master/screenshots/image.png" align="center" alt="Weinote" />
+ <h1 align="center">WeiNote</h1>
+</p>
+<p align="center">Keep a note just like post a weibo!</p>
+<p align="center">
+  <img alt="docker" src="https://github.com/yueyericardo/WeiNote/workflows/Docker%20Release/badge.svg" />
+</p>
+<p align="center">
+  <a href="https://demo.weinote.cc/notes" rel="nofollow" class="rich-diff-level-one">View Demo</a>
+  <br>
+  <a href="https://github.com/yueyericardo/WeiNote/blob/master/README.md" class="rich-diff-level-one">English</a>
+  ·
+  <a href="https://github.com/yueyericardo/WeiNote/blob/master/README-ZH.md" class="rich-diff-level-one">简体中文</a>
+</p>
+
 
 <p class="img">
 <a class="link"  href="https://raw.githubusercontent.com/yueyericardo/WeiNote/master/screenshots/screenshot1.png">
