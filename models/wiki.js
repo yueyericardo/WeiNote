@@ -1,6 +1,15 @@
-const marked = require('marked')
+const marked = require('marked');
 const toc = require('markdown-toc');
 const Wiki = require('../lib/mongo').Wiki
+
+// Override function
+const renderer = {
+  image(href, title, text) {
+    return `<p><img loading="lazy" src="${href}" alt="${text}"></p>`;
+  }
+};
+
+marked.use({ renderer });
 
 function remove_title(text){
   exceptFirstLine = text.split('\n').slice(1);
