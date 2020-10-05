@@ -16,6 +16,7 @@ function remove_title(text){
   return exceptFirstLine.join("\n");
 }
 
+// TODO Stop replace $$ or /$ if it is in code block
 function ignoreLatex(text){
   return text.replace(/(\${2}[^\$]+\${2})/g, function(a){return `<div class="mathjax-block">${a}</div>`});
 }
