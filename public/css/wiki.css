@@ -955,10 +955,12 @@ body {
 mjx-container {
   max-width: 100%;
   overflow: auto;
-  -webkit-box-shadow: inset 0 1px 10px rgba(0, 0, 0, 0.3), 0 1px 0 rgba(255, 255, 255, 0.1), 0 0px 0 rgba(0, 0, 0, 0.5);
-  box-shadow: inset 0 1px 10px rgba(0, 0, 0, 0.3), 0 1px 0 rgba(255, 255, 255, 0.1), 0 0px 0 rgba(0, 0, 0, 0.5);
   border-radius: 3px;
   padding: 10px 0; }
+
+.mathjax-block {
+  -webkit-box-shadow: inset 0 1px 10px rgba(0, 0, 0, 0.3), 0 1px 0 rgba(255, 255, 255, 0.1), 0 0px 0 rgba(0, 0, 0, 0.5);
+  box-shadow: inset 0 1px 10px rgba(0, 0, 0, 0.3), 0 1px 0 rgba(255, 255, 255, 0.1), 0 0px 0 rgba(0, 0, 0, 0.5); }
 
 mjx-container::-webkit-scrollbar {
   width: 0; }

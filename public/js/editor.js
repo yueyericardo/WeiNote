@@ -1,5 +1,5 @@
 function ignoreLatex(text){
-    return text.replace(/(\${2}[^\$]+\${2})/g, function(a){console.log(a); return `<div>${a}</div>`});
+    return text.replace(/(\${2}[^\$]+\${2})/g, function(a){return `<div class="mathjax-block">${a}</div>`});
 }
 
 function textarea_auto_grow(element) {

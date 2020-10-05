@@ -17,7 +17,7 @@ function remove_title(text){
 }
 
 function ignoreLatex(text){
-  return text.replace(/(\${2}[^\$]+\${2})/g, function(a){return `<div>${a}</div>`});
+  return text.replace(/(\${2}[^\$]+\${2})/g, function(a){return `<div class="mathjax-block">${a}</div>`});
 }
 
 function addTableContainer(text){
