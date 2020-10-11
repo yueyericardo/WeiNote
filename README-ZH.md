@@ -7,7 +7,7 @@
   <img alt="docker" src="https://github.com/yueyericardo/WeiNote/workflows/Docker%20Release/badge.svg" />
 </p>
 <p align="center">
-  <a href="https://demo.weinote.cc/notes" rel="nofollow" class="rich-diff-level-one">View Demo</a>
+  <a href="https://demo.wnote.cc/notes" rel="nofollow" class="rich-diff-level-one">View Demo</a>
   <br>
   <a href="https://github.com/yueyericardo/WeiNote/blob/master/README.md" class="rich-diff-level-one">English</a>
   ·
@@ -47,7 +47,7 @@
 - 笔记归档
 
 ## 2. Demo
-https://demo.weinote.cc  
+https://demo.wnote.cc  
 demo 账户: weinote  
 demo 密码: 9vzVABUa30LSldiVVJt5  
 
