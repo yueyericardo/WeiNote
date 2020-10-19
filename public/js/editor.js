@@ -86,7 +86,10 @@ var isDirty = function() {
     }
     return true;
 }
-var setFormSubmitting = function() { formSubmitting = true; };
+var setFormSubmitting = function() {
+    save_lasttag();
+    formSubmitting = true;
+};
 
 window.onload = function(){
     options = {

@@ -46,7 +46,7 @@
                 <% for(var i=0; i < post.tags.length; i++) { %>
                   <% var select = (post.tags[i] == post.tag); select = select ? 1 : 0; %>
                   <input id="tag<%=i%>" style="margin:auto 0;" type="radio" name="tag" value="<%= post.tags[i]%>" <% if (select) { -%>checked<% } -%>>
-                  <label for="tag<%=i%>"> <span style="padding: 1px 25px;"><%= post.tags[i] %></span> </label>
+                  <label for="tag<%=i%>"> <span><%= post.tags[i] %></span> </label>
                 <% } %>
               </div>
           </div>
@@ -142,9 +142,6 @@
 
   load_lasttag();
 
-  window.onunload = function() {
-    save_lasttag();
-  }
   // warning before leave
   $(function() {
     $('form').areYouSure({
