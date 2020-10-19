@@ -876,12 +876,13 @@ body {
   position: relative;
   margin-bottom: 20px;
 }
-.form-item label{
-    display: block;
-    margin: 0 0 .28571429rem;
-    font-size: .92857143em;
-    font-weight: 700;
-    text-transform: none;
+.form-item .txtlabel{
+  padding-top: 10px;
+  display: block;
+  margin: 0 0 .28571429rem;
+  font-size: .92857143em;
+  font-weight: 700;
+  text-transform: none;
 }
 .form-item .input-bar{
   background-color: #262626;
@@ -901,6 +902,7 @@ body {
   min-height: 35px;
   padding: 0.5em 1em;
   border-radius: .28571429rem;
+  text-align: center;
 }
 .form-item textarea {
   background-color: #262626;
@@ -1135,4 +1137,27 @@ input[type="checkbox" i]:disabled {
 .required:after {
   content:" *";
   color: #E91E63;
+}
+// tags lebel
+input[type="radio"]{
+  visibility: hidden;
+  height: 0;
+  width: 0;
+}
+.form-item label{
+  display: inline-block;
+  min-width: 80px;
+  vertical-align: middle;
+  text-align: center;
+  cursor: pointer;
+  background-color: #454545;
+  color: white;
+  margin: 10px auto;
+  padding: 5px 0;
+  border-radius: 6px;
+  font-family: Times;
+  font-size: 0.95em;
+}
+input[type="radio"]:checked + label{
+  background-color: #841a7a;
 }

@@ -43,14 +43,13 @@
 
           <div class="form-item">
               <div class="post-tag-create">
-                  <% for(var i=0; i < post.tags.length; i++) { %>
-                    <% if (post.tags[i] == post.tag) { -%>
-                      <% var check = true; %>
-                    <% } else { -%>
-                      <% var check = false; %>
-                    <% } -%>
-                    <%- include('components/create_tags', { tag: post.tags[i], check: check}) %>
-                  <% } %>
+                <% var tag = post.tag  %>
+                <% var index = post.tags.findIndex(function(tag) {return post.tag === tag}) %>
+                <% for(var i=0; i < post.tags.length; i++) { %>
+                  <% var select = (i == index); select = select ? 1 : 0; %>
+                  <input id="tag<%=i%>" style="margin:auto 0;" type="radio" name="tag" value="<%= post.tags[i]%>" <% if (select) { -%>checked<% } -%>>
+                  <label for="tag<%=i%>"> <span style="padding: 1px 25px;"><%= post.tags[i] %></span> </label>
+                <% } %>
               </div>
           </div>
           <div class="form-item">
@@ -80,47 +79,33 @@
                 </div>
               </div>
               <div class="form-item">
-                <label style="padding-top: 10px">Title</label>
+                <span class="txtlabel">Title</span>
                 <input id="input-title" class="input-bar" name="title" value="<%= post.title %>" placeholder="Title">
               </div>
               <div style="display: flex;">
                   <div class="form-item" style="width: 45%; margin: 0 auto 0 0;">
-                      <label style="padding-top: 10px">New Tag</label>
+                      <span class="txtlabel">New Tag</span>
                       <input class="input-bar" name="new_tag" value="<%= null %>" >
                   </div>
                   <div class="form-item" style="width: 45%; margin: 0 0 0 auto;" >
-                      <label style="padding-top: 10px">Date</label>
+                      <span class="txtlabel">Date</span>
                       <input class="input-bar" type="date" name="postdate" value="<%= post.mydate %>">
                   </div>
               </div>
               <div style="display: flex;">
                   <div class="form-item" style="width: 45%; margin: 0 auto 0 0;">
-                    <label style="padding-top: 10px">Hide</label>
-                      <% if (post.hide) { -%>
-                        <div class="post-tag-create">
-                          <input type="radio" name="is_hide" value="true" checked>&nbsp True &nbsp &nbsp
-                          <input type="radio" name="is_hide" value="false">&nbsp False &nbsp &nbsp
-                        </div>
-                      <% } else { -%>
-                        <div class="post-tag-create">
-                          <input type="radio" name="is_hide" value="true">&nbsp True &nbsp &nbsp
-                          <input type="radio" name="is_hide" value="false" checked>&nbsp False &nbsp &nbsp
-                        </div>
-                      <% } -%>
+                    <span class="txtlabel">Hide</span>
+                      <div class="post-tag-create">
+                        <input type="radio" name="is_hide" value="true" id="is_hide_true" <% if (post.hide) { -%>checked<% } -%> > <label for="is_hide_true" > &nbsp True &nbsp</label>
+                        <input type="radio" name="is_hide" value="false" id="is_hide_false" <% if (!post.hide) { -%>checked<% } -%> ><label for="is_hide_false"> &nbsp False &nbsp</label>
+                      </div>
                   </div>
                   <div class="form-item" style="width: 45%; margin: 0 0 0 auto;" >
-                    <label style="padding-top: 10px">Top</label>
-                      <% if (post.top) { -%>
-                        <div class="post-tag-create">
-                          <input type="radio" name="is_top" value="true" checked>&nbsp True &nbsp &nbsp
-                          <input type="radio" name="is_top" value="false">&nbsp False &nbsp &nbsp
-                        </div>
-                      <% } else { -%>
-                        <div class="post-tag-create">
-                          <input type="radio" name="is_top" value="true">&nbsp True &nbsp &nbsp
-                          <input type="radio" name="is_top" value="false" checked>&nbsp False &nbsp &nbsp
-                        </div>
-                      <% } -%>
+                    <span class="txtlabel">Top</span>
+                      <div class="post-tag-create">
+                        <input type="radio" name="is_top" value="true" id="is_top_true" <% if (post.top) { -%>checked<% } -%>> <label for="is_top_true" > &nbsp True &nbsp</label>
+                        <input type="radio" name="is_top" value="false" id="is_top_false" <% if (!post.top) { -%>checked<% } -%> > <label for="is_top_false" > &nbsp False &nbsp</label>
+                      </div>
                   </div>
               </div>
           </div>

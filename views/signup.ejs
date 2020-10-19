@@ -9,19 +9,19 @@
 
       <form class="create-form" method="post" enctype="multipart/form-data">
           <div class="form-item" style="margin: 0 auto 0 0;">
-              <label class="required" style="padding-top: 10px">Username</label>
+              <span class="txtlabel" class="required">Username</span>
               <input class="input-bar" name="name" type="text" placeholder="length: 3 to 16" required>
           </div>
           <div class="form-item">
-              <label class="required" style="padding-top: 10px">Password</label>
+              <span class="txtlabel" class="required">Password</span>
               <input class="input-bar" name="password" type="password" placeholder="Minimal length: 10 " required>
           </div>
           <div class="form-item">
-              <label class="required" style="padding-top: 10px">Retype Password</label>
+              <span class="txtlabel" class="required">Retype Password</span>
               <input class="input-bar" name="repassword" type="password" required>
           </div>
           <div class="form-item">
-              <label style="padding-top: 10px">Gender</label>
+              <span class="txtlabel">Gender</span>
               <select class="input-bar" name="gender" style="height: 40px; font-size: 0.9em;">
                 <option value="m">Male</option>
                 <option value="f">Female</option>
@@ -29,11 +29,11 @@
               </select>
           </div>
           <div class="form-item">
-              <label class="required" style="padding-top: 10px">Picture (<10 MB)</label>
+              <span class="txtlabel" class="required">Picture (<10 MB)</span>
               <input class="input-bar" type="file" name="avatar" accept="image/*" required>
           </div>
           <div class="form-item">
-              <label style="padding-top: 10px">Bio</label>
+              <span class="txtlabel">Bio</span>
               <textarea name="bio" rows="5"></textarea>
           </div>
           <div class="form-item" style="margin: 20px 0">
