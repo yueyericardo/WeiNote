@@ -182,6 +182,11 @@ $l2-bar-bk: #eaeaea;
   .markdown-body table tr:nth-child(2n) {
     background-color: #e0e0e0;
   }
+  .markdown-body blockquote {
+    border-left: .25em solid #62676c;
+    color: #656667 !important;
+    padding: 0 0.5em;
+  }
 }
 
 .max-width {
@@ -224,6 +229,11 @@ body {
   body {
     overflow: scroll;
     overflow-x: hidden;
+  }
+}
+@media (min-width: 2000px) {
+  .max-width {
+    max-width: 68rem;
   }
 }
 #header {

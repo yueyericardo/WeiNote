@@ -105,6 +105,10 @@
     -webkit-box-shadow: 0 0 1px 1px #a7a7a7; }
   .theme-l2 .markdown-body table tr:nth-child(2n) {
     background-color: #e0e0e0; }
+  .theme-l2 .markdown-body blockquote {
+    border-left: .25em solid #62676c;
+    color: #656667 !important;
+    padding: 0 0.5em; }
 
 .max-width {
   max-width: 60rem;
@@ -146,6 +150,10 @@ body {
   body {
     overflow: scroll;
     overflow-x: hidden; } }
+
+@media (min-width: 2000px) {
+  .max-width {
+    max-width: 68rem; } }
 
 #header {
   width: 100%;
