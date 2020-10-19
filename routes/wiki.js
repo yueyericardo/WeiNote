@@ -56,7 +56,7 @@ router.get('/create', checkLogin, function (req, res, next) {
 
   var title = null;
   var content = null;
-  var tag = 'others';
+  var tag = null;
   var top = false;
   var hide = false;
   var isblog = false;

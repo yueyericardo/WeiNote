@@ -125,6 +125,31 @@ function load_theme(){
 }
 
 
+function load_lasttag(){
+  var is_create_page = document.querySelector('input[name="tag"]:checked') === null;
+  var lasttag = window.localStorage && window.localStorage.getItem("lasttag")  || "others";
+  if (is_create_page){
+    select_tag(lasttag);
+  }
+}
+
+function select_tag(tag){
+  var tags = document.getElementsByName('tag');
+  for (let i = 0; i < tags.length; i++) {
+    if (tags[i].value == tag) {
+      tags[i].checked = true;
+      break;
+    }
+  }
+}
+
+function save_lasttag(){
+  var lasttag = document.querySelector('input[name="tag"]:checked')
+  if (lasttag) {
+    window.localStorage.setItem("lasttag", lasttag.value);
+  }
+}
+
 function toggle_theme(){
   var theme = window.localStorage && window.localStorage.getItem("theme");
   isdark = /theme-d/.test(theme)
