@@ -27,7 +27,7 @@ module.exports = {
 
   bansignup: function bansignup (req, res, next) {
     req.flash('error', 'Sign up is not allowed')
-    return res.status(404).render('404')
+    return res.status(404).send('404 Forbidden')
     next()
   },
 

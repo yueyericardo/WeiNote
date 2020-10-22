@@ -21,86 +21,89 @@ if (allow_signup) {
     router.get('/', checkNotLogin, function (req, res, next) {
       res.render('signup')
     })
+
+    // POST /signup 用户注册
+    router.post('/', checkNotLogin, function (req, res, next) {
+      const name = req.fields.name
+      const gender = req.fields.gender
+      const bio = req.fields.bio
+      const avatar = req.files.avatar.path.split(path.sep).pop()
+      let password = req.fields.password
+      const repassword = req.fields.repassword
+
+      // 校验参数
+      try {
+        if (!(name.length >= 3 && name.length <= 16)) {
+          throw new Error('Limit username to 3-16 letters')
+        }
+        if (['m', 'f', 'x'].indexOf(gender) === -1) {
+          throw new Error('only m、f or x')
+        }
+        if (!req.files.avatar.name) {
+          throw new Error('Please Upload one avatar')
+        }
+        filesize = req.files.avatar.size / 1024 / 1024
+        if (filesize > 10) {
+          throw new Error('Image size exceeds 10MB');
+        }
+        if (password.length < 10) {
+          throw new Error('At least 10 letters for password')
+        }
+        if (password !== repassword) {
+          throw new Error('Two passwords are different')
+        }
+      } catch (e) {
+        // 注册失败，异步删除上传的头像
+        req.flash('error', e.message);
+        if (req.files.avatar.name) {
+          fs.unlinkSync(req.files.avatar.path);
+        }
+        return res.redirect('/signup')
+      }
+
+      // 明文密码加密
+      password = sha1(password)
+
+      // 待写入数据库的用户信息
+      let user = {
+        name: name,
+        password: password,
+        gender: gender,
+        bio: bio,
+        avatar: avatar
+      }
+      // 用户信息写入数据库
+      UserModel.create(user)
+        .then(function (result) {
+          // 此 user 是插入 mongodb 后的值，包含 _id
+          user = result.ops[0]
+          // 删除密码这种敏感信息，将用户信息存入 session
+          delete user.password
+          req.session.user = user
+          // 写入 flash
+          req.flash('success', 'Signup Successfully')
+          // 跳转到首页
+          res.redirect('/notes')
+        })
+        .catch(function (e) {
+          // 注册失败，异步删除上传的头像
+          fs.unlinkSync(req.files.avatar.path);
+          // 用户名被占用则跳回注册页，而不是错误页
+          if (e.message.match('duplicate key')) {
+            req.flash('error', 'Username has been used')
+            return res.redirect('/signup')
+          }
+          next(e)
+        })
+    })
 }else{
     // GET /signup 禁止注册
     router.get('/', checkNotLogin, bansignup, function (req, res, next) {
       res.render('signup')
     })
+    router.post('/', checkNotLogin, bansignup, function (req, res, next) {
+      res.render('signup')
+    })
 }
-
-// POST /signup 用户注册
-router.post('/', checkNotLogin, function (req, res, next) {
-  const name = req.fields.name
-  const gender = req.fields.gender
-  const bio = req.fields.bio
-  const avatar = req.files.avatar.path.split(path.sep).pop()
-  let password = req.fields.password
-  const repassword = req.fields.repassword
-
-  // 校验参数
-  try {
-    if (!(name.length >= 3 && name.length <= 16)) {
-      throw new Error('Limit username to 3-16 letters')
-    }
-    if (['m', 'f', 'x'].indexOf(gender) === -1) {
-      throw new Error('only m、f or x')
-    }
-    if (!req.files.avatar.name) {
-      throw new Error('Please Upload one avatar')
-    }
-    filesize = req.files.avatar.size / 1024 / 1024
-    if (filesize > 10) {
-      throw new Error('Image size exceeds 10MB');
-    }
-    if (password.length < 10) {
-      throw new Error('At least 10 letters for password')
-    }
-    if (password !== repassword) {
-      throw new Error('Two passwords are different')
-    }
-  } catch (e) {
-    // 注册失败，异步删除上传的头像
-    req.flash('error', e.message);
-    if (req.files.avatar.name) {
-      fs.unlinkSync(req.files.avatar.path);
-    }
-    return res.redirect('/signup')
-  }
-
-  // 明文密码加密
-  password = sha1(password)
-
-  // 待写入数据库的用户信息
-  let user = {
-    name: name,
-    password: password,
-    gender: gender,
-    bio: bio,
-    avatar: avatar
-  }
-  // 用户信息写入数据库
-  UserModel.create(user)
-    .then(function (result) {
-      // 此 user 是插入 mongodb 后的值，包含 _id
-      user = result.ops[0]
-      // 删除密码这种敏感信息，将用户信息存入 session
-      delete user.password
-      req.session.user = user
-      // 写入 flash
-      req.flash('success', 'Signup Successfully')
-      // 跳转到首页
-      res.redirect('/notes')
-    })
-    .catch(function (e) {
-      // 注册失败，异步删除上传的头像
-      fs.unlinkSync(req.files.avatar.path);
-      // 用户名被占用则跳回注册页，而不是错误页
-      if (e.message.match('duplicate key')) {
-        req.flash('error', 'Username has been used')
-        return res.redirect('/signup')
-      }
-      next(e)
-    })
-})
 
 module.exports = router
