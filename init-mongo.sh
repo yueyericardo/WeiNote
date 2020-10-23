@@ -30,5 +30,5 @@ if [[ $1 == restart ]]; then
     kill $mongod_pid; 
     wait $mongod_pid; 
     [ -n "${mongod_pid}" -a -d "/proc/${mongod_pid}" ] && echo "process exists" || echo "process not exists"
-    mongod --bind_ip_all; 
+    mongod --auth --bind_ip_all; 
 fi
