@@ -714,6 +714,7 @@ table ::-webkit-scrollbar {
   margin: 0;
   padding: .1em .4em;
   color: #dd0055;
+  word-spacing: 0;
 }
 
 .markdown-body pre {
