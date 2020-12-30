@@ -17,7 +17,7 @@
     "config": "^3.1.0",
     "connect-flash": "0.1.1",
     "connect-mongo": "2.0.1",
-    "date-and-time": "^0.6.3",
+    "date-and-time": "^0.14.2",
     "ejs": "2.5.7",
     "express": "4.16.2",
     "express-formidable": "git+https://github.com/utatti/express-formidable.git",
