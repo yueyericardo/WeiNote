@@ -1,7 +1,7 @@
 @charset "UTF-8";
 .theme-d1 {
   background: #262626;
-  background-image: url(https://yyrcd-1256568788.cos.na-siliconvalley.myqcloud.com/2020-04-06-501227b370fe7f4d6e3b3b0993298eab.png);
+  background-image: url(/css/tile.png);
   color: white; }
   .theme-d1 .dairy .dairy-p {
     background-color: #343434; }
@@ -22,7 +22,7 @@
 
 .theme-d2 {
   background: #484848;
-  background-image: url(https://yyrcd-1256568788.cos.na-siliconvalley.myqcloud.com/2020-04-06-501227b370fe7f4d6e3b3b0993298eab.png);
+  background-image: url(/css/tile.png);
   color: white; }
   .theme-d2 .dairy .dairy-p {
     background-color: #2b2b2b; }
@@ -43,7 +43,7 @@
 
 .theme-d3 {
   background: #6d6d6d;
-  background-image: url(https://yyrcd-1256568788.cos.na-siliconvalley.myqcloud.com/2020-04-06-501227b370fe7f4d6e3b3b0993298eab.png);
+  background-image: url(/css/tile.png);
   color: white; }
   .theme-d3 .dairy .dairy-p {
     background-color: #343434; }
@@ -64,7 +64,7 @@
 
 .theme-l1 {
   background: #9c9c9c;
-  background-image: url(https://yyrcd-1256568788.cos.na-siliconvalley.myqcloud.com/2020-04-06-501227b370fe7f4d6e3b3b0993298eab.png);
+  background-image: url(/css/tile.png);
   color: white; }
   .theme-l1 .dairy .dairy-p {
     background-color: #676565; }
@@ -85,7 +85,7 @@
 
 .theme-l2 {
   background: #e4e4e4;
-  background-image: url(https://yyrcd-1256568788.cos.na-siliconvalley.myqcloud.com/2020-04-06-501227b370fe7f4d6e3b3b0993298eab.png);
+  background-image: url(/css/tile.png);
   color: black; }
   .theme-l2 .dairy .dairy-p {
     background-color: #efefef; }
