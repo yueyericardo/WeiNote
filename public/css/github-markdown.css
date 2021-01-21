@@ -382,8 +382,8 @@
 
 .markdown-body code,
 .markdown-body pre {
-  font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,Courier,monospace;
-  font-size: 12px;
+  font-family: Consolas, Liberation Mono,Menlo,Courier,monospace;
+  font-size: 13px;
 }
 
 .markdown-body pre {
